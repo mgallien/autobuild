@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Autobuild::Subprocess::Failed</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/autobuild/subcommand_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/subcommand.rb">lib/autobuild/subcommand.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Exception</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000124">::new</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="../../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../../README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="../../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="../../Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="../../Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="../../Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="../../Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="../../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="../../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="../../Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="../../Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="../../Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="../../Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="../../Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="../../Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="../../Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="../../Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="../../Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="../../Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="../../Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="../../Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="../../Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="../../Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="../../Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="../../Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="../../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="../../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="../../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
+				
+					<li><a href="../../PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="../../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="../../RMail.html">RMail</a></li>
+				
+					<li><a href="../../RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Autobuild::Subprocess::Failed</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="status-attribute-method" class="method-detail">
+				<a name="status"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">status</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000124"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(status = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 7</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">status</span> = <span class="ruby-keyword kw">nil</span>)
+            <span class="ruby-ivar">@status</span> = <span class="ruby-identifier">status</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

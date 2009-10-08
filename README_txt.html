@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: README.txt [autobuild-1.2.16 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="./Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="./README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="./Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="./Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="./Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="./Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="./Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="./Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="./Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="./Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="./Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="./Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="./Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="./Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="./Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="./Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="./Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="./Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="./Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="./Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="./Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="./Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="./Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="./Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="./Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="./Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="./Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="./Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="./Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
+				
+					<li><a href="./PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="./PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="./RMail.html">RMail</a></li>
+				
+					<li><a href="./RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="./Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<p>
+Copyright &#169; 2006-2008 Sylvain Joyeux <sylvain.joyeux@m4x.org>
+</p>
+<ul>
+<li><a
+href="http://www.rubyforge.org/projects/autobuild">www.rubyforge.org/projects/autobuild</a>
+
+</li>
+<li><a
+href="http://autobuild.rubyforge.org/autobuild">autobuild.rubyforge.org/autobuild</a>
+
+</li>
+</ul>
+<p>
+This work is licensed under the GPLv2 license. See License.txt for details
+</p>
+<h2>What&#8217;s autobuild ?</h2>
+<p>
+<a href="Autobuild.html">Autobuild</a> imports, configures, builds and
+installs various kinds of software packages. It can be used in software
+development to make sure that nothing is broken in the build process of a
+set of packages, or can be used as an automated installation tool.
+</p>
+<p>
+<a href="Autobuild.html">Autobuild</a> config files are Ruby scripts which
+configure rake to
+</p>
+<ul>
+<li>imports the package from a SCM or (optionnaly) updates it
+
+</li>
+<li>configures it. This phase can handle code generation, configuration (for
+instance for autotools-based packages), &#8230;
+
+</li>
+<li>build
+
+</li>
+<li>install
+
+</li>
+</ul>
+<p>
+It takes the dependencies between packages into account in its build
+process, updates the needed environment variables
+(<tt>PKG_CONFIG_PATH</tt>, <tt>PATH</tt>, <tt>LD_LIBRARY_PATH</tt>,
+&#8230;)
+</p>
+<h2>WARNING for 0.5 users</h2>
+<p>
+Old configuration files used with autobuild 0.5 aren&#8217;t accepted by <a
+href="Autobuild.html">Autobuild</a> 0.6. Since 0.6, <a
+href="Autobuild.html">Autobuild</a> uses Ruby for configuration (just like
+rake does)
+</p>
+<h2>Available packages</h2>
+<h3>Common usage</h3>
+<p>
+All package objects define the following attributes
+</p>
+<table>
+<tr><td valign="top"><b>importer</b>:</td><td>the importer object (see &#8220;Available importers&#8221; below)
+
+</td></tr>
+<tr><td valign="top"><b>srcdir</b>:</td><td>where the package sources are located. If it is a relative path, it is
+relative to the value of Autobuild.srcdir. The default is to use the
+package name.
+
+</td></tr>
+<tr><td valign="top"><b>prefix</b>:</td><td>the directory where the package should be installed. If it is a relative
+path, it is relative to the value of Autobuild.prefix. The default is to
+use the package name.
+
+</td></tr>
+</table>
+<p>
+Each package method (<a href="Autobuild.html#M000126">Autobuild.import</a>,
+<a href="Autobuild.html#M000144">Autobuild.autotools</a>, &#8230;) takes
+either a package name for first argument, or a <tt>name =&gt;
+dependency_array</tt> hash, and take a block which can be used to configure
+the package. For instance
+</p>
+<pre>
+    Autobuild.import :my_package do |pkg|
+        pkg.srcdir = 'my_package_dir'
+    end
+
+    Autobuild.import :my_package =&gt; [:depends, :depends_also] do |pkg|
+    end
+</pre>
+<h3>Source only</h3>
+<pre>
+    package = Autobuild.import(dependencies) do |pkg|
+        &lt;package configuration&gt;
+    end
+</pre>
+<p>
+Use <tt>import</tt> if you need the package sources but don&#8217;t need to
+build it. You just need to set <tt>importer</tt> and <tt>srcdir</tt>.
+<tt>prefix</tt> is ignored.
+</p>
+<h3>Autotools</h3>
+<pre>
+    package = Autobuild.autotools(name, dependencies) do |pkg|
+        &lt;package configuration&gt;
+    end
+</pre>
+<p>
+Use this to build GNU autotools-based packages. This handles autoconf-only
+packages as well as those using automake
+</p>
+<p>
+Options to give the <tt>configure</tt> script are given in the
+<tt>configureflags</tt> array
+</p>
+<pre>
+    pkg.configureflags = ['--with-blah', 'FOO=bar' ]
+</pre>
+<p>
+If you want the files produced during the build to be separated from the
+source files, set the <tt>builddir</tt> attribute. For now, it has to be a
+relative path, relative to the source directory.
+</p>
+<pre>
+    pkg.builddir = 'build'
+</pre>
+<p>
+The generation of the configure script uses four programs:
+<tt>autoheader</tt>, <tt>autoconf</tt>, <tt>aclocal</tt>,
+<tt>automake</tt>. The default program path can be overriden in the
+Autotools.programs hash. For instance, to be sure that
+<tt>automake-1.9</tt> is used <bb>for all packages</bb>, you set
+</p>
+<pre>
+    Autotools.programs['automake'] = 'automake-1.9'
+</pre>
+<p>
+<a href="Autobuild.html">Autobuild</a> tries to detect what tools it should
+run, but you can override. Autodetection works as follows:
+</p>
+<ul>
+<li>if a script named <tt>autogen</tt> or <tt>autogen.sh</tt> exists in the
+package source directory, it is run and the other tools are not. The name
+of this kind of script can be set by calling Autotools#use
+
+<pre>
+  pkg.use :autogen =&gt; 'my_autogen_script'
+</pre>
+</li>
+<li><tt>autoheader</tt> is never used by default
+
+</li>
+<li><tt>autoconf</tt> is used if there is <tt>configure.ac</tt> or
+<tt>configure.in</tt> in the source dir
+
+</li>
+<li><tt>aclocal</tt> is used if <tt>autoconf</tt> is enabled (either
+explicitely or by autodetection)
+
+</li>
+<li><tt>automake</tt> is used if there is a <tt>Makefile.am</tt> file in the
+source dir
+
+</li>
+<li>you can force to enable or disable any of these steps by calling
+Autotools#use. Set it to <tt>true</tt> to force its usage, <tt>false</tt>
+to disable it or to a string to force the usage of a particular program
+
+<pre>
+  pkg.use :autogen =&gt; false
+  pkg.use :automake =&gt; false
+  pkg.use :autoheader =&gt; true
+  pkg.use :autoconf =&gt; 'my_autoconf_program'
+</pre>
+<p>
+The &#8216;autogen&#8217; option cannot be set to <tt>true</tt>.
+</p>
+</li>
+</ul>
+<p>
+The only program used during the build and install phases is <tt>make</tt>.
+Its path can be overriden in the <a
+href="Autobuild.html#programs">Autobuild.programs</a> hash
+</p>
+<pre>
+    Autobuild.programs['make'] = 'gnumake'
+</pre>
+<h3>CMake</h3>
+<p>
+A cmake package is defined with
+</p>
+<pre>
+  require 'autobuild/packages/cmake'
+  Autobuild.cmake :package_name do |pkg|
+    &lt;package configuration&gt; ...
+  end
+</pre>
+<p>
+The only configuration attribute available for CMake package is:
+<tt>builddir</tt>
+</p>
+<pre>
+  the directory in which to configure and build the package. It is relative to
+  the package sources. A global value can be defined through Autobuild::CMake.builddir
+</pre>
+<p>
+Additionally, the define(name, value) method allows to define configuration
+variables.
+</p>
+<h2>Available importers</h2>
+<p>
+You must set an importer object for each package. The package importer is
+the <tt>importer</tt> attribute and is set via <tt>package.importer =
+my_importer</tt>. An importer <tt>foo</tt> is defined by the class
+Autobuild::FooImporter and defines a Autobuild.foo method which creates a
+new importer object. Importer classes files are in
+<tt>lib/autobuild/import/</tt>
+</p>
+<h3>Tar</h3>
+<pre>
+    package.importer = tar(uri[, options])
+</pre>
+<p>
+Downloads a tarfile at <tt>uri</tt> and saves it into a local cache
+directory. The cache directory can be set in the <tt>options</tt> hash
+</p>
+<pre>
+    package.importer = tar(uri, :cachedir = '/tmp')
+</pre>
+<p>
+It is &#8220;#{Autobuild.prefix}/cache&#8221; by default. The known URI
+schemes are file:// for local files and http:// or ftp:// for remote files.
+There is currently no way to set passive mode on FTP, since the standard
+open-uri library does not allow that.
+</p>
+<h3>CVS</h3>
+<pre>
+    package.importer = cvs(cvsroot, module[, options])
+</pre>
+<p>
+Where <tt>options</tt> is an option hash. See also <a
+href="Autobuild/CVSImporter.html">Autobuild::CVSImporter</a> and <a
+href="Autobuild.html#M000099">Autobuild.cvs</a>
+</p>
+<ul>
+<li>the default CVS command is <tt>cvs</tt>. It can be changed by
+
+<pre>
+  Autobuild.programs['cvs'] = 'my_cvs_command'
+</pre>
+</li>
+<li>the default checkout option is <tt>-P</tt>. You can change that by giving a
+<tt>cvsco</tt> option
+
+<pre>
+  cvs cvsroot, module, :cvsco =&gt; ['--my', '--cvs', '--options']
+</pre>
+</li>
+<li>the default update option is <tt>-dP</tt>. You can change that by giving a
+<tt>cvsup</tt> option
+
+<pre>
+  cvs cvsroot, module, :cvsup =&gt; ['--my', '--cvs', '--options']
+</pre>
+</li>
+</ul>
+<h3>Subversion</h3>
+<pre>
+    package.importer = svn(url[, options])
+</pre>
+<p>
+Where <tt>options</tt> is an option hash. See also Autobuild::SVNImporter
+and <a href="Autobuild.html#M000082">Autobuild.svn</a>
+</p>
+<ul>
+<li>the default Subversion command is <tt>svn</tt>. It can be changed by
+
+<pre>
+  Autobuild.programs['svn'] = 'my_svn_command'
+</pre>
+</li>
+<li>by default, no options are given to checkout. You add some by giving a
+<tt>svnco</tt> option
+
+<pre>
+  svn url, :svnco =&gt; ['--my', '--svn', '--options']
+</pre>
+</li>
+<li>by default, no options are given to update. You can add some by giving a
+<tt>svnup</tt> option
+
+<pre>
+  svn url, :svnup =&gt; ['--my', '--svn', '--options']
+</pre>
+</li>
+</ul>
+<h3>Darcs</h3>
+<pre>
+    package.importer = darcs(url[, options])
+</pre>
+<p>
+Where <tt>options</tt> is a hash. See also <a
+href="Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a> and <a
+href="Autobuild.html#M000077">Autobuild.darcs</a>
+</p>
+<ul>
+<li>the default Darcs command is <tt>darcs</tt>. It can be changed by
+
+<pre>
+  Autobuild.programs['darcs'] = 'my_svn_command'
+</pre>
+</li>
+<li>by default, no options are given to get. You add some by giving a
+<tt>get</tt> option
+
+<pre>
+  darcs url, :get =&gt; ['--my', '--darcs', '--options']
+</pre>
+</li>
+<li>by default, no options are given to pull. You can add some by giving a
+<tt>pull</tt> option
+
+<pre>
+  darcs url, :pull =&gt; ['--my', '--darcs', '--options']
+</pre>
+</li>
+</ul>
+<h3>Git</h3>
+<pre>
+    package.importer = git(url[, branch])
+</pre>
+<p>
+Imports the given branch (or master if none is given) of the repository at
+the given URL. The branch is imported as the &#8216;autobuild&#8217; remote
+and fetched into the master local branch.
+</p>
+<h1>Copyright and license</h1>
+<table>
+<tr><td valign="top">Author:</td><td>Sylvain Joyeux <sylvain.joyeux@m4x.org>
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2005-2008 Sylvain Joyeux
+
+</td></tr>
+<tr><td valign="top">License:</td><td>GPL
+
+</td></tr>
+</table>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

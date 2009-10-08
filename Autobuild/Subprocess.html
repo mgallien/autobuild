@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: Autobuild::Subprocess</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/autobuild/subcommand_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/subcommand.rb">lib/autobuild/subcommand.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000125">::run</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="../Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="../Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="../Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="../Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="../Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="../Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="../Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="../Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="../Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="../Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="../Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="../Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="../Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="../Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="../Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="../Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="../Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="../Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="../Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
+				
+					<li><a href="../PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="../RMail.html">RMail</a></li>
+				
+					<li><a href="../RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">Autobuild::Subprocess</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="CONTROL_COMMAND_NOT_FOUND">CONTROL_COMMAND_NOT_FOUND</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CONTROL_UNEXPECTED">CONTROL_UNEXPECTED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="run-method" class="method-detail ">
+				<a name="M000125"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">run</span><span
+						class="method-args">(target, phase, *command)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="run-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">phase</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
+        <span class="ruby-comment cmt"># Filter nil and empty? in command</span>
+        <span class="ruby-identifier">command</span>.<span class="ruby-identifier">reject!</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">empty?</span>) }
+        <span class="ruby-identifier">command</span>.<span class="ruby-identifier">collect!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span> }
+
+        <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span>)
+        <span class="ruby-identifier">logname</span> = <span class="ruby-node">&quot;#{Autobuild.logdir}/#{target}-#{phase}.log&quot;</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">logname</span>))
+            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">logname</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
+            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{target}: running #{command.join(&quot; &quot;)}\n    (output goes to #{logname})&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">input_streams</span> = <span class="ruby-identifier">command</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">$1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">o</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\&lt;(.+)/</span> }.<span class="ruby-identifier">compact</span>
+        <span class="ruby-identifier">command</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\&lt;(.+)/</span> }
+
+        <span class="ruby-identifier">open_flag</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">keep_oldlogs</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'a'</span>
+                    <span class="ruby-keyword kw">else</span> <span class="ruby-value str">'w'</span>
+                    <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">status</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">logname</span>, <span class="ruby-identifier">open_flag</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">logfile</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">keep_oldlogs</span>
+                <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{Time.now}: running&quot;</span>
+            <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;    #{command.join(&quot; &quot;)}&quot;</span>
+            <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span>
+            <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">flush</span>
+
+            <span class="ruby-identifier">pread</span>, <span class="ruby-identifier">pwrite</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span> <span class="ruby-comment cmt"># to feed subprocess stdin </span>
+            <span class="ruby-identifier">cread</span>, <span class="ruby-identifier">cwrite</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span> <span class="ruby-comment cmt"># to control that exec goes well</span>
+
+            <span class="ruby-identifier">pid</span> = <span class="ruby-identifier">fork</span> <span class="ruby-keyword kw">do</span>
+                <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
+                <span class="ruby-keyword kw">begin</span>
+                    <span class="ruby-constant">Process</span>.<span class="ruby-identifier">setpriority</span>(<span class="ruby-constant">Process</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIO_PROCESS</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">nice</span>)
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
+                        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
+                        <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
+                    <span class="ruby-keyword kw">else</span>
+                        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
+                        <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
+                    <span class="ruby-keyword kw">end</span>
+
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">input_streams</span>.<span class="ruby-identifier">empty?</span>
+                        <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">close</span>
+                        <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">pread</span>)
+                    <span class="ruby-keyword kw">end</span>
+                   
+                    <span class="ruby-identifier">exec</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
+                <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+                    <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">write</span>([<span class="ruby-constant">CONTROL_COMMAND_NOT_FOUND</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'I'</span>))
+                    <span class="ruby-identifier">raise</span>
+                <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span>
+                    <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">write</span>([<span class="ruby-constant">CONTROL_UNEXPECTED</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'I'</span>))
+                    <span class="ruby-identifier">raise</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-comment cmt"># Feed the input</span>
+            <span class="ruby-identifier">pread</span>.<span class="ruby-identifier">close</span>
+            <span class="ruby-keyword kw">begin</span>
+                <span class="ruby-identifier">input_streams</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">infile</span><span class="ruby-operator">|</span>
+                    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infile</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">instream</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">instream</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">line</span>) }
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>, <span class="ruby-node">&quot;cannot open input files: #{e.message}&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">close</span>
+
+            <span class="ruby-comment cmt"># Get control status</span>
+            <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">close</span>
+            <span class="ruby-identifier">value</span> = <span class="ruby-identifier">cread</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">4</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
+                <span class="ruby-comment cmt"># An error occured</span>
+                <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'I'</span>).<span class="ruby-identifier">first</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CONTROL_COMMAND_NOT_FOUND</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>, <span class="ruby-node">&quot;command '#{command.first}' not found&quot;</span>
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>, <span class="ruby-value str">&quot;something unexpected happened&quot;</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">childpid</span>, <span class="ruby-identifier">childstatus</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">wait2</span>(<span class="ruby-identifier">pid</span>)
+            <span class="ruby-identifier">childstatus</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">exitstatus</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">status</span>.<span class="ruby-identifier">exitstatus</span>), <span class="ruby-node">&quot;'#{command.join(' ')}' returned status #{status.exitstatus}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Failed</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">error</span> = <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">SubcommandFailed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">command</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>), <span class="ruby-identifier">logname</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">status</span>)
+        <span class="ruby-identifier">error</span>.<span class="ruby-identifier">phase</span> = <span class="ruby-identifier">phase</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">error</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Autobuild::InstalledPkgConfig</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/autobuild/packages/pkgconfig_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/packages/pkgconfig.rb">lib/autobuild/packages/pkgconfig.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Package</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000129">::new</a></li>
+					
+					<li><a href="#M000130">#installstamp</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="../Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="../Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="../Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="../Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="../Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="../Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="../Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="../Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="../Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="../Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="../Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="../Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="../Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="../Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="../Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="../Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="../Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="../Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="../Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
+				
+					<li><a href="../PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="../RMail.html">RMail</a></li>
+				
+					<li><a href="../RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Autobuild::InstalledPkgConfig</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="pkgconfig-attribute-method" class="method-detail">
+				<a name="pkgconfig"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">pkgconfig</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="prefix-attribute-method" class="method-detail">
+				<a name="prefix"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">prefix</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000129"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 8</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
+            <span class="ruby-ivar">@pkgconfig</span> = <span class="ruby-constant">PkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
+            <span class="ruby-ivar">@prefix</span>    = <span class="ruby-ivar">@pkgconfig</span>.<span class="ruby-identifier">prefix</span>
+            <span class="ruby-keyword kw">super</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="installstamp-method" class="method-detail ">
+				<a name="M000130"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">installstamp</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="installstamp-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 14</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
+            <span class="ruby-identifier">std_stamp</span> = <span class="ruby-keyword kw">super</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">std_stamp</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">std_stamp</span>)
+
+            <span class="ruby-identifier">pcfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">pkgconfig</span>.<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">&quot;lib&quot;</span>, <span class="ruby-value str">&quot;pkgconfig&quot;</span>, <span class="ruby-node">&quot;#{name}.pc&quot;</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">pcfile</span>)
+                <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;cannot find the .pc file for #{name}, tried #{pcfile}&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">pcfile</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

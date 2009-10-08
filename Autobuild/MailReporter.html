@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Autobuild::MailReporter</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/autobuild/reporting_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/reporting.rb">lib/autobuild/reporting.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Reporter</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000119">::new</a></li>
+					
+					<li><a href="#M000118">#default_mail</a></li>
+					
+					<li><a href="#M000120">#error</a></li>
+					
+					<li><a href="#M000122">#send_mail</a></li>
+					
+					<li><a href="#M000121">#success</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="../Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="../Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="../Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="../Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="../Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="../Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="../Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="../Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="../Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="../Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="../Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="../Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="../Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="../Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="../Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="../Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="../Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="../Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="../Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
+				
+					<li><a href="../PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="../RMail.html">RMail</a></li>
+				
+					<li><a href="../RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Autobuild::MailReporter</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="from-email-attribute-method" class="method-detail">
+				<a name="from_email"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">from_email</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="to-email-attribute-method" class="method-detail">
+				<a name="to_email"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">to_email</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="smtp-hostname-attribute-method" class="method-detail">
+				<a name="smtp_hostname"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">smtp_hostname</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="smtp-port-attribute-method" class="method-detail">
+				<a name="smtp_port"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">smtp_port</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="subject-attribute-method" class="method-detail">
+				<a name="subject"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">subject</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="only-errors-attribute-method" class="method-detail">
+				<a name="only_errors"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">only_errors</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000119"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(config)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 105</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">config</span>)
+            <span class="ruby-ivar">@from_email</span> = (<span class="ruby-identifier">config</span>[<span class="ruby-identifier">:from</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default_mail</span>)
+            <span class="ruby-ivar">@to_email</span>   = (<span class="ruby-identifier">config</span>[<span class="ruby-identifier">:to</span>]   <span class="ruby-operator">||</span> <span class="ruby-identifier">default_mail</span>)
+            <span class="ruby-ivar">@subject</span> = (<span class="ruby-identifier">config</span>[<span class="ruby-identifier">:subject</span>] <span class="ruby-operator">||</span> <span class="ruby-node">&quot;Build %result% on #{Socket.gethostname} at %time%&quot;</span>)
+            <span class="ruby-ivar">@only_errors</span> = <span class="ruby-identifier">config</span>[<span class="ruby-identifier">:only_errors</span>]
+            <span class="ruby-ivar">@smtp_hostname</span> = (<span class="ruby-identifier">config</span>[<span class="ruby-identifier">:smtp</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;localhost&quot;</span> )
+            <span class="ruby-ivar">@smtp_port</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">config</span>[<span class="ruby-identifier">:port</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">getservbyname</span>(<span class="ruby-value str">'smtp'</span>))
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="default-mail-method" class="method-detail ">
+				<a name="M000118"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_mail</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-mail-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 94</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_mail</span>
+            <span class="ruby-constant">Etc</span><span class="ruby-operator">::</span><span class="ruby-identifier">endpwent</span>
+            <span class="ruby-identifier">uname</span> = <span class="ruby-keyword kw">while</span> (<span class="ruby-identifier">pwent</span> = <span class="ruby-constant">Etc</span><span class="ruby-operator">::</span><span class="ruby-identifier">getpwent</span>)
+                        <span class="ruby-keyword kw">break</span> (<span class="ruby-identifier">pwent</span>.<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pwent</span>.<span class="ruby-identifier">uid</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">uid</span>
+                    <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;FATAL: cannot find a user with uid=#{Process.uid}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">uname</span>
+            <span class="ruby-node">&quot;#{pwent.name}@#{Socket.gethostname}&quot;</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="error-method" class="method-detail ">
+				<a name="M000120"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">error</span><span
+						class="method-args">(error)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="error-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 114</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">mail?</span>
+                <span class="ruby-identifier">send_mail</span>(<span class="ruby-value str">&quot;failed&quot;</span>, <span class="ruby-identifier">error</span>.<span class="ruby-identifier">to_s</span>)
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="send-mail-method" class="method-detail ">
+				<a name="M000122"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">send_mail</span><span
+						class="method-args">(result, body = "")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="send-mail-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 126</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_mail</span>(<span class="ruby-identifier">result</span>, <span class="ruby-identifier">body</span> = <span class="ruby-value str">&quot;&quot;</span>)
+            <span class="ruby-identifier">mail</span> = <span class="ruby-constant">RMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">header</span>.<span class="ruby-identifier">date</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+            <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">header</span>.<span class="ruby-identifier">from</span> = <span class="ruby-identifier">from_email</span>
+            <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">header</span>.<span class="ruby-identifier">subject</span> = <span class="ruby-identifier">subject</span>.
+                <span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'%result%'</span>, <span class="ruby-identifier">result</span>).
+                <span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'%time%'</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_s</span>).
+                <span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'%hostname%'</span>, <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">gethostname</span>)
+
+            <span class="ruby-identifier">part</span> = <span class="ruby-constant">RMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">part</span>.<span class="ruby-identifier">header</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value str">'Content-Type'</span>, <span class="ruby-value str">'text/plain'</span>)
+            <span class="ruby-identifier">part</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">body</span>
+            <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">add_part</span>(<span class="ruby-identifier">part</span>)
+
+            <span class="ruby-comment cmt"># Attach log files</span>
+            <span class="ruby-constant">Reporting</span>.<span class="ruby-identifier">each_log</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">name</span> = <span class="ruby-identifier">file</span>[<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+                <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">add_file</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">file</span>)
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-comment cmt"># Send the mails</span>
+            <span class="ruby-identifier">smtp</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">SMTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">smtp_hostname</span>, <span class="ruby-identifier">smtp_port</span>)
+            <span class="ruby-identifier">smtp</span>.<span class="ruby-identifier">start</span> {
+                <span class="ruby-identifier">to_email</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">email</span><span class="ruby-operator">|</span>
+                    <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">header</span>.<span class="ruby-identifier">to</span> = <span class="ruby-identifier">email</span>
+                    <span class="ruby-identifier">smtp</span>.<span class="ruby-identifier">send_mail</span> <span class="ruby-constant">RMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Serialize</span>.<span class="ruby-identifier">write</span>(<span class="ruby-value str">''</span>, <span class="ruby-identifier">mail</span>), <span class="ruby-identifier">from_email</span>, <span class="ruby-identifier">email</span>
+                <span class="ruby-keyword kw">end</span>
+            }
+
+            <span class="ruby-comment cmt"># Notify the sending</span>
+            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Sent notification mail to #{to_email} with source #{from_email}&quot;</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="success-method" class="method-detail ">
+				<a name="M000121"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">success</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="success-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 120</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">success</span>
+            <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">only_errors</span>
+                <span class="ruby-identifier">send_mail</span>(<span class="ruby-value str">&quot;success&quot;</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">post_success_message</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;&quot;</span>)
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

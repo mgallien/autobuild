@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Autobuild::GenomModule</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/autobuild/packages/genom_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/packages/genom.rb">lib/autobuild/packages/genom.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Autotools</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000158">::new</a></li>
+					
+					<li><a href="#M000162">#cpp_options</a></li>
+					
+					<li><a href="#M000166">#depends_on</a></li>
+					
+					<li><a href="#M000167">#genom_dependencies</a></li>
+					
+					<li><a href="#M000161">#genomstamp</a></li>
+					
+					<li><a href="#M000164">#get_provides</a></li>
+					
+					<li><a href="#M000163">#get_requires</a></li>
+					
+					<li><a href="#M000159">#import</a></li>
+					
+					<li><a href="#M000160">#prepare</a></li>
+					
+					<li><a href="#M000168">#regen</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="../Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="../Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="../Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="../Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="../Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="../Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="../Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="../Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="../Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="../Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="../Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="../Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="../Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="../Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="../Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="../Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="../Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="../Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="../Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
+				
+					<li><a href="../PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="../RMail.html">RMail</a></li>
+				
+					<li><a href="../RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Autobuild::GenomModule</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="genomflags-attribute-method" class="method-detail">
+				<a name="genomflags"></a>
+				
+				<a name="genomflags="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">genomflags</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000158"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(*args, &config)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 13</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">config</span>)
+            <span class="ruby-ivar">@genomflags</span> = []
+            <span class="ruby-keyword kw">super</span>
+
+            <span class="ruby-identifier">use</span> <span class="ruby-identifier">:autogen</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'autogen'</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="cpp-options-method" class="method-detail ">
+				<a name="M000162"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cpp_options</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Extract the cpp options from the genom options
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="cpp-options-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 38</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cpp_options</span>
+            [<span class="ruby-operator">*</span><span class="ruby-identifier">genomflags</span>].<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">opt</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^-D/</span> }
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="depends-on-method" class="method-detail ">
+				<a name="M000166"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">depends_on</span><span
+						class="method-args">(*packages)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="depends-on-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 75</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+            <span class="ruby-keyword kw">super</span>
+            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>].<span class="ruby-identifier">installstamp</span> }
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="genom-dependencies-method" class="method-detail ">
+				<a name="M000167"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">genom_dependencies</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Make the genom-stamp file depend on
+</p>
+<pre>
+  * genom includes
+  * genom canvas
+  * the genom binary itself
+</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="genom-dependencies-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 84</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genom_dependencies</span>
+            <span class="ruby-comment cmt"># Get the genom pkg-config</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Package</span>[<span class="ruby-value str">'genom'</span>]
+                <span class="ruby-value str">'genom'</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">genom_pkg</span> = <span class="ruby-constant">PkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'genom'</span>)
+
+                <span class="ruby-identifier">includedir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">includedir</span>, <span class="ruby-value str">'genom'</span>)
+                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">includedir</span>
+
+                <span class="ruby-identifier">canvasdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">&quot;share&quot;</span>, <span class="ruby-value str">&quot;genom&quot;</span>, <span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">version</span>);;
+                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">canvasdir</span>
+
+                <span class="ruby-identifier">binary</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">exec_prefix</span>, <span class="ruby-value str">&quot;bin&quot;</span>, <span class="ruby-value str">&quot;genom&quot;</span>)
+                <span class="ruby-identifier">file</span> <span class="ruby-identifier">binary</span>
+
+                [<span class="ruby-identifier">binary</span>, <span class="ruby-identifier">includedir</span>, <span class="ruby-identifier">canvasdir</span>]
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="genomstamp-method" class="method-detail ">
+				<a name="M000161"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">genomstamp</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The file touched by genom on successful generation
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="genomstamp-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 35</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genomstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.genom'</span>, <span class="ruby-value str">'genom-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="get-provides-method" class="method-detail ">
+				<a name="M000164"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_provides</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Alias this package to the ones defined in the EXTRA_PKGCONFIG flag in
+configure.ac.user
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-provides-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 63</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_provides</span>
+            <span class="ruby-identifier">configure_ac_user</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.ac.user'</span>)
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">configure_ac_user</span>)
+            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">configure_ac_user</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*EXTRA_PKGCONFIG\s*=\s*&quot;?([\w\-]+(?:\s+[\w\-]+)*)&quot;?/</span>
+                        <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s+/</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">provides</span> <span class="ruby-identifier">pkg</span> }
+                    <span class="ruby-keyword kw">end</span>
+                }
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="get-requires-method" class="method-detail ">
+				<a name="M000163"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_requires</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Extracts dependencies using the requires: field in the .gen file
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-requires-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 43</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_requires</span>
+            <span class="ruby-identifier">apionly</span> = <span class="ruby-identifier">genomflags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'-a'</span> }
+            <span class="ruby-identifier">cpp</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:cpp</span>)
+            <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">popen3</span>(<span class="ruby-node">&quot;#{cpp} #{cpp_options.join(&quot; &quot;)} #{srcdir}/#{name}.gen&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cin</span>, <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">out</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:\s*([\w\-]+(?:\s*,\s*[\w\-]+)*);/</span>
+                        <span class="ruby-comment cmt"># Remove the codels_requires lines if -a is given to genom</span>
+                        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$1</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;codels_&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">apionly</span>
+                            <span class="ruby-identifier">$2</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,/</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip</span> }
+                        <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(?:codels_)?requires/</span>
+                        <span class="ruby-comment cmt"># Check that the regexp is not too strict</span>
+                        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;failed to match #{line}&quot;</span>
+                    <span class="ruby-keyword kw">end</span>
+                }
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="import-method" class="method-detail ">
+				<a name="M000159"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">import</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="import-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 20</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+            <span class="ruby-keyword kw">super</span>
+            <span class="ruby-identifier">get_provides</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="prepare-method" class="method-detail ">
+				<a name="M000160"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prepare</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Called before running the rake tasks and after all imports have been made
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prepare-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 27</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+            <span class="ruby-identifier">genomflags</span>.<span class="ruby-identifier">flatten!</span>
+
+            <span class="ruby-keyword kw">super</span>
+            <span class="ruby-identifier">get_requires</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="regen-method" class="method-detail ">
+				<a name="M000168"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">regen</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="regen-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 104</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
+            <span class="ruby-identifier">cmdline</span> = [ <span class="ruby-value str">'genom'</span>, <span class="ruby-node">&quot;#{name}.gen&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">genomflags</span> ]
+
+            <span class="ruby-comment cmt"># Check that the module has been generated with the same flags</span>
+            <span class="ruby-identifier">genom_mk</span> = <span class="ruby-node">&quot;#{srcdir}/autoconf/genom.mk&quot;</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">genom_mk</span>)
+                <span class="ruby-identifier">contents</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">genom_mk</span>).<span class="ruby-identifier">readlines</span>
+                <span class="ruby-identifier">old_file</span> = <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^GENFILE/</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'GENFILE='</span>, <span class="ruby-value str">''</span>).<span class="ruby-identifier">strip</span>
+                <span class="ruby-identifier">old_flags</span> = <span class="ruby-constant">Shellwords</span>.<span class="ruby-identifier">shellwords</span>(
+                            <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^GENFLAGS/</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'GENFLAGS='</span>, <span class="ruby-value str">''</span>))
+
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_file</span> <span class="ruby-operator">!=</span> <span class="ruby-node">&quot;#{name}.gen&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">old_flags</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">genomflags</span>).<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">genomflags</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">old_flags</span>).<span class="ruby-identifier">empty?</span>
+                    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">genomstamp</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">file</span> <span class="ruby-identifier">buildstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genomstamp</span>
+            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genom_dependencies</span>
+            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span>
+                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
+                    <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating GenoM files for #{package.name}&quot;</span>
+                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">cmdline</span>)
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">acuser</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;configure.ac.user&quot;</span>)
+            <span class="ruby-identifier">file</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure'</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">acuser</span> <span class="ruby-keyword kw">do</span>
+                <span class="ruby-comment cmt"># configure does not depend on the .gen file</span>
+                <span class="ruby-comment cmt"># since the generation takes care of rebuilding configure</span>
+                <span class="ruby-comment cmt"># if .gen has changed</span>
+                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating build system for #{package.name}&quot;</span>
+                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) { <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'autogen'</span>)) }
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-keyword kw">super</span>(<span class="ruby-node">&quot;#{srcdir}/autoconf/configure.ac&quot;</span>)
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
