@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: README.txt [autobuild-1.2.16 Documentation]</title>
+	<title>File: README.txt [autobuild-1.3.3 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -71,6 +71,12 @@
 					<li><a href="./Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
 				
 					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/FakeDeployment.html">Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 				
 					<li><a href="./Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
 				
@@ -208,7 +214,7 @@ use the package name.
 </table>
 <p>
 Each package method (<a href="Autobuild.html#M000126">Autobuild.import</a>,
-<a href="Autobuild.html#M000144">Autobuild.autotools</a>, &#8230;) takes
+<a href="Autobuild.html#M000145">Autobuild.autotools</a>, &#8230;) takes
 either a package name for first argument, or a <tt>name =&gt;
 dependency_array</tt> hash, and take a block which can be used to configure
 the package. For instance
@@ -403,7 +409,7 @@ href="Autobuild.html#M000099">Autobuild.cvs</a>
 </pre>
 <p>
 Where <tt>options</tt> is an option hash. See also Autobuild::SVNImporter
-and <a href="Autobuild.html#M000082">Autobuild.svn</a>
+and <a href="Autobuild.html#M000086">Autobuild.svn</a>
 </p>
 <ul>
 <li>the default Subversion command is <tt>svn</tt>. It can be changed by

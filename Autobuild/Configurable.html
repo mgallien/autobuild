@@ -63,15 +63,15 @@
 					
 					<li><a href="#M000019">::new</a></li>
 					
-					<li><a href="#M000026">#build</a></li>
+					<li><a href="#M000027">#build</a></li>
 					
 					<li><a href="#M000015">#builddir</a></li>
 					
 					<li><a href="#M000014">#builddir=</a></li>
 					
-					<li><a href="#M000016">#buildstamp</a></li>
+					<li><a href="#M000018">#buildstamp</a></li>
 					
-					<li><a href="#M000025">#configure</a></li>
+					<li><a href="#M000024">#configure</a></li>
 					
 					<li><a href="#M000020">#depends_on</a></li>
 					
@@ -79,7 +79,7 @@
 					
 					<li><a href="#M000028">#install</a></li>
 					
-					<li><a href="#M000023">#prepare</a></li>
+					<li><a href="#M000022">#prepare</a></li>
 					
 				</ul>
 			</div>
@@ -138,6 +138,12 @@
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/FakeDeployment.html">Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 				
 					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
 				
@@ -207,7 +213,7 @@ Base class for packages that require a configuration + build step.
 <p>
 Child classes must provide a configurestamp file which represents the last
 configuration step done. This file is updated by a call to <a
-href="Configurable.html#M000025">configure</a> (see below)
+href="Configurable.html#M000024">configure</a> (see below)
 </p>
 <p>
 Three new methods are added, which can be reimplemented in child classes:
@@ -219,7 +225,7 @@ depended-upon packages are installed.
 </li>
 <li><tt>build</tt> is ran after <tt>configure</tt> if the configure stamp
 and/or the source files have been updated. The <a
-href="Configurable.html#M000016">buildstamp</a> stampfile represents when
+href="Configurable.html#M000018">buildstamp</a> stampfile represents when
 the last build has been done. The build must be done in the <a
 href="Configurable.html#M000015">builddir</a> directory.
 
@@ -339,7 +345,7 @@ href="Configurable.html#M000015">builddir</a> directory.
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000026"></a>
+				<a name="M000027"></a>
 
 				<div class="method-heading">
 				
@@ -360,7 +366,7 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 94</span>
+<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 96</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -438,7 +444,7 @@ Returns the absolute builddir
 
 		
 			<div id="buildstamp-method" class="method-detail ">
-				<a name="M000016"></a>
+				<a name="M000018"></a>
 
 				<div class="method-heading">
 				
@@ -471,7 +477,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000025"></a>
+				<a name="M000024"></a>
 
 				<div class="method-heading">
 				
@@ -492,7 +498,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 89</span>
+<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 91</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">configurestamp</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -594,7 +600,7 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 98</span>
+<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 100</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">installstamp</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -607,7 +613,7 @@ Install the result in prefix
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000023"></a>
+				<a name="M000022"></a>
 
 				<div class="method-heading">
 				
@@ -628,6 +634,8 @@ Install the result in prefix
 <pre>
 <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 65</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+            <span class="ruby-keyword kw">super</span>
+
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> <span class="ruby-keyword kw">do</span>
                 <span class="ruby-identifier">ensure_dependencies_installed</span>
                 <span class="ruby-identifier">configure</span>

@@ -5,7 +5,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>Class: Autobuild::Git::Status</title>
+	<title>Class: Autobuild::FakeOrogenEnvironment::BlackHole</title>
 
 	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
 
@@ -28,8 +28,8 @@
 				<div class="section-body">
 					<ul>
 					
-						<li><a href="../../lib/autobuild/import/git_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/autobuild/import/git.rb">lib/autobuild/import/git.rb</a></li>
+						<li><a href="../../lib/autobuild/packages/orogen_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/packages/orogen.rb">lib/autobuild/packages/orogen.rb</a></li>
 					
 					</ul>
 				</div>
@@ -45,7 +45,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Importer::Status</p>
+				<p class="link"><a href="../../Object.html">Object</a></p>
 				
 			</div>
 			
@@ -59,11 +59,13 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000089">::new</a></li>
+					<li><a href="#M000178">::const_missing</a></li>
 					
-					<li><a href="#M000091">#log</a></li>
+					<li><a href="#M000177">::method_missing</a></li>
 					
-					<li><a href="#M000090">#needs_update?</a></li>
+					<li><a href="#M000175">::new</a></li>
+					
+					<li><a href="#M000176">#method_missing</a></li>
 					
 				</ul>
 			</div>
@@ -188,7 +190,7 @@
 	</div>
 
 	<div id="documentation">
-		<h1 class="class">Autobuild::Git::Status</h1>
+		<h1 class="class">Autobuild::FakeOrogenEnvironment::BlackHole</h1>
 
 		<div id="description">
 			
@@ -199,57 +201,6 @@
 
 		<!-- Attributes -->
 		
-		<div id="attribute-method-details" class="method-section section">
-			<h3 class="section-header">Attributes</h3>
-
-			
-			<div id="fetch-commit-attribute-method" class="method-detail">
-				<a name="fetch_commit"></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">fetch_commit</span><span
-						class="attribute-access-type">[R]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p class="missing-docs">(Not documented)</p>
-				
-				</div>
-			</div>
-			
-			<div id="head-commit-attribute-method" class="method-detail">
-				<a name="head_commit"></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">head_commit</span><span
-						class="attribute-access-type">[R]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p class="missing-docs">(Not documented)</p>
-				
-				</div>
-			</div>
-			
-			<div id="common-commit-attribute-method" class="method-detail">
-				<a name="common_commit"></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">common_commit</span><span
-						class="attribute-access-type">[R]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p class="missing-docs">(Not documented)</p>
-				
-				</div>
-			</div>
-			
-		</div>
-		
 
 		<!-- Methods -->
 		
@@ -257,13 +208,77 @@
 			<h3 class="section-header">Public Class Methods</h3>
 
 		
+			<div id="const-missing-method" class="method-detail ">
+				<a name="M000178"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">const_missing</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="const-missing-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 20</span>
+            <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+                <span class="ruby-keyword kw">self</span>
+            <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="method-missing-method" class="method-detail ">
+				<a name="M000177"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">method_missing</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="method-missing-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 17</span>
+            <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">method_missing</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+                <span class="ruby-keyword kw">self</span>
+            <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
 			<div id="new-method" class="method-detail ">
-				<a name="M000089"></a>
+				<a name="M000175"></a>
 
 				<div class="method-heading">
 				
 					<span class="method-name">new</span><span
-						class="method-args">(status, remote_commit, local_commit, common_commit)</span>
+						class="method-args">(*args)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -277,20 +292,8 @@
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 123</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">remote_commit</span>, <span class="ruby-identifier">local_commit</span>, <span class="ruby-identifier">common_commit</span>)
-                <span class="ruby-keyword kw">super</span>()
-                <span class="ruby-ivar">@status</span>        = <span class="ruby-identifier">status</span>
-                <span class="ruby-ivar">@fetch_commit</span>  = <span class="ruby-identifier">fetch_commit</span>
-                <span class="ruby-ivar">@head_commit</span>   = <span class="ruby-identifier">head_commit</span>
-                <span class="ruby-ivar">@common_commit</span> = <span class="ruby-identifier">common_commit</span>
-
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">remote_commit</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">common_commit</span>
-                    <span class="ruby-ivar">@remote_commits</span> = <span class="ruby-identifier">log</span>(<span class="ruby-identifier">common_commit</span>, <span class="ruby-identifier">remote_commit</span>)
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">local_commit</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">common_commit</span>
-                    <span class="ruby-ivar">@local_commits</span> = <span class="ruby-identifier">log</span>(<span class="ruby-identifier">common_commit</span>, <span class="ruby-identifier">local_commit</span>)
-                <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 12</span>
+            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -306,13 +309,13 @@
 			<h3 class="section-header">Public Instance Methods</h3>
 
 		
-			<div id="log-method" class="method-detail ">
-				<a name="M000091"></a>
+			<div id="method-missing-method" class="method-detail ">
+				<a name="M000176"></a>
 
 				<div class="method-heading">
 				
-					<span class="method-name">log</span><span
-						class="method-args">(from, to)</span>
+					<span class="method-name">method_missing</span><span
+						class="method-args">(*args)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -324,43 +327,11 @@
 
 					
 					<div class="method-source-code"
-						id="log-source">
+						id="method-missing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 142</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)
-                <span class="ruby-node">`git log --pretty=format:&quot;%h %cr %cn %s&quot; #{from}..#{to}`</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
-            <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="needs-update--method" class="method-detail ">
-				<a name="M000090"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">needs_update?</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="needs-update--source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 138</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">needs_update?</span>
-                <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Status</span><span class="ruby-operator">::</span><span class="ruby-constant">NEEDS_MERGE</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Status</span><span class="ruby-operator">::</span><span class="ruby-constant">SIMPLE_UPDATE</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 14</span>
+            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+                <span class="ruby-keyword kw">self</span>
             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					

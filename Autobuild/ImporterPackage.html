@@ -63,6 +63,8 @@
 					
 					<li><a href="#M000127">#installstamp</a></li>
 					
+					<li><a href="#M000129">#prepare</a></li>
+					
 				</ul>
 			</div>
 			
@@ -120,6 +122,12 @@
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/FakeDeployment.html">Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 				
 					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
 				
@@ -243,16 +251,6 @@
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
             <span class="ruby-ivar">@exclude</span> = []
             <span class="ruby-keyword kw">super</span>
-            <span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;^#{Regexp.quote(installstamp)}&quot;</span>)
-
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">pkg</span>.<span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">exclude</span>
-                <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">freeze</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">installstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span> 
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span> <span class="ruby-identifier">installstamp</span>
-            <span class="ruby-keyword kw">end</span>
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -291,6 +289,49 @@
 <span class="ruby-comment cmt"># File lib/autobuild/packages/import.rb, line 10</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
             <span class="ruby-node">&quot;#{srcdir}/#{STAMPFILE}&quot;</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="prepare-method" class="method-detail ">
+				<a name="M000129"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prepare</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prepare-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/import.rb, line 21</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+            <span class="ruby-keyword kw">super</span>
+
+            <span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;^#{Regexp.quote(installstamp)}&quot;</span>)
+
+            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">pkg</span>.<span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">exclude</span>
+                <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">freeze</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">file</span> <span class="ruby-identifier">installstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span> 
+                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span> <span class="ruby-identifier">installstamp</span>
+            <span class="ruby-keyword kw">end</span>
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					

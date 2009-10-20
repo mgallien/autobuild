@@ -63,25 +63,27 @@
 					
 					<li><a href="#M000134">::builddir=</a></li>
 					
-					<li><a href="#M000136">::new</a></li>
+					<li><a href="#M000137">::new</a></li>
 					
-					<li><a href="#M000143">#build</a></li>
+					<li><a href="#M000147">#build</a></li>
 					
-					<li><a href="#M000142">#configure</a></li>
+					<li><a href="#M000144">#configure</a></li>
 					
-					<li><a href="#M000135">#configurestamp</a></li>
+					<li><a href="#M000136">#configurestamp</a></li>
 					
-					<li><a href="#M000137">#define</a></li>
+					<li><a href="#M000138">#define</a></li>
 					
-					<li><a href="#M000140">#equivalent_option_value?</a></li>
+					<li><a href="#M000141">#equivalent_option_value?</a></li>
 					
-					<li><a href="#M000145">#install</a></li>
+					<li><a href="#M000142">#import</a></li>
 					
-					<li><a href="#M000138">#install_doc</a></li>
+					<li><a href="#M000150">#install</a></li>
 					
-					<li><a href="#M000141">#prepare</a></li>
+					<li><a href="#M000139">#install_doc</a></li>
 					
-					<li><a href="#M000139">#with_doc</a></li>
+					<li><a href="#M000143">#prepare</a></li>
+					
+					<li><a href="#M000140">#with_doc</a></li>
 					
 				</ul>
 			</div>
@@ -140,6 +142,12 @@
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/FakeDeployment.html">Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 				
 					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
 				
@@ -337,7 +345,7 @@ If true, always run cmake before make during the build
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000136"></a>
+				<a name="M000137"></a>
 
 				<div class="method-heading">
 				
@@ -376,7 +384,7 @@ If true, always run cmake before make during the build
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000143"></a>
+				<a name="M000147"></a>
 
 				<div class="method-heading">
 				
@@ -397,7 +405,7 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 126</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 135</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;building #{name}&quot;</span>
@@ -417,7 +425,7 @@ Do the build in builddir
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000142"></a>
+				<a name="M000144"></a>
 
 				<div class="method-heading">
 				
@@ -438,7 +446,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 106</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 115</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{builddir} already exists but is not a directory&quot;</span>
@@ -466,7 +474,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="configurestamp-method" class="method-detail ">
-				<a name="M000135"></a>
+				<a name="M000136"></a>
 
 				<div class="method-heading">
 				
@@ -496,7 +504,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="define-method" class="method-detail ">
-				<a name="M000137"></a>
+				<a name="M000138"></a>
 
 				<div class="method-heading">
 				
@@ -528,7 +536,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="equivalent-option-value--method" class="method-detail ">
-				<a name="M000140"></a>
+				<a name="M000141"></a>
 
 				<div class="method-heading">
 				
@@ -569,8 +577,45 @@ Configure the builddir directory before starting make
 			</div>
 
 		
+			<div id="import-method" class="method-detail ">
+				<a name="M000142"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">import</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="import-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 69</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+            <span class="ruby-keyword kw">super</span>
+
+            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;*.pc.in&quot;</span>)) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">&quot;.pc.in&quot;</span>)
+                <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{file}&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
 			<div id="install-method" class="method-detail ">
-				<a name="M000145"></a>
+				<a name="M000150"></a>
 
 				<div class="method-heading">
 				
@@ -591,11 +636,12 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 138</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 147</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;installing #{name}&quot;</span>
                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'install'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-value str">'install'</span>)
+                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">update_environment</span> <span class="ruby-identifier">prefix</span>
             <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">super</span>
         <span class="ruby-keyword kw">end</span></pre>
@@ -608,7 +654,7 @@ Install the result in prefix
 
 		
 			<div id="install-doc-method" class="method-detail ">
-				<a name="M000138"></a>
+				<a name="M000139"></a>
 
 				<div class="method-heading">
 				
@@ -640,7 +686,7 @@ Install the result in prefix
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000141"></a>
+				<a name="M000143"></a>
 
 				<div class="method-heading">
 				
@@ -659,7 +705,7 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 69</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 78</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
             <span class="ruby-keyword kw">super</span>
 
@@ -704,7 +750,7 @@ Install the result in prefix
 
 		
 			<div id="with-doc-method" class="method-detail ">
-				<a name="M000139"></a>
+				<a name="M000140"></a>
 
 				<div class="method-heading">
 				

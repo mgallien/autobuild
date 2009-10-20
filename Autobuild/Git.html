@@ -68,15 +68,15 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000079">::new</a></li>
+					<li><a href="#M000078">::new</a></li>
 					
-					<li><a href="#M000098">#checkout</a></li>
+					<li><a href="#M000097">#checkout</a></li>
 					
-					<li><a href="#M000086">#fetch_remote</a></li>
+					<li><a href="#M000084">#fetch_remote</a></li>
 					
-					<li><a href="#M000084">#merge=</a></li>
+					<li><a href="#M000082">#merge=</a></li>
 					
-					<li><a href="#M000083">#merge?</a></li>
+					<li><a href="#M000081">#merge?</a></li>
 					
 					<li><a href="#M000092">#merge_status</a></li>
 					
@@ -86,7 +86,7 @@
 					
 					<li><a href="#M000094">#update</a></li>
 					
-					<li><a href="#M000085">#validates_git_repository</a></li>
+					<li><a href="#M000083">#validate_srcdir</a></li>
 					
 				</ul>
 			</div>
@@ -145,6 +145,12 @@
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/FakeDeployment.html">Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 				
 					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
 				
@@ -289,7 +295,7 @@ If set, branch has to be nil.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000079"></a>
+				<a name="M000078"></a>
 
 				<div class="method-heading">
 				
@@ -365,7 +371,7 @@ defaults to &#8216;svn&#8217; and can be configured by doing
 
 		
 			<div id="checkout-method" class="method-detail ">
-				<a name="M000098"></a>
+				<a name="M000097"></a>
 
 				<div class="method-heading">
 				
@@ -422,7 +428,7 @@ defaults to &#8216;svn&#8217; and can be configured by doing
 
 		
 			<div id="fetch-remote-method" class="method-detail ">
-				<a name="M000086"></a>
+				<a name="M000084"></a>
 
 				<div class="method-heading">
 				
@@ -447,9 +453,8 @@ package&#8217;s source directory.
 <pre>
 <span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 78</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_remote</span>(<span class="ruby-identifier">package</span>)
+            <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-identifier">validates_git_repository</span>
-
                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>), <span class="ruby-value str">'fetch'</span>, <span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span>)
                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.git'</span>, <span class="ruby-value str">'FETCH_HEAD'</span>) )
                     <span class="ruby-identifier">fetch_commit</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.git'</span>, <span class="ruby-value str">'FETCH_HEAD'</span>) ).
@@ -469,7 +474,7 @@ package&#8217;s source directory.
 
 		
 			<div id="merge--method" class="method-detail ">
-				<a name="M000084"></a>
+				<a name="M000082"></a>
 
 				<div class="method-heading">
 				
@@ -482,7 +487,7 @@ package&#8217;s source directory.
 				<div class="method-description">
 					
 					<p>
-Set the merge flag. See <a href="Git.html#M000083">merge?</a>
+Set the merge flag. See <a href="Git.html#M000081">merge?</a>
 </p>
 					
 
@@ -501,7 +506,7 @@ Set the merge flag. See <a href="Git.html#M000083">merge?</a>
 
 		
 			<div id="merge--method" class="method-detail ">
-				<a name="M000083"></a>
+				<a name="M000081"></a>
 
 				<div class="method-heading">
 				
@@ -563,7 +568,7 @@ fast-forward
                          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">common_commit</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">head_commit</span>
                              <span class="ruby-constant">Status</span><span class="ruby-operator">::</span><span class="ruby-constant">SIMPLE_UPDATE</span>
                          <span class="ruby-keyword kw">else</span>
-                             <span class="ruby-constant">Status</span><span class="ruby-operator">::</span><span class="ruby-constant">MERGE</span>
+                             <span class="ruby-constant">Status</span><span class="ruby-operator">::</span><span class="ruby-constant">NEEDS_MERGE</span>
                          <span class="ruby-keyword kw">end</span>
                      <span class="ruby-keyword kw">else</span>
                          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">common_commit</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">head_commit</span>
@@ -642,8 +647,9 @@ represents the status of this package w.r.t. the root repository
 					<div class="method-source-code"
 						id="status-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 95</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 94</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">status</span>(<span class="ruby-identifier">package</span>)
+            <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-identifier">remote_commit</span> = <span class="ruby-identifier">fetch_remote</span>(<span class="ruby-identifier">package</span>)
                 <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">remote_commit</span>
@@ -688,8 +694,8 @@ represents the status of this package w.r.t. the root repository
 <pre>
 <span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 168</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">package</span>)
+            <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-identifier">validates_git_repository</span>
                 <span class="ruby-identifier">fetch_commit</span> = <span class="ruby-identifier">fetch_remote</span>(<span class="ruby-identifier">package</span>)
                 <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">fetch_commit</span>
                     <span class="ruby-keyword kw">return</span>
@@ -728,13 +734,13 @@ represents the status of this package w.r.t. the root repository
 			</div>
 
 		
-			<div id="validates-git-repository-method" class="method-detail ">
-				<a name="M000085"></a>
+			<div id="validate-srcdir-method" class="method-detail ">
+				<a name="M000083"></a>
 
 				<div class="method-heading">
 				
-					<span class="method-name">validates_git_repository</span><span
-						class="method-args">()</span>
+					<span class="method-name">validate_srcdir</span><span
+						class="method-args">(package)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -749,12 +755,12 @@ directory is not a git repository
 
 					
 					<div class="method-source-code"
-						id="validates-git-repository-source">
+						id="validate-srcdir-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 69</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_git_repository</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-value str">'.git'</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{package.srcdir} is not a git repository&quot;</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.git'</span>))
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{Dir.pwd} is not a git repository&quot;</span>
             <span class="ruby-keyword kw">end</span>
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
