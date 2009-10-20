@@ -59,37 +59,37 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000054">::[]</a></li>
+					<li><a href="#M000053">::[]</a></li>
 					
-					<li><a href="#M000053">::each</a></li>
+					<li><a href="#M000052">::each</a></li>
 					
-					<li><a href="#M000036">::new</a></li>
+					<li><a href="#M000035">::new</a></li>
 					
 					<li><a href="#M000050">#depends_on</a></li>
 					
 					<li><a href="#M000047">#doc_disabled</a></li>
 					
-					<li><a href="#M000045">#doc_task</a></li>
+					<li><a href="#M000043">#doc_task</a></li>
 					
 					<li><a href="#M000048">#has_doc?</a></li>
 					
-					<li><a href="#M000039">#import</a></li>
+					<li><a href="#M000038">#import</a></li>
 					
-					<li><a href="#M000031">#import=</a></li>
+					<li><a href="#M000030">#import=</a></li>
 					
 					<li><a href="#M000046">#install_doc</a></li>
 					
-					<li><a href="#M000034">#installstamp</a></li>
+					<li><a href="#M000033">#installstamp</a></li>
 					
 					<li><a href="#M000049">#post_install</a></li>
 					
-					<li><a href="#M000033">#prefix</a></li>
+					<li><a href="#M000032">#prefix</a></li>
 					
-					<li><a href="#M000040">#prepare</a></li>
+					<li><a href="#M000039">#prepare</a></li>
 					
-					<li><a href="#M000052">#provides</a></li>
+					<li><a href="#M000051">#provides</a></li>
 					
-					<li><a href="#M000032">#srcdir</a></li>
+					<li><a href="#M000031">#srcdir</a></li>
 					
 				</ul>
 			</div>
@@ -249,7 +249,7 @@ autodetection. The first side is that packages must declare what they
 provide. One example is the handling of pkgconfig dependencies: packages
 must declare that they provide a pkgconfig definition. This side of the
 autodetection must be done just after the package&#8217;s import, by
-overloading the <a href="Package.html#M000039">import</a> method:
+overloading the <a href="Package.html#M000038">import</a> method:
 </p>
 <pre>
   def import
@@ -264,7 +264,7 @@ with &#8220;super&#8221;.
 </p>
 <p>
 The other side is the detection itself. That must be done by overloading
-the <a href="Package.html#M000040">prepare</a> method.
+the <a href="Package.html#M000039">prepare</a> method.
 </p>
 
 		</div>
@@ -445,7 +445,7 @@ prefix directory.
 
 		
 			<div id="--method" class="method-detail ">
-				<a name="M000054"></a>
+				<a name="M000053"></a>
 
 				<div class="method-heading">
 				
@@ -479,7 +479,7 @@ Gets a package from its name
 
 		
 			<div id="each-method" class="method-detail ">
-				<a name="M000053"></a>
+				<a name="M000052"></a>
 
 				<div class="method-heading">
 				
@@ -515,7 +515,7 @@ list of package aliases
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000036"></a>
+				<a name="M000035"></a>
 
 				<div class="method-heading">
 				
@@ -655,7 +655,7 @@ built and installed.
 				<div class="method-description">
 					
 					<p>
-Can be called in the <a href="Package.html#M000045">doc_task</a>
+Can be called in the <a href="Package.html#M000043">doc_task</a>
 implementation to announce that the documentation is to be disabled for
 that package. This is mainly used when a runtime check is necessary to know
 if a package has documentation or not.
@@ -679,7 +679,7 @@ if a package has documentation or not.
 
 		
 			<div id="doc-task-method" class="method-detail ">
-				<a name="M000045"></a>
+				<a name="M000043"></a>
 
 				<div class="method-heading">
 				
@@ -784,7 +784,7 @@ True if a documentation task is defined for this package
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000039"></a>
+				<a name="M000038"></a>
 
 				<div class="method-heading">
 				
@@ -818,7 +818,7 @@ href="Package.html">Autobuild::Package</a> for more information.
 
 		
 			<div id="import--method" class="method-detail ">
-				<a name="M000031"></a>
+				<a name="M000030"></a>
 
 				<div class="method-heading">
 				
@@ -892,7 +892,7 @@ Use the <a href="Package.html#importer">importer</a> attribute instead
 
 		
 			<div id="installstamp-method" class="method-detail ">
-				<a name="M000034"></a>
+				<a name="M000033"></a>
 
 				<div class="method-heading">
 				
@@ -968,7 +968,7 @@ A package is sucessfully built when it is installed
 
 		
 			<div id="prefix-method" class="method-detail ">
-				<a name="M000033"></a>
+				<a name="M000032"></a>
 
 				<div class="method-heading">
 				
@@ -1000,7 +1000,7 @@ Absolute path to the installation directory. See prefix=
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000040"></a>
+				<a name="M000039"></a>
 
 				<div class="method-heading">
 				
@@ -1048,7 +1048,7 @@ package when required. The package&#8217;s build target is called
 
 		
 			<div id="provides-method" class="method-detail ">
-				<a name="M000052"></a>
+				<a name="M000051"></a>
 
 				<div class="method-heading">
 				
@@ -1092,7 +1092,7 @@ listed in <tt>packages</tt> are aliases for this package.
 
 		
 			<div id="srcdir-method" class="method-detail ">
-				<a name="M000032"></a>
+				<a name="M000031"></a>
 
 				<div class="method-heading">
 				
