@@ -73,7 +73,7 @@
 					
 					<li><a href="#M000048">#has_doc?</a></li>
 					
-					<li><a href="#M000041">#import</a></li>
+					<li><a href="#M000039">#import</a></li>
 					
 					<li><a href="#M000031">#import=</a></li>
 					
@@ -85,7 +85,7 @@
 					
 					<li><a href="#M000033">#prefix</a></li>
 					
-					<li><a href="#M000042">#prepare</a></li>
+					<li><a href="#M000040">#prepare</a></li>
 					
 					<li><a href="#M000052">#provides</a></li>
 					
@@ -249,7 +249,7 @@ autodetection. The first side is that packages must declare what they
 provide. One example is the handling of pkgconfig dependencies: packages
 must declare that they provide a pkgconfig definition. This side of the
 autodetection must be done just after the package&#8217;s import, by
-overloading the <a href="Package.html#M000041">import</a> method:
+overloading the <a href="Package.html#M000039">import</a> method:
 </p>
 <pre>
   def import
@@ -264,7 +264,7 @@ with &#8220;super&#8221;.
 </p>
 <p>
 The other side is the detection itself. That must be done by overloading
-the <a href="Package.html#M000042">prepare</a> method.
+the <a href="Package.html#M000040">prepare</a> method.
 </p>
 
 		</div>
@@ -349,7 +349,7 @@ to Autobuild.prefix. Defaults to &#8217;&#8217;
 				
 				<p>
 Sets the log directory. If no value is set, the package will use <a
-href="../Autobuild.html#M000039">Autobuild.logdir</a>
+href="../Autobuild.html#M000041">Autobuild.logdir</a>
 </p>
 				
 				</div>
@@ -784,7 +784,7 @@ True if a documentation task is defined for this package
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000041"></a>
+				<a name="M000039"></a>
 
 				<div class="method-heading">
 				
@@ -1000,7 +1000,7 @@ Absolute path to the installation directory. See prefix=
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000042"></a>
+				<a name="M000040"></a>
 
 				<div class="method-heading">
 				
