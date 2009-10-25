@@ -59,37 +59,45 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000053">::[]</a></li>
+					<li><a href="#M000057">::[]</a></li>
 					
-					<li><a href="#M000052">::each</a></li>
+					<li><a href="#M000056">::each</a></li>
 					
-					<li><a href="#M000035">::new</a></li>
+					<li><a href="#M000036">::new</a></li>
 					
-					<li><a href="#M000050">#depends_on</a></li>
+					<li><a href="#M000054">#depends_on</a></li>
 					
-					<li><a href="#M000047">#doc_disabled</a></li>
+					<li><a href="#M000051">#doc_disabled</a></li>
 					
-					<li><a href="#M000043">#doc_task</a></li>
+					<li><a href="#M000045">#doc_task</a></li>
 					
-					<li><a href="#M000048">#has_doc?</a></li>
+					<li><a href="#M000052">#has_doc?</a></li>
 					
-					<li><a href="#M000038">#import</a></li>
+					<li><a href="#M000042">#import</a></li>
 					
-					<li><a href="#M000030">#import=</a></li>
+					<li><a href="#M000031">#import=</a></li>
 					
-					<li><a href="#M000046">#install_doc</a></li>
+					<li><a href="#M000050">#install_doc</a></li>
 					
-					<li><a href="#M000033">#installstamp</a></li>
+					<li><a href="#M000035">#installstamp</a></li>
 					
-					<li><a href="#M000049">#post_install</a></li>
+					<li><a href="#M000059">#parallel_build_level</a></li>
 					
-					<li><a href="#M000032">#prefix</a></li>
+					<li><a href="#M000058">#parallel_build_level=</a></li>
 					
-					<li><a href="#M000039">#prepare</a></li>
+					<li><a href="#M000053">#post_install</a></li>
 					
-					<li><a href="#M000051">#provides</a></li>
+					<li><a href="#M000034">#prefix</a></li>
 					
-					<li><a href="#M000031">#srcdir</a></li>
+					<li><a href="#M000043">#prepare</a></li>
+					
+					<li><a href="#M000039">#prepare_for_forced_build</a></li>
+					
+					<li><a href="#M000041">#prepare_for_rebuild</a></li>
+					
+					<li><a href="#M000055">#provides</a></li>
+					
+					<li><a href="#M000033">#srcdir</a></li>
 					
 				</ul>
 			</div>
@@ -146,6 +154,8 @@
 					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
 				
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/DummyPackage.html">Autobuild::DummyPackage</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
@@ -249,7 +259,7 @@ autodetection. The first side is that packages must declare what they
 provide. One example is the handling of pkgconfig dependencies: packages
 must declare that they provide a pkgconfig definition. This side of the
 autodetection must be done just after the package&#8217;s import, by
-overloading the <a href="Package.html#M000038">import</a> method:
+overloading the <a href="Package.html#M000042">import</a> method:
 </p>
 <pre>
   def import
@@ -264,7 +274,7 @@ with &#8220;super&#8221;.
 </p>
 <p>
 The other side is the detection itself. That must be done by overloading
-the <a href="Package.html#M000039">prepare</a> method.
+the <a href="Package.html#M000043">prepare</a> method.
 </p>
 
 		</div>
@@ -349,7 +359,7 @@ to Autobuild.prefix. Defaults to &#8217;&#8217;
 				
 				<p>
 Sets the log directory. If no value is set, the package will use <a
-href="../Autobuild.html#M000041">Autobuild.logdir</a>
+href="../Autobuild.html#M000046">Autobuild.logdir</a>
 </p>
 				
 				</div>
@@ -445,7 +455,7 @@ prefix directory.
 
 		
 			<div id="--method" class="method-detail ">
-				<a name="M000053"></a>
+				<a name="M000057"></a>
 
 				<div class="method-heading">
 				
@@ -466,7 +476,7 @@ Gets a package from its name
 					<div class="method-source-code"
 						id="--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 279</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 294</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">name</span>)
             <span class="ruby-ivar">@@packages</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@@provides</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>]
         <span class="ruby-keyword kw">end</span></pre>
@@ -479,7 +489,7 @@ Gets a package from its name
 
 		
 			<div id="each-method" class="method-detail ">
-				<a name="M000052"></a>
+				<a name="M000056"></a>
 
 				<div class="method-heading">
 				
@@ -501,7 +511,7 @@ list of package aliases
 					<div class="method-source-code"
 						id="each-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 273</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 288</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each</span>(<span class="ruby-identifier">with_provides</span> = <span class="ruby-keyword kw">false</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">p</span>)
             <span class="ruby-ivar">@@packages</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">p</span>) 
             <span class="ruby-ivar">@@provides</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">p</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">with_provides</span>
@@ -515,7 +525,7 @@ list of package aliases
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000035"></a>
+				<a name="M000036"></a>
 
 				<div class="method-heading">
 				
@@ -538,6 +548,7 @@ list of package aliases
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">spec</span>)
             <span class="ruby-ivar">@dependencies</span>   = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
             <span class="ruby-ivar">@provides</span>       = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-ivar">@parallel_build_level</span> = <span class="ruby-keyword kw">nil</span>
 
             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">spec</span>
                 <span class="ruby-identifier">name</span>, <span class="ruby-identifier">depends</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span>
@@ -596,7 +607,7 @@ list of package aliases
 
 		
 			<div id="depends-on-method" class="method-detail ">
-				<a name="M000050"></a>
+				<a name="M000054"></a>
 
 				<div class="method-heading">
 				
@@ -619,7 +630,7 @@ built and installed.
 					<div class="method-source-code"
 						id="depends-on-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 241</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 256</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>
@@ -642,7 +653,7 @@ built and installed.
 
 		
 			<div id="doc-disabled-method" class="method-detail ">
-				<a name="M000047"></a>
+				<a name="M000051"></a>
 
 				<div class="method-heading">
 				
@@ -655,7 +666,7 @@ built and installed.
 				<div class="method-description">
 					
 					<p>
-Can be called in the <a href="Package.html#M000043">doc_task</a>
+Can be called in the <a href="Package.html#M000045">doc_task</a>
 implementation to announce that the documentation is to be disabled for
 that package. This is mainly used when a runtime check is necessary to know
 if a package has documentation or not.
@@ -666,7 +677,7 @@ if a package has documentation or not.
 					<div class="method-source-code"
 						id="doc-disabled-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 219</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 234</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">doc_disabled</span>
             <span class="ruby-identifier">throw</span> <span class="ruby-identifier">:doc_disabled</span>
         <span class="ruby-keyword kw">end</span></pre>
@@ -679,7 +690,7 @@ if a package has documentation or not.
 
 		
 			<div id="doc-task-method" class="method-detail ">
-				<a name="M000043"></a>
+				<a name="M000045"></a>
 
 				<div class="method-heading">
 				
@@ -712,7 +723,7 @@ which calls this method internally.
 					<div class="method-source-code"
 						id="doc-task-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 175</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 190</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">doc_task</span>
             <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-doc&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{name}-build&quot;</span> <span class="ruby-keyword kw">do</span>
                 <span class="ruby-ivar">@installed_doc</span> = <span class="ruby-keyword kw">false</span>
@@ -750,7 +761,7 @@ which calls this method internally.
 
 		
 			<div id="has-doc--method" class="method-detail ">
-				<a name="M000048"></a>
+				<a name="M000052"></a>
 
 				<div class="method-heading">
 				
@@ -771,7 +782,7 @@ True if a documentation task is defined for this package
 					<div class="method-source-code"
 						id="has-doc--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 224</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 239</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_doc?</span>
             <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">lookup</span>(<span class="ruby-node">&quot;#{name}-doc&quot;</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -784,7 +795,7 @@ True if a documentation task is defined for this package
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000038"></a>
+				<a name="M000042"></a>
 
 				<div class="method-heading">
 				
@@ -807,7 +818,7 @@ href="Package.html">Autobuild::Package</a> for more information.
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 133</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 148</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>; <span class="ruby-ivar">@importer</span>.<span class="ruby-identifier">import</span>(<span class="ruby-keyword kw">self</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@importer</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -818,7 +829,7 @@ href="Package.html">Autobuild::Package</a> for more information.
 
 		
 			<div id="import--method" class="method-detail ">
-				<a name="M000030"></a>
+				<a name="M000031"></a>
 
 				<div class="method-heading">
 				
@@ -853,7 +864,7 @@ Use the <a href="Package.html#importer">importer</a> attribute instead
 
 		
 			<div id="install-doc-method" class="method-detail ">
-				<a name="M000046"></a>
+				<a name="M000050"></a>
 
 				<div class="method-heading">
 				
@@ -872,7 +883,7 @@ Use the <a href="Package.html#importer">importer</a> attribute instead
 					<div class="method-source-code"
 						id="install-doc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 204</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 219</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_doc</span>(<span class="ruby-identifier">relative_to</span> = <span class="ruby-identifier">srcdir</span>)
             <span class="ruby-identifier">full_doc_prefix</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">doc_prefix</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">prefix</span>)
             <span class="ruby-identifier">doc_target_dir</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">doc_target_dir</span>, <span class="ruby-identifier">full_doc_prefix</span>)
@@ -892,7 +903,7 @@ Use the <a href="Package.html#importer">importer</a> attribute instead
 
 		
 			<div id="installstamp-method" class="method-detail ">
-				<a name="M000033"></a>
+				<a name="M000035"></a>
 
 				<div class="method-heading">
 				
@@ -929,8 +940,96 @@ A package is sucessfully built when it is installed
 			</div>
 
 		
+			<div id="parallel-build-level-method" class="method-detail ">
+				<a name="M000059"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parallel_build_level</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the level of parallelism authorized during the build for this
+particular package. If not set, defaults to the system-wide option (<a
+href="../Autobuild.html#M000132">Autobuild.parallel_build_level</a> and
+Autobuild.parallel_build_level=).
+</p>
+<p>
+The default value is the number of CPUs on this system.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parallel-build-level-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 313</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parallel_build_level</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@parallel_build_level</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">parallel_build_level</span>
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@parallel_build_level</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@parallel_build_level</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+                <span class="ruby-value">1</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-ivar">@parallel_build_level</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="parallel-build-level--method" class="method-detail ">
+				<a name="M000058"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parallel_build_level=</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the level of parallelism authorized while building this package
+</p>
+<p>
+See <a href="Package.html#M000059">parallel_build_level</a> and <a
+href="../Autobuild.html#M000132">Autobuild.parallel_build_level</a> for
+more information.
+</p>
+<p>
+Note that not all package types use this value
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parallel-build-level--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 304</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parallel_build_level=</span>(<span class="ruby-identifier">value</span>)
+            <span class="ruby-ivar">@parallel_build_level</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>)
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
 			<div id="post-install-method" class="method-detail ">
-				<a name="M000049"></a>
+				<a name="M000053"></a>
 
 				<div class="method-heading">
 				
@@ -949,7 +1048,7 @@ A package is sucessfully built when it is installed
 					<div class="method-source-code"
 						id="post-install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 228</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 243</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">post_install</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
                 <span class="ruby-ivar">@post_install</span> = <span class="ruby-identifier">block</span>
@@ -968,7 +1067,7 @@ A package is sucessfully built when it is installed
 
 		
 			<div id="prefix-method" class="method-detail ">
-				<a name="M000032"></a>
+				<a name="M000034"></a>
 
 				<div class="method-heading">
 				
@@ -1000,7 +1099,7 @@ Absolute path to the installation directory. See prefix=
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000039"></a>
+				<a name="M000043"></a>
 
 				<div class="method-heading">
 				
@@ -1023,7 +1122,7 @@ package when required. The package&#8217;s build target is called
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 137</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 152</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
             <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-keyword kw">super</span>
 
@@ -1047,8 +1146,80 @@ package when required. The package&#8217;s build target is called
 			</div>
 
 		
+			<div id="prepare-for-forced-build-method" class="method-detail ">
+				<a name="M000039"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prepare_for_forced_build</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Called before a forced build. It should remove all the timestamp and target
+files so that all the build phases of this package gets retriggered.
+However, it should not clean the build products.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prepare-for-forced-build-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 134</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_for_forced_build</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">installstamp</span>)
+                <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">installstamp</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="prepare-for-rebuild-method" class="method-detail ">
+				<a name="M000041"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prepare_for_rebuild</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Called when the user asked for a full rebuild. It should delete the build
+products so that a full build is retriggered.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prepare-for-rebuild-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 142</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_for_rebuild</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
 			<div id="provides-method" class="method-detail ">
-				<a name="M000051"></a>
+				<a name="M000055"></a>
 
 				<div class="method-heading">
 				
@@ -1070,7 +1241,7 @@ listed in <tt>packages</tt> are aliases for this package.
 					<div class="method-source-code"
 						id="provides-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 257</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 272</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">provides</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>
@@ -1092,7 +1263,7 @@ listed in <tt>packages</tt> are aliases for this package.
 
 		
 			<div id="srcdir-method" class="method-detail ">
-				<a name="M000031"></a>
+				<a name="M000033"></a>
 
 				<div class="method-heading">
 				

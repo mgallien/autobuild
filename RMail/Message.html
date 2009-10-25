@@ -59,7 +59,7 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000123">#add_file</a></li>
+					<li><a href="#M000131">#add_file</a></li>
 					
 				</ul>
 			</div>
@@ -116,6 +116,8 @@
 					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
 				
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/DummyPackage.html">Autobuild::DummyPackage</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
@@ -203,7 +205,7 @@
 
 		
 			<div id="add-file-method" class="method-detail ">
-				<a name="M000123"></a>
+				<a name="M000131"></a>
 
 				<div class="method-heading">
 				
@@ -224,7 +226,7 @@ Attachs a file to a message
 					<div class="method-source-code"
 						id="add-file-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 164</span>
+<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 180</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_file</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">content_type</span>=<span class="ruby-value str">'text/plain'</span>)
             <span class="ruby-identifier">part</span> = <span class="ruby-constant">RMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>
             <span class="ruby-identifier">part</span>.<span class="ruby-identifier">header</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value str">'Content-Type'</span>, <span class="ruby-identifier">content_type</span>)

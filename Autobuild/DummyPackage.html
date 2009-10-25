@@ -5,7 +5,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>Class: Autobuild::Exception</title>
+	<title>Class: Autobuild::DummyPackage</title>
 
 	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
 
@@ -28,8 +28,8 @@
 				<div class="section-body">
 					<ul>
 					
-						<li><a href="../lib/autobuild/exceptions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/autobuild/exceptions.rb">lib/autobuild/exceptions.rb</a></li>
+						<li><a href="../lib/autobuild/packages/dummy_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/packages/dummy.rb">lib/autobuild/packages/dummy.rb</a></li>
 					
 					</ul>
 				</div>
@@ -45,7 +45,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">RuntimeError</p>
+				<p class="link">Package</p>
 				
 			</div>
 			
@@ -59,15 +59,13 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000002">::new</a></li>
+					<li><a href="#M000191">::new</a></li>
 					
-					<li><a href="#M000006">#exception_message</a></li>
+					<li><a href="#M000192">#import</a></li>
 					
-					<li><a href="#M000001">#fatal?</a></li>
+					<li><a href="#M000190">#installstamp</a></li>
 					
-					<li><a href="#M000000">#mail?</a></li>
-					
-					<li><a href="#M000005">#to_s</a></li>
+					<li><a href="#M000195">#prepare</a></li>
 					
 				</ul>
 			</div>
@@ -194,59 +192,16 @@
 	</div>
 
 	<div id="documentation">
-		<h1 class="class">Autobuild::Exception</h1>
+		<h1 class="class">Autobuild::DummyPackage</h1>
 
 		<div id="description">
-			<p>
-Base class for all <a href="../Autobuild.html">Autobuild</a> exceptions
-</p>
-
+			
 		</div>
 
 		<!-- Constants -->
 		
 
 		<!-- Attributes -->
-		
-		<div id="attribute-method-details" class="method-section section">
-			<h3 class="section-header">Attributes</h3>
-
-			
-			<div id="target-attribute-method" class="method-detail">
-				<a name="target"></a>
-				
-				<a name="target="></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">target</span><span
-						class="attribute-access-type">[RW]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p class="missing-docs">(Not documented)</p>
-				
-				</div>
-			</div>
-			
-			<div id="phase-attribute-method" class="method-detail">
-				<a name="phase"></a>
-				
-				<a name="phase="></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">phase</span><span
-						class="attribute-access-type">[RW]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p class="missing-docs">(Not documented)</p>
-				
-				</div>
-			</div>
-			
-		</div>
 		
 
 		<!-- Methods -->
@@ -256,33 +211,28 @@ Base class for all <a href="../Autobuild.html">Autobuild</a> exceptions
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000002"></a>
+				<a name="M000191"></a>
 
 				<div class="method-heading">
 				
 					<span class="method-name">new</span><span
-						class="method-args">(target = nil, phase = nil)</span>
+						class="method-args">(*args)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
 
 				<div class="method-description">
 					
-					<pre>
- Creates a new exception which occured while doing *phase*
-</pre>
-<p>
-in <b>target</b>
-</p>
+					<p class="missing-docs">(Not documented)</p>
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 12</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">target</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">phase</span> = <span class="ruby-keyword kw">nil</span>)
-            <span class="ruby-ivar">@target</span>, <span class="ruby-ivar">@phase</span> = <span class="ruby-identifier">target</span>, <span class="ruby-identifier">phase</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 11</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+            <span class="ruby-keyword kw">super</span>
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -298,101 +248,12 @@ in <b>target</b>
 			<h3 class="section-header">Public Instance Methods</h3>
 
 		
-			<div id="exception-message-method" class="method-detail method-alias">
-				<a name="M000006"></a>
+			<div id="import-method" class="method-detail ">
+				<a name="M000192"></a>
 
 				<div class="method-heading">
 				
-					<span class="method-name">exception_message</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Alias for <a href="Exception.html#M000005">to_s</a>
-</p>
-					
-
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="fatal--method" class="method-detail ">
-				<a name="M000001"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">fatal?</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-If the error is fatal
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="fatal--source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 7</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fatal?</span>; <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="mail--method" class="method-detail ">
-				<a name="M000000"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">mail?</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-If the error should be reported by mail
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="mail--source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 5</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mail?</span>;  <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="to-s-method" class="method-detail ">
-				<a name="M000005"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">to_s</span><span
+					<span class="method-name">import</span><span
 						class="method-args">()</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
@@ -405,26 +266,86 @@ If the error should be reported by mail
 
 					
 					<div class="method-source-code"
-						id="to-s-source">
+						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 17</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">target</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">phase</span>
-                <span class="ruby-node">&quot;#{target}: failed in #{phase} phase\n    #{super}&quot;</span>
-            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">target</span>
-                <span class="ruby-node">&quot;#{target}: #{super}&quot;</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-keyword kw">super</span>
-            <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 15</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
-				<div class="aliases">
-					Also aliased as: <a href="Exception.html#M000006">exception_message</a>
+			</div>
+
+		
+			<div id="installstamp-method" class="method-detail ">
+				<a name="M000190"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">installstamp</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
 				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="installstamp-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 7</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
+            <span class="ruby-node">&quot;#{srcdir}/#{STAMPFILE}&quot;</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="prepare-method" class="method-detail ">
+				<a name="M000195"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prepare</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prepare-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 18</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+            <span class="ruby-node">%w{import prepare build doc}</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
+                <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">task</span>(<span class="ruby-node">&quot;#{name}-#{phase}&quot;</span>)
+                <span class="ruby-identifier">t</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-node">&quot;#{name}-#{phase}&quot;</span>]
+                <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">needed?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">task</span>(<span class="ruby-identifier">installstamp</span>)
+            <span class="ruby-identifier">t</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-identifier">installstamp</span>]
+            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">needed?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
 				
 			</div>
 

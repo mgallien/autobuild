@@ -61,7 +61,7 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000125">::run</a></li>
+					<li><a href="#M000135">::run</a></li>
 					
 				</ul>
 			</div>
@@ -118,6 +118,8 @@
 					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
 				
 					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/DummyPackage.html">Autobuild::DummyPackage</a></li>
 				
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
@@ -222,7 +224,7 @@
 
 		
 			<div id="run-method" class="method-detail ">
-				<a name="M000125"></a>
+				<a name="M000135"></a>
 
 				<div class="method-heading">
 				
@@ -241,8 +243,10 @@
 					<div class="method-source-code"
 						id="run-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 14</span>
+<span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 68</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">phase</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
+        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
+
         <span class="ruby-comment cmt"># Filter nil and empty? in command</span>
         <span class="ruby-identifier">command</span>.<span class="ruby-identifier">reject!</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">empty?</span>) }
         <span class="ruby-identifier">command</span>.<span class="ruby-identifier">collect!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span> }
@@ -272,17 +276,29 @@
             <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;    #{command.join(&quot; &quot;)}&quot;</span>
             <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span>
             <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">flush</span>
+            <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
 
-            <span class="ruby-identifier">pread</span>, <span class="ruby-identifier">pwrite</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span> <span class="ruby-comment cmt"># to feed subprocess stdin </span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">input_streams</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">pread</span>, <span class="ruby-identifier">pwrite</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span> <span class="ruby-comment cmt"># to feed subprocess stdin </span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-comment cmt"># the caller wants the stdout/stderr stream of the process, git it to him</span>
+                <span class="ruby-identifier">outread</span>, <span class="ruby-identifier">outwrite</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span>
+                <span class="ruby-identifier">outread</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
+                <span class="ruby-identifier">outwrite</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
+            <span class="ruby-keyword kw">end</span>
             <span class="ruby-identifier">cread</span>, <span class="ruby-identifier">cwrite</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span> <span class="ruby-comment cmt"># to control that exec goes well</span>
+
+            <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">fcntl</span>(<span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">F_SETFD</span>, <span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">FD_CLOEXEC</span>)
 
             <span class="ruby-identifier">pid</span> = <span class="ruby-identifier">fork</span> <span class="ruby-keyword kw">do</span>
                 <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
                 <span class="ruby-keyword kw">begin</span>
                     <span class="ruby-constant">Process</span>.<span class="ruby-identifier">setpriority</span>(<span class="ruby-constant">Process</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIO_PROCESS</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">nice</span>)
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
-                        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
-                        <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
+
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">outwrite</span>
+                        <span class="ruby-identifier">outread</span>.<span class="ruby-identifier">close</span>
+                        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">outwrite</span>.<span class="ruby-identifier">dup</span>)
+                        <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">outwrite</span>.<span class="ruby-identifier">dup</span>)
                     <span class="ruby-keyword kw">else</span>
                         <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
                         <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">dup</span>)
@@ -304,17 +320,19 @@
             <span class="ruby-keyword kw">end</span>
 
             <span class="ruby-comment cmt"># Feed the input</span>
-            <span class="ruby-identifier">pread</span>.<span class="ruby-identifier">close</span>
-            <span class="ruby-keyword kw">begin</span>
-                <span class="ruby-identifier">input_streams</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">infile</span><span class="ruby-operator">|</span>
-                    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infile</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">instream</span><span class="ruby-operator">|</span>
-                        <span class="ruby-identifier">instream</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">line</span>) }
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">input_streams</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">pread</span>.<span class="ruby-identifier">close</span>
+                <span class="ruby-keyword kw">begin</span>
+                    <span class="ruby-identifier">input_streams</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">infile</span><span class="ruby-operator">|</span>
+                        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infile</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">instream</span><span class="ruby-operator">|</span>
+                            <span class="ruby-identifier">instream</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">line</span>) }
+                        <span class="ruby-keyword kw">end</span>
                     <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>, <span class="ruby-node">&quot;cannot open input files: #{e.message}&quot;</span>
                 <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>, <span class="ruby-node">&quot;cannot open input files: #{e.message}&quot;</span>
+                <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">close</span>
             <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">pwrite</span>.<span class="ruby-identifier">close</span>
 
             <span class="ruby-comment cmt"># Get control status</span>
             <span class="ruby-identifier">cwrite</span>.<span class="ruby-identifier">close</span>
@@ -327,6 +345,22 @@
                 <span class="ruby-keyword kw">else</span>
                     <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>, <span class="ruby-value str">&quot;something unexpected happened&quot;</span>
                 <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-comment cmt"># If the caller asked for process output, provide it to him</span>
+            <span class="ruby-comment cmt"># line-by-line.</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">outread</span>
+                <span class="ruby-identifier">outwrite</span>.<span class="ruby-identifier">close</span>
+                <span class="ruby-identifier">outread</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
+                        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">line</span>
+                    <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-identifier">logfile</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">line</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+                        <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">line</span>)
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+                <span class="ruby-identifier">outread</span>.<span class="ruby-identifier">close</span>
             <span class="ruby-keyword kw">end</span>
 
             <span class="ruby-identifier">childpid</span>, <span class="ruby-identifier">childstatus</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">wait2</span>(<span class="ruby-identifier">pid</span>)

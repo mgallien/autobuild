@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: Changes.txt [autobuild-1.3.3 Documentation]</title>
+	<title>File: Changes.txt [autobuild-1.4.0 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -69,6 +69,8 @@
 					<li><a href="./Autobuild/Configurable.html">Autobuild::Configurable</a></li>
 				
 					<li><a href="./Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="./Autobuild/DummyPackage.html">Autobuild::DummyPackage</a></li>
 				
 					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
@@ -137,7 +139,22 @@
 	</div>
 
 	<div id="documentation">
-		<h2>Version 1.3.3</h2>
+		<h2>Version 1.4.0</h2>
+<ul>
+<li>cmake package handler now displays progress value
+
+</li>
+<li>added support for parallel builds
+
+</li>
+<li>added the long-awaited &#8212;force-build and &#8212;rebuild options. The
+first one forces the call to all the build steps, but without deleting the
+build products. The second one deletes all build products and retriggers a
+full build.
+
+</li>
+</ul>
+<h2>Version 1.3.3</h2>
 <ul>
 <li>fix: changing Orogen.corba now affects packages that have already been
 declared but for which the corba attribute has not been set explicitely to
@@ -365,7 +382,7 @@ inside the imported source tree
 <li>misc fixes w.r.t. handling dependencies
 
 </li>
-<li>added <a href="Autobuild.html#M000040">Autobuild.post_success_message</a>
+<li>added <a href="Autobuild.html#M000044">Autobuild.post_success_message</a>
 
 </li>
 </ul>
@@ -405,7 +422,7 @@ daily use at my work
 <li>put install-stamp files into logdir, to clean up the installation prefix
 
 </li>
-<li>added <a href="Autobuild.html#M000036">Autobuild.post_install</a>: run an
+<li>added <a href="Autobuild.html#M000038">Autobuild.post_install</a>: run an
 external program or call a block after all packages have been successfully
 built
 
