@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>autobuild-1.4.0 Documentation</title>
+	<title>autobuild-1.4.1 Documentation</title>
 
 	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
 
@@ -19,20 +19,23 @@
 <body class="indexpage">
 
 	
-	<h1>autobuild-1.4.0 Documentation</h1>
+	<h1>autobuild-1.4.1 Documentation</h1>
 
 	
 	<div id="main">
 		<p>
-Copyright &#169; 2006-2008 Sylvain Joyeux <sylvain.joyeux@m4x.org>
+Copyright &#169; 2006-2009 Sylvain Joyeux <sylvain.joyeux@m4x.org>
 </p>
 <ul>
 <li><a
-href="http://www.rubyforge.org/projects/autobuild">www.rubyforge.org/projects/autobuild</a>
+href="http://doudou.github.com/autobuild">doudou.github.com/autobuild</a>
 
 </li>
 <li><a
-href="http://autobuild.rubyforge.org/autobuild">autobuild.rubyforge.org/autobuild</a>
+href="http://github.com/doudou/autobuild">github.com/doudou/autobuild</a>
+
+</li>
+<li><a href="http://doudou.github.com/autoproj">doudou.github.com/autoproj</a>
 
 </li>
 </ul>
@@ -100,7 +103,7 @@ use the package name.
 </table>
 <p>
 Each package method (<a href="Autobuild.html#M000136">Autobuild.import</a>,
-<a href="Autobuild.html#M000154">Autobuild.autotools</a>, &#8230;) takes
+<a href="Autobuild.html#M000152">Autobuild.autotools</a>, &#8230;) takes
 either a package name for first argument, or a <tt>name =&gt;
 dependency_array</tt> hash, and take a block which can be used to configure
 the package. For instance
@@ -265,7 +268,7 @@ open-uri library does not allow that.
 <p>
 Where <tt>options</tt> is an option hash. See also <a
 href="Autobuild/CVSImporter.html">Autobuild::CVSImporter</a> and <a
-href="Autobuild.html#M000105">Autobuild.cvs</a>
+href="Autobuild.html#M000106">Autobuild.cvs</a>
 </p>
 <ul>
 <li>the default CVS command is <tt>cvs</tt>. It can be changed by
@@ -295,7 +298,7 @@ href="Autobuild.html#M000105">Autobuild.cvs</a>
 </pre>
 <p>
 Where <tt>options</tt> is an option hash. See also Autobuild::SVNImporter
-and <a href="Autobuild.html#M000092">Autobuild.svn</a>
+and <a href="Autobuild.html#M000099">Autobuild.svn</a>
 </p>
 <ul>
 <li>the default Subversion command is <tt>svn</tt>. It can be changed by
@@ -326,7 +329,7 @@ and <a href="Autobuild.html#M000092">Autobuild.svn</a>
 <p>
 Where <tt>options</tt> is a hash. See also <a
 href="Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a> and <a
-href="Autobuild.html#M000083">Autobuild.darcs</a>
+href="Autobuild.html#M000084">Autobuild.darcs</a>
 </p>
 <ul>
 <li>the default Darcs command is <tt>darcs</tt>. It can be changed by
@@ -473,27 +476,27 @@ and fetched into the master local branch.
 	<h2>Methods</h2>
 	<ul>
 		
-			<li><a href="Autobuild/Reporting.html#M000119">::<< &mdash; Autobuild::Reporting</a></li>
+			<li><a href="Autobuild/Reporting.html#M000114">::<< &mdash; Autobuild::Reporting</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000057">::[] &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild.html#M000060">::apply &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000059">::apply &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000040">::apply_post_install &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000039">::apply_post_install &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild.html#M000133">::autodetect_processor_count &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000154">::autotools &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000152">::autotools &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000144">::builddir &mdash; Autobuild::CMake</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000145">::builddir= &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000015">::builddir= &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000013">::builddir= &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000155">::builddir= &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Autotools.html#M000154">::builddir= &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild.html#M000047">::clean_log! &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000046">::clean_log! &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild.html#M000143">::cmake &mdash; Autobuild</a></li>
 		
@@ -501,79 +504,79 @@ and fetched into the master local branch.
 		
 			<li><a href="Autobuild/FakeOrogenEnvironment/BlackHole.html#M000188">::const_missing &mdash; Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000201">::const_missing &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000194">::const_missing &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000212">::const_missing &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000204">::const_missing &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild.html#M000105">::cvs &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000106">::cvs &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000083">::darcs &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000084">::darcs &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000189">::dummy &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000207">::dummy &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000056">::each &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Reporting.html#M000121">::each_log &mdash; Autobuild::Reporting</a></li>
+			<li><a href="Autobuild/Reporting.html#M000116">::each_log &mdash; Autobuild::Reporting</a></li>
 		
-			<li><a href="Autobuild/Reporting.html#M000120">::each_reporter &mdash; Autobuild::Reporting</a></li>
+			<li><a href="Autobuild/Reporting.html#M000115">::each_reporter &mdash; Autobuild::Reporting</a></li>
 		
-			<li><a href="Autobuild.html#M000014">::env_add &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000021">::env_add &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000017">::env_add_path &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000025">::env_add_path &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000013">::env_set &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000020">::env_set &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild/Reporting.html#M000118">::error &mdash; Autobuild::Reporting</a></li>
+			<li><a href="Autobuild/Reporting.html#M000113">::error &mdash; Autobuild::Reporting</a></li>
 		
-			<li><a href="Autobuild.html#M000037">::full_build? &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000033">::full_build? &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild.html#M000170">::genom &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000116">::get_stamp &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000120">::get_stamp &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000106">::git &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000101">::git &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild.html#M000136">::import &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild.html#M000142">::installed_pkgconfig &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000203">::load &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000195">::load &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild.html#M000046">::logdir &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000045">::logdir &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild/FakeOrogenEnvironment/BlackHole.html#M000187">::method_missing &mdash; Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 		
 			<li><a href="PkgConfig/NotFound.html#M000003">::new &mdash; PkgConfig::NotFound</a></li>
 		
-			<li><a href="Autobuild/CVSImporter.html#M000099">::new &mdash; Autobuild::CVSImporter</a></li>
+			<li><a href="Autobuild/CVSImporter.html#M000102">::new &mdash; Autobuild::CVSImporter</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000193">::new &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000189">::new &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000036">::new &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Package.html#M000037">::new &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Git/Status.html#M000095">::new &mdash; Autobuild::Git::Status</a></li>
+			<li><a href="Autobuild/Git/Status.html#M000092">::new &mdash; Autobuild::Git::Status</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000147">::new &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000084">::new &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Git.html#M000082">::new &mdash; Autobuild::Git</a></li>
 		
 			<li><a href="Autobuild/InstalledPkgConfig.html#M000140">::new &mdash; Autobuild::InstalledPkgConfig</a></li>
 		
 			<li><a href="Autobuild/SubcommandFailed.html#M000010">::new &mdash; Autobuild::SubcommandFailed</a></li>
 		
-			<li><a href="Autobuild/DummyPackage.html#M000191">::new &mdash; Autobuild::DummyPackage</a></li>
+			<li><a href="Autobuild/DummyPackage.html#M000209">::new &mdash; Autobuild::DummyPackage</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000063">::new &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Importer.html#M000064">::new &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000020">::new &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000017">::new &mdash; Autobuild::Configurable</a></li>
 		
 			<li><a href="Autobuild/GenomModule.html#M000171">::new &mdash; Autobuild::GenomModule</a></li>
 		
 			<li><a href="Autobuild/ImporterPackage.html#M000138">::new &mdash; Autobuild::ImporterPackage</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000204">::new &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000196">::new &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000161">::new &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Autotools.html#M000159">::new &mdash; Autobuild::Autotools</a></li>
 		
 			<li><a href="Autobuild/Exception.html#M000002">::new &mdash; Autobuild::Exception</a></li>
 		
@@ -581,23 +584,23 @@ and fetched into the master local branch.
 		
 			<li><a href="PkgConfig.html#M000008">::new &mdash; PkgConfig</a></li>
 		
-			<li><a href="Autobuild/Importer/Status.html#M000062">::new &mdash; Autobuild::Importer::Status</a></li>
+			<li><a href="Autobuild/Importer/Status.html#M000063">::new &mdash; Autobuild::Importer::Status</a></li>
 		
-			<li><a href="Autobuild/SVN.html#M000085">::new &mdash; Autobuild::SVN</a></li>
+			<li><a href="Autobuild/SVN.html#M000090">::new &mdash; Autobuild::SVN</a></li>
 		
 			<li><a href="Autobuild/FakeOrogenEnvironment/BlackHole.html#M000185">::new &mdash; Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 		
-			<li><a href="Autobuild/Orogen.html#M000216">::new &mdash; Autobuild::Orogen</a></li>
+			<li><a href="Autobuild/Orogen.html#M000217">::new &mdash; Autobuild::Orogen</a></li>
 		
 			<li><a href="Autobuild/MailReporter.html#M000127">::new &mdash; Autobuild::MailReporter</a></li>
 		
-			<li><a href="Autobuild/SourceTreeTask.html#M000111">::new &mdash; Autobuild::SourceTreeTask</a></li>
+			<li><a href="Autobuild/SourceTreeTask.html#M000117">::new &mdash; Autobuild::SourceTreeTask</a></li>
 		
-			<li><a href="Autobuild/DarcsImporter.html#M000079">::new &mdash; Autobuild::DarcsImporter</a></li>
+			<li><a href="Autobuild/DarcsImporter.html#M000080">::new &mdash; Autobuild::DarcsImporter</a></li>
 		
 			<li><a href="Autobuild/Subprocess/Failed.html#M000134">::new &mdash; Autobuild::Subprocess::Failed</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000202">::orocos_target &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/Orogen.html#M000214">::orocos_target &mdash; Autobuild::Orogen</a></li>
 		
 			<li><a href="Autobuild.html#M000184">::orogen &mdash; Autobuild</a></li>
 		
@@ -605,297 +608,299 @@ and fetched into the master local branch.
 		
 			<li><a href="Autobuild.html#M000132">::parallel_build_level &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000021">::pathvar &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000029">::pathvar &mdash; Autobuild</a></li>
 		
 			<li><a href="Autobuild.html#M000038">::post_install &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000044">::post_success_message &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000040">::post_success_message &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000108">::progress &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000107">::progress &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000110">::progress_value &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000109">::progress_value &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000109">::progress_with_value &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000108">::progress_with_value &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild/Reporting.html#M000114">::report &mdash; Autobuild::Reporting</a></li>
+			<li><a href="Autobuild/Reporting.html#M000110">::report &mdash; Autobuild::Reporting</a></li>
 		
 			<li><a href="Autobuild/Subprocess.html#M000135">::run &mdash; Autobuild::Subprocess</a></li>
 		
-			<li><a href="Autobuild.html#M000113">::source_tree &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000119">::source_tree &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild/Reporting.html#M000115">::success &mdash; Autobuild::Reporting</a></li>
+			<li><a href="Autobuild/Reporting.html#M000112">::success &mdash; Autobuild::Reporting</a></li>
 		
-			<li><a href="Autobuild.html#M000092">::svn &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000099">::svn &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000080">::tar &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000079">::tar &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000048">::tool &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000047">::tool &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000117">::touch_stamp &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000126">::touch_stamp &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000107">::tree_timestamp &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000111">::tree_timestamp &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild.html#M000022">::update_environment &mdash; Autobuild</a></li>
+			<li><a href="Autobuild.html#M000030">::update_environment &mdash; Autobuild</a></li>
 		
-			<li><a href="Autobuild/TarImporter.html#M000067">::url_to_mode &mdash; Autobuild::TarImporter</a></li>
+			<li><a href="Autobuild/TarImporter.html#M000062">::url_to_mode &mdash; Autobuild::TarImporter</a></li>
 		
-			<li><a href="Object.html#M000032">#Autobuild &mdash; Object</a></li>
+			<li><a href="Object.html#M000031">#Autobuild &mdash; Object</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000194">#add_default_logger &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000190">#add_default_logger &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 		
 			<li><a href="RMail/Message.html#M000131">#add_file &mdash; RMail::Message</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000069">#apply &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Importer.html#M000071">#apply &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000181">#build &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/CMake.html#M000164">#build &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/CMake.html#M000159">#build &mdash; Autobuild::CMake</a></li>
+			<li><a href="Autobuild/Autotools.html#M000176">#build &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000029">#build &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000027">#build &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000158">#builddir &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Configurable.html#M000015">#builddir &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000018">#builddir &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Autotools.html#M000157">#builddir &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000157">#builddir= &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Configurable.html#M000014">#builddir= &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000016">#builddir= &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Autotools.html#M000156">#builddir= &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000019">#buildstamp &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000016">#buildstamp &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000160">#buildstamp &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Autotools.html#M000158">#buildstamp &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/TarImporter.html#M000074">#cachedir &mdash; Autobuild::TarImporter</a></li>
+			<li><a href="Autobuild/TarImporter.html#M000073">#cachedir &mdash; Autobuild::TarImporter</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000068">#call_patch &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Importer.html#M000069">#call_patch &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000103">#checkout &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Git.html#M000100">#checkout &mdash; Autobuild::Git</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000028">#configure &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/CMake.html#M000162">#configure &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000178">#configure &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Autotools.html#M000172">#configure &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/CMake.html#M000156">#configure &mdash; Autobuild::CMake</a></li>
+			<li><a href="Autobuild/Configurable.html#M000026">#configure &mdash; Autobuild::Configurable</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000146">#configurestamp &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000199">#const_missing &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000192">#const_missing &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000213">#const_missing &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000205">#const_missing &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/Orogen.html#M000215">#corba &mdash; Autobuild::Orogen</a></li>
+			<li><a href="Autobuild/Orogen.html#M000216">#corba &mdash; Autobuild::Orogen</a></li>
 		
-			<li><a href="Autobuild/GenomModule.html#M000175">#cpp_options &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000177">#cpp_options &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/MailReporter.html#M000126">#default_mail &mdash; Autobuild::MailReporter</a></li>
+			<li><a href="Autobuild/MailReporter.html#M000125">#default_mail &mdash; Autobuild::MailReporter</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000148">#define &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000024">#depends_on &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000022">#depends_on &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000166">#depends_on &mdash; Autobuild::Autotools</a></li>
-		
-			<li><a href="Autobuild/GenomModule.html#M000179">#depends_on &mdash; Autobuild::GenomModule</a></li>
-		
-			<li><a href="Autobuild/Orogen.html#M000217">#depends_on &mdash; Autobuild::Orogen</a></li>
+			<li><a href="Autobuild/Autotools.html#M000165">#depends_on &mdash; Autobuild::Autotools</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000054">#depends_on &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000211">#deployment &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000181">#depends_on &mdash; Autobuild::GenomModule</a></li>
+		
+			<li><a href="Autobuild/Orogen.html#M000218">#depends_on &mdash; Autobuild::Orogen</a></li>
+		
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000203">#deployment &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000051">#doc_disabled &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000045">#doc_task &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Package.html#M000048">#doc_task &mdash; Autobuild::Package</a></li>
+		
+			<li><a href="Autobuild/Configurable.html#M000023">#ensure_dependencies_installed &mdash; Autobuild::Configurable</a></li>
 		
 			<li><a href="Autobuild/Autotools.html#M000167">#ensure_dependencies_installed &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000026">#ensure_dependencies_installed &mdash; Autobuild::Configurable</a></li>
-		
 			<li><a href="Autobuild/CMake.html#M000151">#equivalent_option_value? &mdash; Autobuild::CMake</a></li>
-		
-			<li><a href="Autobuild/Reporter.html#M000122">#error &mdash; Autobuild::Reporter</a></li>
 		
 			<li><a href="Autobuild/MailReporter.html#M000128">#error &mdash; Autobuild::MailReporter</a></li>
 		
-			<li><a href="Autobuild/StdoutReporter.html#M000124">#error &mdash; Autobuild::StdoutReporter</a></li>
+			<li><a href="Autobuild/Reporter.html#M000121">#error &mdash; Autobuild::Reporter</a></li>
+		
+			<li><a href="Autobuild/StdoutReporter.html#M000123">#error &mdash; Autobuild::StdoutReporter</a></li>
 		
 			<li><a href="Autobuild/Exception.html#M000006">#exception_message &mdash; Autobuild::Exception</a></li>
 		
 			<li><a href="Autobuild/Exception.html#M000001">#fatal? &mdash; Autobuild::Exception</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000091">#fetch_remote &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Git.html#M000088">#fetch_remote &mdash; Autobuild::Git</a></li>
 		
-			<li><a href="Autobuild/GenomModule.html#M000180">#genom_dependencies &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000182">#genom_dependencies &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/GenomModule.html#M000174">#genomstamp &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000175">#genomstamp &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/Orogen.html#M000220">#genstamp &mdash; Autobuild::Orogen</a></li>
+			<li><a href="Autobuild/Orogen.html#M000221">#genstamp &mdash; Autobuild::Orogen</a></li>
 		
-			<li><a href="Autobuild/GenomModule.html#M000177">#get_provides &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000180">#get_provides &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/GenomModule.html#M000176">#get_requires &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000178">#get_requires &mdash; Autobuild::GenomModule</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000052">#has_doc? &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000042">#import &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/CMake.html#M000153">#import &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/DummyPackage.html#M000192">#import &mdash; Autobuild::DummyPackage</a></li>
+			<li><a href="Autobuild/DummyPackage.html#M000210">#import &mdash; Autobuild::DummyPackage</a></li>
 		
-			<li><a href="Autobuild/GenomModule.html#M000172">#import &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/Importer.html#M000067">#import &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/CMake.html#M000152">#import &mdash; Autobuild::CMake</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000173">#import &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000065">#import &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Orogen.html#M000219">#import &mdash; Autobuild::Orogen</a></li>
 		
-			<li><a href="Autobuild/Orogen.html#M000218">#import &mdash; Autobuild::Orogen</a></li>
+			<li><a href="Autobuild/Package.html#M000043">#import &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000031">#import= &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Package.html#M000032">#import= &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000182">#install &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Autotools.html#M000179">#install &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/CMake.html#M000164">#install &mdash; Autobuild::CMake</a></li>
+			<li><a href="Autobuild/CMake.html#M000166">#install &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000030">#install &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000028">#install &mdash; Autobuild::Configurable</a></li>
+		
+			<li><a href="Autobuild/Autotools.html#M000160">#install_doc &mdash; Autobuild::Autotools</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000149">#install_doc &mdash; Autobuild::CMake</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000050">#install_doc &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000162">#install_doc &mdash; Autobuild::Autotools</a></li>
-		
-			<li><a href="Autobuild/Package.html#M000035">#installstamp &mdash; Autobuild::Package</a></li>
-		
 			<li><a href="Autobuild/ImporterPackage.html#M000137">#installstamp &mdash; Autobuild::ImporterPackage</a></li>
 		
-			<li><a href="Autobuild/DummyPackage.html#M000190">#installstamp &mdash; Autobuild::DummyPackage</a></li>
+			<li><a href="Autobuild/Package.html#M000036">#installstamp &mdash; Autobuild::Package</a></li>
+		
+			<li><a href="Autobuild/DummyPackage.html#M000208">#installstamp &mdash; Autobuild::DummyPackage</a></li>
 		
 			<li><a href="Autobuild/InstalledPkgConfig.html#M000141">#installstamp &mdash; Autobuild::InstalledPkgConfig</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000205">#load &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000197">#load &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/Git/Status.html#M000097">#log &mdash; Autobuild::Git::Status</a></li>
+			<li><a href="Autobuild/Git/Status.html#M000095">#log &mdash; Autobuild::Git::Status</a></li>
 		
 			<li><a href="Autobuild/SubcommandFailed.html#M000009">#mail? &mdash; Autobuild::SubcommandFailed</a></li>
 		
-			<li><a href="Autobuild/Exception.html#M000000">#mail? &mdash; Autobuild::Exception</a></li>
-		
 			<li><a href="Autobuild/PackageException.html#M000007">#mail? &mdash; Autobuild::PackageException</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000089">#merge= &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Exception.html#M000000">#mail? &mdash; Autobuild::Exception</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000087">#merge? &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Git.html#M000086">#merge= &mdash; Autobuild::Git</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000098">#merge_status &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Git.html#M000085">#merge? &mdash; Autobuild::Git</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000214">#method_missing &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/Git.html#M000096">#merge_status &mdash; Autobuild::Git</a></li>
 		
 			<li><a href="PkgConfig.html#M000011">#method_missing &mdash; PkgConfig</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000200">#method_missing &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
-		
 			<li><a href="Autobuild/FakeOrogenEnvironment/BlackHole.html#M000186">#method_missing &mdash; Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 		
-			<li><a href="Autobuild/CVSImporter.html#M000101">#modulename &mdash; Autobuild::CVSImporter</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000193">#method_missing &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000206">#name &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000206">#method_missing &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/Git/Status.html#M000096">#needs_update? &mdash; Autobuild::Git::Status</a></li>
+			<li><a href="Autobuild/CVSImporter.html#M000103">#modulename &mdash; Autobuild::CVSImporter</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000094">#on_target_branch? &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000198">#name &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000059">#parallel_build_level &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Git/Status.html#M000094">#needs_update? &mdash; Autobuild::Git::Status</a></li>
+		
+			<li><a href="Autobuild/Git.html#M000091">#on_target_branch? &mdash; Autobuild::Git</a></li>
+		
+			<li><a href="Autobuild/Orogen.html#M000215">#orocos_target &mdash; Autobuild::Orogen</a></li>
+		
+			<li><a href="Autobuild/Package.html#M000060">#parallel_build_level &mdash; Autobuild::Package</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000058">#parallel_build_level= &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000072">#patch &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Importer.html#M000074">#patch &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000064">#patches &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Importer.html#M000065">#patches &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000066">#patchlist &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Importer.html#M000068">#patchlist &mdash; Autobuild::Importer</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000053">#post_install &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000034">#prefix &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Package.html#M000035">#prefix &mdash; Autobuild::Package</a></li>
+		
+			<li><a href="Autobuild/DummyPackage.html#M000211">#prepare &mdash; Autobuild::DummyPackage</a></li>
+		
+			<li><a href="Autobuild/Orogen.html#M000220">#prepare &mdash; Autobuild::Orogen</a></li>
 		
 			<li><a href="Autobuild/ImporterPackage.html#M000139">#prepare &mdash; Autobuild::ImporterPackage</a></li>
 		
-			<li><a href="Autobuild/Orogen.html#M000219">#prepare &mdash; Autobuild::Orogen</a></li>
-		
-			<li><a href="Autobuild/DummyPackage.html#M000195">#prepare &mdash; Autobuild::DummyPackage</a></li>
-		
-			<li><a href="Autobuild/GenomModule.html#M000173">#prepare &mdash; Autobuild::GenomModule</a></li>
+			<li><a href="Autobuild/Package.html#M000044">#prepare &mdash; Autobuild::Package</a></li>
 		
 			<li><a href="Autobuild/Autotools.html#M000168">#prepare &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/CMake.html#M000153">#prepare &mdash; Autobuild::CMake</a></li>
+			<li><a href="Autobuild/GenomModule.html#M000174">#prepare &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000027">#prepare &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Configurable.html#M000024">#prepare &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000043">#prepare &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/CMake.html#M000155">#prepare &mdash; Autobuild::CMake</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000039">#prepare_for_forced_build &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Configurable.html#M000018">#prepare_for_forced_build &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000022">#prepare_for_forced_build &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Package.html#M000041">#prepare_for_forced_build &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000041">#prepare_for_rebuild &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Configurable.html#M000019">#prepare_for_rebuild &mdash; Autobuild::Configurable</a></li>
 		
-			<li><a href="Autobuild/Configurable.html#M000023">#prepare_for_rebuild &mdash; Autobuild::Configurable</a></li>
+			<li><a href="Autobuild/Package.html#M000042">#prepare_for_rebuild &mdash; Autobuild::Package</a></li>
 		
 			<li><a href="Autobuild/Package.html#M000055">#provides &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000169">#regen &mdash; Autobuild::Autotools</a></li>
-		
 			<li><a href="Autobuild/GenomModule.html#M000183">#regen &mdash; Autobuild::GenomModule</a></li>
 		
-			<li><a href="Autobuild/Orogen.html#M000221">#regen &mdash; Autobuild::Orogen</a></li>
+			<li><a href="Autobuild/Autotools.html#M000169">#regen &mdash; Autobuild::Autotools</a></li>
+		
+			<li><a href="Autobuild/Orogen.html#M000222">#regen &mdash; Autobuild::Orogen</a></li>
 		
 			<li><a href="Autobuild/MailReporter.html#M000130">#send_mail &mdash; Autobuild::MailReporter</a></li>
 		
-			<li><a href="Autobuild/Package.html#M000033">#srcdir &mdash; Autobuild::Package</a></li>
+			<li><a href="Autobuild/Package.html#M000034">#srcdir &mdash; Autobuild::Package</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000210">#static_deployment &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000202">#static_deployment &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000093">#status &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/Git.html#M000089">#status &mdash; Autobuild::Git</a></li>
 		
 			<li><a href="Autobuild/MailReporter.html#M000129">#success &mdash; Autobuild::MailReporter</a></li>
 		
-			<li><a href="Autobuild/StdoutReporter.html#M000125">#success &mdash; Autobuild::StdoutReporter</a></li>
+			<li><a href="Autobuild/StdoutReporter.html#M000124">#success &mdash; Autobuild::StdoutReporter</a></li>
 		
-			<li><a href="Autobuild/Reporter.html#M000123">#success &mdash; Autobuild::Reporter</a></li>
+			<li><a href="Autobuild/Reporter.html#M000122">#success &mdash; Autobuild::Reporter</a></li>
 		
 			<li><a href="Autobuild/TarImporter.html#M000075">#tardir &mdash; Autobuild::TarImporter</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000198">#task &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment/FakeDeployment.html#M000191">#task &mdash; Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
 		
-			<li><a href="Autobuild/SourceTreeTask.html#M000112">#timestamp &mdash; Autobuild::SourceTreeTask</a></li>
+			<li><a href="Autobuild/SourceTreeTask.html#M000118">#timestamp &mdash; Autobuild::SourceTreeTask</a></li>
+		
+			<li><a href="PkgConfig/NotFound.html#M000004">#to_s &mdash; PkgConfig::NotFound</a></li>
 		
 			<li><a href="Autobuild/SubcommandFailed.html#M000012">#to_s &mdash; Autobuild::SubcommandFailed</a></li>
 		
 			<li><a href="Autobuild/Exception.html#M000005">#to_s &mdash; Autobuild::Exception</a></li>
 		
-			<li><a href="PkgConfig/NotFound.html#M000004">#to_s &mdash; PkgConfig::NotFound</a></li>
+			<li><a href="Autobuild/Importer.html#M000072">#unapply &mdash; Autobuild::Importer</a></li>
 		
-			<li><a href="Autobuild/Importer.html#M000071">#unapply &mdash; Autobuild::Importer</a></li>
+			<li><a href="Autobuild/Git.html#M000098">#update &mdash; Autobuild::Git</a></li>
 		
-			<li><a href="Autobuild/Git.html#M000100">#update &mdash; Autobuild::Git</a></li>
+			<li><a href="Autobuild/TarImporter.html#M000066">#update_cache &mdash; Autobuild::TarImporter</a></li>
 		
-			<li><a href="Autobuild/TarImporter.html#M000070">#update_cache &mdash; Autobuild::TarImporter</a></li>
+			<li><a href="Autobuild/TarImporter.html#M000070">#url= &mdash; Autobuild::TarImporter</a></li>
 		
-			<li><a href="Autobuild/TarImporter.html#M000073">#url= &mdash; Autobuild::TarImporter</a></li>
+			<li><a href="Autobuild/Autotools.html#M000163">#use &mdash; Autobuild::Autotools</a></li>
 		
-			<li><a href="Autobuild/Autotools.html#M000165">#use &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000199">#using_library &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000207">#using_library &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000201">#using_task_library &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000209">#using_task_library &mdash; Autobuild::FakeOrogenEnvironment</a></li>
+			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000200">#using_toolkit &mdash; Autobuild::FakeOrogenEnvironment</a></li>
 		
-			<li><a href="Autobuild/FakeOrogenEnvironment.html#M000208">#using_toolkit &mdash; Autobuild::FakeOrogenEnvironment</a></li>
-		
-			<li><a href="Autobuild/Git.html#M000090">#validate_srcdir &mdash; Autobuild::Git</a></li>
-		
-			<li><a href="Autobuild/Autotools.html#M000163">#with_doc &mdash; Autobuild::Autotools</a></li>
+			<li><a href="Autobuild/Git.html#M000087">#validate_srcdir &mdash; Autobuild::Git</a></li>
 		
 			<li><a href="Autobuild/CMake.html#M000150">#with_doc &mdash; Autobuild::CMake</a></li>
+		
+			<li><a href="Autobuild/Autotools.html#M000161">#with_doc &mdash; Autobuild::Autotools</a></li>
 		
 	</ul>
 

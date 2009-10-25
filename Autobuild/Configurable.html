@@ -59,31 +59,31 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000015">::builddir=</a></li>
+					<li><a href="#M000013">::builddir=</a></li>
 					
-					<li><a href="#M000020">::new</a></li>
+					<li><a href="#M000017">::new</a></li>
 					
-					<li><a href="#M000029">#build</a></li>
+					<li><a href="#M000027">#build</a></li>
 					
-					<li><a href="#M000018">#builddir</a></li>
+					<li><a href="#M000015">#builddir</a></li>
 					
-					<li><a href="#M000016">#builddir=</a></li>
+					<li><a href="#M000014">#builddir=</a></li>
 					
-					<li><a href="#M000019">#buildstamp</a></li>
+					<li><a href="#M000016">#buildstamp</a></li>
 					
-					<li><a href="#M000028">#configure</a></li>
+					<li><a href="#M000026">#configure</a></li>
 					
-					<li><a href="#M000024">#depends_on</a></li>
+					<li><a href="#M000022">#depends_on</a></li>
 					
-					<li><a href="#M000026">#ensure_dependencies_installed</a></li>
+					<li><a href="#M000023">#ensure_dependencies_installed</a></li>
 					
-					<li><a href="#M000030">#install</a></li>
+					<li><a href="#M000028">#install</a></li>
 					
-					<li><a href="#M000027">#prepare</a></li>
+					<li><a href="#M000024">#prepare</a></li>
 					
-					<li><a href="#M000022">#prepare_for_forced_build</a></li>
+					<li><a href="#M000018">#prepare_for_forced_build</a></li>
 					
-					<li><a href="#M000023">#prepare_for_rebuild</a></li>
+					<li><a href="#M000019">#prepare_for_rebuild</a></li>
 					
 				</ul>
 			</div>
@@ -219,7 +219,7 @@ Base class for packages that require a configuration + build step.
 <p>
 Child classes must provide a configurestamp file which represents the last
 configuration step done. This file is updated by a call to <a
-href="Configurable.html#M000028">configure</a> (see below)
+href="Configurable.html#M000026">configure</a> (see below)
 </p>
 <p>
 Three new methods are added, which can be reimplemented in child classes:
@@ -231,9 +231,9 @@ depended-upon packages are installed.
 </li>
 <li><tt>build</tt> is ran after <tt>configure</tt> if the configure stamp
 and/or the source files have been updated. The <a
-href="Configurable.html#M000019">buildstamp</a> stampfile represents when
+href="Configurable.html#M000016">buildstamp</a> stampfile represents when
 the last build has been done. The build must be done in the <a
-href="Configurable.html#M000018">builddir</a> directory.
+href="Configurable.html#M000015">builddir</a> directory.
 
 </li>
 <li><tt>install</tt> is ran after <tt>build</tt>.
@@ -277,7 +277,7 @@ href="Configurable.html#M000018">builddir</a> directory.
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000015"></a>
+				<a name="M000013"></a>
 
 				<div class="method-heading">
 				
@@ -311,7 +311,7 @@ href="Configurable.html#M000018">builddir</a> directory.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000020"></a>
+				<a name="M000017"></a>
 
 				<div class="method-heading">
 				
@@ -351,7 +351,7 @@ href="Configurable.html#M000018">builddir</a> directory.
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000029"></a>
+				<a name="M000027"></a>
 
 				<div class="method-heading">
 				
@@ -384,7 +384,7 @@ Do the build in builddir
 
 		
 			<div id="builddir-method" class="method-detail ">
-				<a name="M000018"></a>
+				<a name="M000015"></a>
 
 				<div class="method-heading">
 				
@@ -416,7 +416,7 @@ Returns the absolute builddir
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000016"></a>
+				<a name="M000014"></a>
 
 				<div class="method-heading">
 				
@@ -450,7 +450,7 @@ Returns the absolute builddir
 
 		
 			<div id="buildstamp-method" class="method-detail ">
-				<a name="M000019"></a>
+				<a name="M000016"></a>
 
 				<div class="method-heading">
 				
@@ -483,7 +483,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000028"></a>
+				<a name="M000026"></a>
 
 				<div class="method-heading">
 				
@@ -517,7 +517,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="depends-on-method" class="method-detail ">
-				<a name="M000024"></a>
+				<a name="M000022"></a>
 
 				<div class="method-heading">
 				
@@ -551,7 +551,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="ensure-dependencies-installed-method" class="method-detail ">
-				<a name="M000026"></a>
+				<a name="M000023"></a>
 
 				<div class="method-heading">
 				
@@ -585,7 +585,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="install-method" class="method-detail ">
-				<a name="M000030"></a>
+				<a name="M000028"></a>
 
 				<div class="method-heading">
 				
@@ -619,7 +619,7 @@ Install the result in prefix
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000027"></a>
+				<a name="M000024"></a>
 
 				<div class="method-heading">
 				
@@ -672,7 +672,7 @@ Install the result in prefix
 
 		
 			<div id="prepare-for-forced-build-method" class="method-detail ">
-				<a name="M000022"></a>
+				<a name="M000018"></a>
 
 				<div class="method-heading">
 				
@@ -705,7 +705,7 @@ Install the result in prefix
 
 		
 			<div id="prepare-for-rebuild-method" class="method-detail ">
-				<a name="M000023"></a>
+				<a name="M000019"></a>
 
 				<div class="method-heading">
 				

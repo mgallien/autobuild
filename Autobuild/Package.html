@@ -63,41 +63,41 @@
 					
 					<li><a href="#M000056">::each</a></li>
 					
-					<li><a href="#M000036">::new</a></li>
+					<li><a href="#M000037">::new</a></li>
 					
 					<li><a href="#M000054">#depends_on</a></li>
 					
 					<li><a href="#M000051">#doc_disabled</a></li>
 					
-					<li><a href="#M000045">#doc_task</a></li>
+					<li><a href="#M000048">#doc_task</a></li>
 					
 					<li><a href="#M000052">#has_doc?</a></li>
 					
-					<li><a href="#M000042">#import</a></li>
+					<li><a href="#M000043">#import</a></li>
 					
-					<li><a href="#M000031">#import=</a></li>
+					<li><a href="#M000032">#import=</a></li>
 					
 					<li><a href="#M000050">#install_doc</a></li>
 					
-					<li><a href="#M000035">#installstamp</a></li>
+					<li><a href="#M000036">#installstamp</a></li>
 					
-					<li><a href="#M000059">#parallel_build_level</a></li>
+					<li><a href="#M000060">#parallel_build_level</a></li>
 					
 					<li><a href="#M000058">#parallel_build_level=</a></li>
 					
 					<li><a href="#M000053">#post_install</a></li>
 					
-					<li><a href="#M000034">#prefix</a></li>
+					<li><a href="#M000035">#prefix</a></li>
 					
-					<li><a href="#M000043">#prepare</a></li>
+					<li><a href="#M000044">#prepare</a></li>
 					
-					<li><a href="#M000039">#prepare_for_forced_build</a></li>
+					<li><a href="#M000041">#prepare_for_forced_build</a></li>
 					
-					<li><a href="#M000041">#prepare_for_rebuild</a></li>
+					<li><a href="#M000042">#prepare_for_rebuild</a></li>
 					
 					<li><a href="#M000055">#provides</a></li>
 					
-					<li><a href="#M000033">#srcdir</a></li>
+					<li><a href="#M000034">#srcdir</a></li>
 					
 				</ul>
 			</div>
@@ -259,7 +259,7 @@ autodetection. The first side is that packages must declare what they
 provide. One example is the handling of pkgconfig dependencies: packages
 must declare that they provide a pkgconfig definition. This side of the
 autodetection must be done just after the package&#8217;s import, by
-overloading the <a href="Package.html#M000042">import</a> method:
+overloading the <a href="Package.html#M000043">import</a> method:
 </p>
 <pre>
   def import
@@ -274,7 +274,7 @@ with &#8220;super&#8221;.
 </p>
 <p>
 The other side is the detection itself. That must be done by overloading
-the <a href="Package.html#M000043">prepare</a> method.
+the <a href="Package.html#M000044">prepare</a> method.
 </p>
 
 		</div>
@@ -359,7 +359,7 @@ to Autobuild.prefix. Defaults to &#8217;&#8217;
 				
 				<p>
 Sets the log directory. If no value is set, the package will use <a
-href="../Autobuild.html#M000046">Autobuild.logdir</a>
+href="../Autobuild.html#M000045">Autobuild.logdir</a>
 </p>
 				
 				</div>
@@ -525,7 +525,7 @@ list of package aliases
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000036"></a>
+				<a name="M000037"></a>
 
 				<div class="method-heading">
 				
@@ -633,7 +633,7 @@ built and installed.
 <span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 256</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_str</span>
                 <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
                 <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>]
                     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>), <span class="ruby-node">&quot;package #{p} not defined&quot;</span>
@@ -666,7 +666,7 @@ built and installed.
 				<div class="method-description">
 					
 					<p>
-Can be called in the <a href="Package.html#M000045">doc_task</a>
+Can be called in the <a href="Package.html#M000048">doc_task</a>
 implementation to announce that the documentation is to be disabled for
 that package. This is mainly used when a runtime check is necessary to know
 if a package has documentation or not.
@@ -690,7 +690,7 @@ if a package has documentation or not.
 
 		
 			<div id="doc-task-method" class="method-detail ">
-				<a name="M000045"></a>
+				<a name="M000048"></a>
 
 				<div class="method-heading">
 				
@@ -795,7 +795,7 @@ True if a documentation task is defined for this package
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000042"></a>
+				<a name="M000043"></a>
 
 				<div class="method-heading">
 				
@@ -829,7 +829,7 @@ href="Package.html">Autobuild::Package</a> for more information.
 
 		
 			<div id="import--method" class="method-detail ">
-				<a name="M000031"></a>
+				<a name="M000032"></a>
 
 				<div class="method-heading">
 				
@@ -903,7 +903,7 @@ Use the <a href="Package.html#importer">importer</a> attribute instead
 
 		
 			<div id="installstamp-method" class="method-detail ">
-				<a name="M000035"></a>
+				<a name="M000036"></a>
 
 				<div class="method-heading">
 				
@@ -941,7 +941,7 @@ A package is sucessfully built when it is installed
 
 		
 			<div id="parallel-build-level-method" class="method-detail ">
-				<a name="M000059"></a>
+				<a name="M000060"></a>
 
 				<div class="method-heading">
 				
@@ -1003,7 +1003,7 @@ The default value is the number of CPUs on this system.
 Sets the level of parallelism authorized while building this package
 </p>
 <p>
-See <a href="Package.html#M000059">parallel_build_level</a> and <a
+See <a href="Package.html#M000060">parallel_build_level</a> and <a
 href="../Autobuild.html#M000132">Autobuild.parallel_build_level</a> for
 more information.
 </p>
@@ -1067,7 +1067,7 @@ Note that not all package types use this value
 
 		
 			<div id="prefix-method" class="method-detail ">
-				<a name="M000034"></a>
+				<a name="M000035"></a>
 
 				<div class="method-heading">
 				
@@ -1099,7 +1099,7 @@ Absolute path to the installation directory. See prefix=
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000043"></a>
+				<a name="M000044"></a>
 
 				<div class="method-heading">
 				
@@ -1147,7 +1147,7 @@ package when required. The package&#8217;s build target is called
 
 		
 			<div id="prepare-for-forced-build-method" class="method-detail ">
-				<a name="M000039"></a>
+				<a name="M000041"></a>
 
 				<div class="method-heading">
 				
@@ -1185,7 +1185,7 @@ However, it should not clean the build products.
 
 		
 			<div id="prepare-for-rebuild-method" class="method-detail ">
-				<a name="M000041"></a>
+				<a name="M000042"></a>
 
 				<div class="method-heading">
 				
@@ -1244,7 +1244,7 @@ listed in <tt>packages</tt> are aliases for this package.
 <span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 272</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">provides</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_str</span>
                 <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
                 <span class="ruby-ivar">@@provides</span>[<span class="ruby-identifier">p</span>] = <span class="ruby-keyword kw">self</span> 
                 <span class="ruby-identifier">task</span> <span class="ruby-identifier">p</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>
@@ -1263,7 +1263,7 @@ listed in <tt>packages</tt> are aliases for this package.
 
 		
 			<div id="srcdir-method" class="method-detail ">
-				<a name="M000033"></a>
+				<a name="M000034"></a>
 
 				<div class="method-heading">
 				

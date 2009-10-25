@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: README.txt [autobuild-1.4.0 Documentation]</title>
+	<title>File: README.txt [autobuild-1.4.1 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -140,15 +140,18 @@
 
 	<div id="documentation">
 		<p>
-Copyright &#169; 2006-2008 Sylvain Joyeux <sylvain.joyeux@m4x.org>
+Copyright &#169; 2006-2009 Sylvain Joyeux <sylvain.joyeux@m4x.org>
 </p>
 <ul>
 <li><a
-href="http://www.rubyforge.org/projects/autobuild">www.rubyforge.org/projects/autobuild</a>
+href="http://doudou.github.com/autobuild">doudou.github.com/autobuild</a>
 
 </li>
 <li><a
-href="http://autobuild.rubyforge.org/autobuild">autobuild.rubyforge.org/autobuild</a>
+href="http://github.com/doudou/autobuild">github.com/doudou/autobuild</a>
+
+</li>
+<li><a href="http://doudou.github.com/autoproj">doudou.github.com/autoproj</a>
 
 </li>
 </ul>
@@ -216,7 +219,7 @@ use the package name.
 </table>
 <p>
 Each package method (<a href="Autobuild.html#M000136">Autobuild.import</a>,
-<a href="Autobuild.html#M000154">Autobuild.autotools</a>, &#8230;) takes
+<a href="Autobuild.html#M000152">Autobuild.autotools</a>, &#8230;) takes
 either a package name for first argument, or a <tt>name =&gt;
 dependency_array</tt> hash, and take a block which can be used to configure
 the package. For instance
@@ -381,7 +384,7 @@ open-uri library does not allow that.
 <p>
 Where <tt>options</tt> is an option hash. See also <a
 href="Autobuild/CVSImporter.html">Autobuild::CVSImporter</a> and <a
-href="Autobuild.html#M000105">Autobuild.cvs</a>
+href="Autobuild.html#M000106">Autobuild.cvs</a>
 </p>
 <ul>
 <li>the default CVS command is <tt>cvs</tt>. It can be changed by
@@ -411,7 +414,7 @@ href="Autobuild.html#M000105">Autobuild.cvs</a>
 </pre>
 <p>
 Where <tt>options</tt> is an option hash. See also Autobuild::SVNImporter
-and <a href="Autobuild.html#M000092">Autobuild.svn</a>
+and <a href="Autobuild.html#M000099">Autobuild.svn</a>
 </p>
 <ul>
 <li>the default Subversion command is <tt>svn</tt>. It can be changed by
@@ -442,7 +445,7 @@ and <a href="Autobuild.html#M000092">Autobuild.svn</a>
 <p>
 Where <tt>options</tt> is a hash. See also <a
 href="Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a> and <a
-href="Autobuild.html#M000083">Autobuild.darcs</a>
+href="Autobuild.html#M000084">Autobuild.darcs</a>
 </p>
 <ul>
 <li>the default Darcs command is <tt>darcs</tt>. It can be changed by
