@@ -59,25 +59,25 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000171">::new</a></li>
+					<li><a href="#M000174">::new</a></li>
 					
-					<li><a href="#M000177">#cpp_options</a></li>
+					<li><a href="#M000180">#cpp_options</a></li>
 					
-					<li><a href="#M000181">#depends_on</a></li>
+					<li><a href="#M000184">#depends_on</a></li>
 					
-					<li><a href="#M000182">#genom_dependencies</a></li>
+					<li><a href="#M000185">#genom_dependencies</a></li>
 					
-					<li><a href="#M000175">#genomstamp</a></li>
+					<li><a href="#M000178">#genomstamp</a></li>
 					
-					<li><a href="#M000180">#get_provides</a></li>
+					<li><a href="#M000183">#get_provides</a></li>
 					
-					<li><a href="#M000178">#get_requires</a></li>
+					<li><a href="#M000181">#get_requires</a></li>
 					
-					<li><a href="#M000173">#import</a></li>
+					<li><a href="#M000176">#import</a></li>
 					
-					<li><a href="#M000174">#prepare</a></li>
+					<li><a href="#M000177">#prepare</a></li>
 					
-					<li><a href="#M000183">#regen</a></li>
+					<li><a href="#M000186">#regen</a></li>
 					
 				</ul>
 			</div>
@@ -246,7 +246,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000171"></a>
+				<a name="M000174"></a>
 
 				<div class="method-heading">
 				
@@ -287,7 +287,7 @@
 
 		
 			<div id="cpp-options-method" class="method-detail ">
-				<a name="M000177"></a>
+				<a name="M000180"></a>
 
 				<div class="method-heading">
 				
@@ -321,7 +321,7 @@ Extract the cpp options from the genom options
 
 		
 			<div id="depends-on-method" class="method-detail ">
-				<a name="M000181"></a>
+				<a name="M000184"></a>
 
 				<div class="method-heading">
 				
@@ -340,7 +340,7 @@ Extract the cpp options from the genom options
 					<div class="method-source-code"
 						id="depends-on-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 88</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 89</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-keyword kw">super</span>
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>].<span class="ruby-identifier">installstamp</span> }
@@ -354,7 +354,7 @@ Extract the cpp options from the genom options
 
 		
 			<div id="genom-dependencies-method" class="method-detail ">
-				<a name="M000182"></a>
+				<a name="M000185"></a>
 
 				<div class="method-heading">
 				
@@ -380,7 +380,7 @@ Make the genom-stamp file depend on
 					<div class="method-source-code"
 						id="genom-dependencies-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 97</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 98</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genom_dependencies</span>
             <span class="ruby-comment cmt"># Get the genom pkg-config</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Package</span>[<span class="ruby-value str">'genom'</span>]
@@ -409,7 +409,7 @@ Make the genom-stamp file depend on
 
 		
 			<div id="genomstamp-method" class="method-detail ">
-				<a name="M000175"></a>
+				<a name="M000178"></a>
 
 				<div class="method-heading">
 				
@@ -441,7 +441,7 @@ The file touched by genom on successful generation
 
 		
 			<div id="get-provides-method" class="method-detail ">
-				<a name="M000180"></a>
+				<a name="M000183"></a>
 
 				<div class="method-heading">
 				
@@ -463,7 +463,7 @@ configure.ac.user
 					<div class="method-source-code"
 						id="get-provides-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 76</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 77</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_provides</span>
             <span class="ruby-identifier">configure_ac_user</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.ac.user'</span>)
             <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">configure_ac_user</span>)
@@ -484,7 +484,7 @@ configure.ac.user
 
 		
 			<div id="get-requires-method" class="method-detail ">
-				<a name="M000178"></a>
+				<a name="M000181"></a>
 
 				<div class="method-heading">
 				
@@ -512,9 +512,10 @@ Extracts dependencies using the requires: field in the .gen file
             <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-keyword kw">nil</span>
             <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">popen3</span>(<span class="ruby-node">&quot;#{cpp} #{cpp_options.join(&quot; &quot;)} #{srcdir}/#{name}.gen&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cin</span>, <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">out</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:.*,$/</span>
-                        <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-identifier">line</span>
-                    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">currentBuffer</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:.*$/</span>
+                        <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-value str">&quot;&quot;</span>
+                    <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentBuffer</span>
                         <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>
                         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:\s*(\&quot;?\s*[\w\-=&gt;&lt;0-9.\s]+\s*\&quot;?(?:\s*,\s*\&quot;?\s*[\w\-=&gt;&lt;0-9.\s]+\s*\&quot;?)*);/</span>
                             <span class="ruby-comment cmt"># Remove the codels_requires lines if -a is given to genom</span>
@@ -545,7 +546,7 @@ Extracts dependencies using the requires: field in the .gen file
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000173"></a>
+				<a name="M000176"></a>
 
 				<div class="method-heading">
 				
@@ -578,7 +579,7 @@ Extracts dependencies using the requires: field in the .gen file
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000174"></a>
+				<a name="M000177"></a>
 
 				<div class="method-heading">
 				
@@ -615,7 +616,7 @@ Called before running the rake tasks and after all imports have been made
 
 		
 			<div id="regen-method" class="method-detail ">
-				<a name="M000183"></a>
+				<a name="M000186"></a>
 
 				<div class="method-heading">
 				
@@ -634,7 +635,7 @@ Called before running the rake tasks and after all imports have been made
 					<div class="method-source-code"
 						id="regen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 117</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 118</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
             <span class="ruby-identifier">cmdline</span> = [ <span class="ruby-value str">'genom'</span>, <span class="ruby-node">&quot;#{name}.gen&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">genomflags</span> ]
 

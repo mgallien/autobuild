@@ -68,25 +68,25 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000082">::new</a></li>
+					<li><a href="#M000085">::new</a></li>
 					
-					<li><a href="#M000100">#checkout</a></li>
+					<li><a href="#M000104">#checkout</a></li>
 					
-					<li><a href="#M000088">#fetch_remote</a></li>
+					<li><a href="#M000091">#fetch_remote</a></li>
 					
-					<li><a href="#M000086">#merge=</a></li>
+					<li><a href="#M000088">#merge=</a></li>
 					
-					<li><a href="#M000085">#merge?</a></li>
+					<li><a href="#M000087">#merge?</a></li>
 					
-					<li><a href="#M000096">#merge_status</a></li>
+					<li><a href="#M000099">#merge_status</a></li>
 					
-					<li><a href="#M000091">#on_target_branch?</a></li>
+					<li><a href="#M000095">#on_target_branch?</a></li>
 					
-					<li><a href="#M000089">#status</a></li>
+					<li><a href="#M000093">#status</a></li>
 					
-					<li><a href="#M000098">#update</a></li>
+					<li><a href="#M000100">#update</a></li>
 					
-					<li><a href="#M000087">#validate_srcdir</a></li>
+					<li><a href="#M000089">#validate_srcdir</a></li>
 					
 				</ul>
 			</div>
@@ -261,7 +261,27 @@
 The branch this importer is tracking
 </p>
 <p>
-If set, tag has to be nil.
+If set, both commit and tag have to be nil.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="tag-attribute-method" class="method-detail">
+				<a name="tag"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">tag</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The tag we are pointing to. It is a tag name.
+</p>
+<p>
+If set, both branch and commit have to be nil.
 </p>
 				
 				</div>
@@ -278,10 +298,10 @@ If set, tag has to be nil.
 				<div class="method-description">
 				
 				<p>
-The commit we are pointing to. It can be either a commit ID or a tag name.
+The commit we are pointing to. It is a commit ID.
 </p>
 <p>
-If set, branch has to be nil.
+If set, both branch and tag have to be nil.
 </p>
 				
 				</div>
@@ -297,7 +317,7 @@ If set, branch has to be nil.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000082"></a>
+				<a name="M000085"></a>
 
 				<div class="method-heading">
 				
@@ -347,15 +367,16 @@ defaults to &#8216;svn&#8217; and can be configured by doing
             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">gitopts</span>[<span class="ruby-identifier">:branch</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">branch</span>
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;git branch specified with both the option hash and the explicit parameter&quot;</span>
             <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">branch</span> = <span class="ruby-identifier">gitopts</span>[<span class="ruby-identifier">:branch</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">branch</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'master'</span>
+            <span class="ruby-identifier">branch</span> = <span class="ruby-identifier">gitopts</span>[<span class="ruby-identifier">:branch</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">branch</span>
             <span class="ruby-identifier">tag</span>    = <span class="ruby-identifier">gitopts</span>[<span class="ruby-identifier">:tag</span>]
             <span class="ruby-identifier">commit</span> = <span class="ruby-identifier">gitopts</span>[<span class="ruby-identifier">:commit</span>]
 
-            <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">branch</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">commit</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">branch</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">commit</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">tag</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">commit</span>)
+            <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">branch</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">commit</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">branch</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tag</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">tag</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">commit</span>)
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;you can specify only a branch, tag or commit but not two or three at the same time&quot;</span>
             <span class="ruby-keyword kw">end</span>
-            <span class="ruby-ivar">@branch</span> = <span class="ruby-identifier">branch</span>
-            <span class="ruby-ivar">@commit</span> = <span class="ruby-identifier">tag</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">commit</span>
+            <span class="ruby-ivar">@branch</span> = <span class="ruby-identifier">branch</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'master'</span>
+            <span class="ruby-ivar">@tag</span>    = <span class="ruby-identifier">tag</span>
+            <span class="ruby-ivar">@commit</span> = <span class="ruby-identifier">commit</span>
             <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">common</span>)
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -373,7 +394,7 @@ defaults to &#8216;svn&#8217; and can be configured by doing
 
 		
 			<div id="checkout-method" class="method-detail ">
-				<a name="M000100"></a>
+				<a name="M000104"></a>
 
 				<div class="method-heading">
 				
@@ -392,7 +413,7 @@ defaults to &#8216;svn&#8217; and can be configured by doing
 					<div class="method-source-code"
 						id="checkout-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 202</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 212</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">checkout</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-identifier">base_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'..'</span>, <span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>)
             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">base_dir</span>)
@@ -405,9 +426,9 @@ defaults to &#8216;svn&#8217; and can be configured by doing
 
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-comment cmt"># If we are tracking a commit/tag, just check it out</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">commit</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">commit</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tag</span>
                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>),
-                        <span class="ruby-value str">'checkout'</span>, <span class="ruby-identifier">commit</span>)
+                        <span class="ruby-value str">'checkout'</span>, <span class="ruby-identifier">commit</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tag</span>)
                     <span class="ruby-keyword kw">return</span>
                 <span class="ruby-keyword kw">end</span>
 
@@ -430,7 +451,7 @@ defaults to &#8216;svn&#8217; and can be configured by doing
 
 		
 			<div id="fetch-remote-method" class="method-detail ">
-				<a name="M000088"></a>
+				<a name="M000091"></a>
 
 				<div class="method-heading">
 				
@@ -453,11 +474,15 @@ package&#8217;s source directory.
 					<div class="method-source-code"
 						id="fetch-remote-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 78</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 84</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_remote</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>), <span class="ruby-value str">'fetch'</span>, <span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span>)
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">commit</span> <span class="ruby-comment cmt"># we are checking out a specific commit. We just call git fetch</span>
+                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>), <span class="ruby-value str">'fetch'</span>, <span class="ruby-identifier">repository</span>)
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>), <span class="ruby-value str">'fetch'</span>, <span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tag</span>)
+                <span class="ruby-keyword kw">end</span>
                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.git'</span>, <span class="ruby-value str">'FETCH_HEAD'</span>) )
                     <span class="ruby-identifier">fetch_commit</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.git'</span>, <span class="ruby-value str">'FETCH_HEAD'</span>) ).
                         <span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/not-for-merge/</span> }
@@ -476,7 +501,7 @@ package&#8217;s source directory.
 
 		
 			<div id="merge--method" class="method-detail ">
-				<a name="M000086"></a>
+				<a name="M000088"></a>
 
 				<div class="method-heading">
 				
@@ -489,7 +514,7 @@ package&#8217;s source directory.
 				<div class="method-description">
 					
 					<p>
-Set the merge flag. See <a href="Git.html#M000085">merge?</a>
+Set the merge flag. See <a href="Git.html#M000087">merge?</a>
 </p>
 					
 
@@ -497,7 +522,7 @@ Set the merge flag. See <a href="Git.html#M000085">merge?</a>
 					<div class="method-source-code"
 						id="merge--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 65</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 71</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge=</span>(<span class="ruby-identifier">flag</span>); <span class="ruby-ivar">@merge</span> = <span class="ruby-identifier">flag</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -508,7 +533,7 @@ Set the merge flag. See <a href="Git.html#M000085">merge?</a>
 
 		
 			<div id="merge--method" class="method-detail ">
-				<a name="M000085"></a>
+				<a name="M000087"></a>
 
 				<div class="method-heading">
 				
@@ -531,7 +556,7 @@ fast-forward
 					<div class="method-source-code"
 						id="merge--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 62</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 68</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge?</span>; <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@merge</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -542,7 +567,7 @@ fast-forward
 
 		
 			<div id="merge-status-method" class="method-detail ">
-				<a name="M000096"></a>
+				<a name="M000099"></a>
 
 				<div class="method-heading">
 				
@@ -561,7 +586,7 @@ fast-forward
 					<div class="method-source-code"
 						id="merge-status-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 147</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 157</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_status</span>(<span class="ruby-identifier">fetch_commit</span>)
             <span class="ruby-identifier">common_commit</span> = <span class="ruby-node">`git merge-base HEAD #{fetch_commit}`</span>.<span class="ruby-identifier">chomp</span>
             <span class="ruby-identifier">head_commit</span>   = <span class="ruby-node">`git rev-parse #{branch}`</span>.<span class="ruby-identifier">chomp</span>
@@ -591,7 +616,7 @@ fast-forward
 
 		
 			<div id="on-target-branch--method" class="method-detail ">
-				<a name="M000091"></a>
+				<a name="M000095"></a>
 
 				<div class="method-heading">
 				
@@ -613,7 +638,7 @@ directory is the package&#8217;s directory
 					<div class="method-source-code"
 						id="on-target-branch--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 113</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 123</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_target_branch?</span>
             <span class="ruby-identifier">current_branch</span> = <span class="ruby-value">`git symbolic-ref HEAD`</span>.<span class="ruby-identifier">chomp</span>
             <span class="ruby-identifier">current_branch</span> <span class="ruby-operator">==</span> <span class="ruby-node">&quot;refs/heads/#{branch}&quot;</span>
@@ -627,7 +652,7 @@ directory is the package&#8217;s directory
 
 		
 			<div id="status-method" class="method-detail ">
-				<a name="M000089"></a>
+				<a name="M000093"></a>
 
 				<div class="method-heading">
 				
@@ -649,7 +674,7 @@ represents the status of this package w.r.t. the root repository
 					<div class="method-source-code"
 						id="status-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 94</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 104</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">status</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
@@ -675,7 +700,7 @@ represents the status of this package w.r.t. the root repository
 
 		
 			<div id="update-method" class="method-detail ">
-				<a name="M000098"></a>
+				<a name="M000100"></a>
 
 				<div class="method-heading">
 				
@@ -694,7 +719,7 @@ represents the status of this package w.r.t. the root repository
 					<div class="method-source-code"
 						id="update-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 168</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 178</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
@@ -704,8 +729,8 @@ represents the status of this package w.r.t. the root repository
                 <span class="ruby-keyword kw">end</span>
 
                 <span class="ruby-comment cmt"># If we are tracking a commit/tag, just check it out and return</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">commit</span>
-                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>), <span class="ruby-value str">'checkout'</span>, <span class="ruby-identifier">commit</span>)
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">commit</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tag</span>
+                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'git'</span>), <span class="ruby-value str">'checkout'</span>, <span class="ruby-identifier">commit</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tag</span>)
                     <span class="ruby-keyword kw">return</span>
                 <span class="ruby-keyword kw">end</span>
 
@@ -737,7 +762,7 @@ represents the status of this package w.r.t. the root repository
 
 		
 			<div id="validate-srcdir-method" class="method-detail ">
-				<a name="M000087"></a>
+				<a name="M000089"></a>
 
 				<div class="method-heading">
 				
@@ -759,7 +784,7 @@ directory is not a git repository
 					<div class="method-source-code"
 						id="validate-srcdir-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 69</span>
+<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 75</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate_srcdir</span>(<span class="ruby-identifier">package</span>)
             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.git'</span>))
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{Dir.pwd} is not a git repository&quot;</span>

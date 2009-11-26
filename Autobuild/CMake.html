@@ -59,31 +59,35 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000144">::builddir</a></li>
+					<li><a href="#M000145">::builddir</a></li>
 					
-					<li><a href="#M000145">::builddir=</a></li>
+					<li><a href="#M000146">::builddir=</a></li>
 					
-					<li><a href="#M000147">::new</a></li>
+					<li><a href="#M000147">::full_reconfigures?</a></li>
 					
-					<li><a href="#M000164">#build</a></li>
+					<li><a href="#M000150">::new</a></li>
 					
-					<li><a href="#M000162">#configure</a></li>
+					<li><a href="#M000167">#build</a></li>
 					
-					<li><a href="#M000146">#configurestamp</a></li>
+					<li><a href="#M000165">#configure</a></li>
 					
-					<li><a href="#M000148">#define</a></li>
+					<li><a href="#M000149">#configurestamp</a></li>
 					
-					<li><a href="#M000151">#equivalent_option_value?</a></li>
+					<li><a href="#M000151">#define</a></li>
 					
-					<li><a href="#M000153">#import</a></li>
+					<li><a href="#M000155">#equivalent_option_value?</a></li>
 					
-					<li><a href="#M000166">#install</a></li>
+					<li><a href="#M000148">#full_reconfigures?</a></li>
 					
-					<li><a href="#M000149">#install_doc</a></li>
+					<li><a href="#M000157">#import</a></li>
 					
-					<li><a href="#M000155">#prepare</a></li>
+					<li><a href="#M000169">#install</a></li>
 					
-					<li><a href="#M000150">#with_doc</a></li>
+					<li><a href="#M000152">#install_doc</a></li>
+					
+					<li><a href="#M000158">#prepare</a></li>
+					
+					<li><a href="#M000153">#with_doc</a></li>
 					
 				</ul>
 			</div>
@@ -237,6 +241,23 @@
 			<h3 class="section-header">Attributes</h3>
 
 			
+			<div id="full-reconfigures-attribute-method" class="method-detail">
+				<a name="full_reconfigures"></a>
+				
+				<a name="full_reconfigures="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">full_reconfigures</span><span
+						class="attribute-access-type">[W]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
 			<div id="defines-attribute-method" class="method-detail">
 				<a name="defines"></a>
 				
@@ -273,6 +294,29 @@ If true, always run cmake before make during the build
 				</div>
 			</div>
 			
+			<div id="full-reconfigures-attribute-method" class="method-detail">
+				<a name="full_reconfigures"></a>
+				
+				<a name="full_reconfigures="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">full_reconfigures</span><span
+						class="attribute-access-type">[W]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+If true, we always remove the <a href="CMake.html">CMake</a> cache before
+reconfiguring.
+</p>
+<p>
+See <a href="CMake.html#M000147">full_reconfigures?</a> for more details
+</p>
+				
+				</div>
+			</div>
+			
 		</div>
 		
 
@@ -283,7 +327,7 @@ If true, always run cmake before make during the build
 
 		
 			<div id="builddir-method" class="method-detail ">
-				<a name="M000144"></a>
+				<a name="M000145"></a>
 
 				<div class="method-heading">
 				
@@ -313,7 +357,7 @@ If true, always run cmake before make during the build
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000145"></a>
+				<a name="M000146"></a>
 
 				<div class="method-heading">
 				
@@ -346,8 +390,40 @@ If true, always run cmake before make during the build
 			</div>
 
 		
-			<div id="new-method" class="method-detail ">
+			<div id="full-reconfigures--method" class="method-detail ">
 				<a name="M000147"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">full_reconfigures?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="full-reconfigures--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 18</span>
+            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_reconfigures?</span>
+                <span class="ruby-ivar">@full_reconfigures</span>
+            <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000150"></a>
 
 				<div class="method-heading">
 				
@@ -366,7 +442,7 @@ If true, always run cmake before make during the build
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 25</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 49</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
             <span class="ruby-ivar">@defines</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
             <span class="ruby-keyword kw">super</span>
@@ -386,7 +462,7 @@ If true, always run cmake before make during the build
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000164"></a>
+				<a name="M000167"></a>
 
 				<div class="method-heading">
 				
@@ -407,7 +483,7 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 135</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 162</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress_with_value</span> <span class="ruby-node">&quot;building #{name}&quot;</span>
@@ -431,7 +507,7 @@ Do the build in builddir
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000162"></a>
+				<a name="M000165"></a>
 
 				<div class="method-heading">
 				
@@ -452,7 +528,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 115</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 139</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{builddir} already exists but is not a directory&quot;</span>
@@ -467,6 +543,9 @@ Configure the builddir directory before starting make
                 <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">srcdir</span>
                 
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating and configuring build system for #{name}&quot;</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">full_reconfigures?</span>
+                    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span>
+                <span class="ruby-keyword kw">end</span>
                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
                 <span class="ruby-keyword kw">super</span>
             <span class="ruby-keyword kw">end</span>
@@ -480,7 +559,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="configurestamp-method" class="method-detail ">
-				<a name="M000146"></a>
+				<a name="M000149"></a>
 
 				<div class="method-heading">
 				
@@ -499,7 +578,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configurestamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 23</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 47</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configurestamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">builddir</span>, <span class="ruby-value str">&quot;CMakeCache.txt&quot;</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -510,7 +589,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="define-method" class="method-detail ">
-				<a name="M000148"></a>
+				<a name="M000151"></a>
 
 				<div class="method-heading">
 				
@@ -529,7 +608,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="define-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 30</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 54</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
             <span class="ruby-ivar">@defines</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
         <span class="ruby-keyword kw">end</span></pre>
@@ -542,7 +621,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="equivalent-option-value--method" class="method-detail ">
-				<a name="M000151"></a>
+				<a name="M000155"></a>
 
 				<div class="method-heading">
 				
@@ -561,7 +640,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="equivalent-option-value--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 55</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 79</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">equivalent_option_value?</span>(<span class="ruby-identifier">old</span>, <span class="ruby-identifier">new</span>)
             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">new</span>
                 <span class="ruby-keyword kw">true</span>
@@ -583,8 +662,52 @@ Configure the builddir directory before starting make
 			</div>
 
 		
+			<div id="full-reconfigures--method" class="method-detail ">
+				<a name="M000148"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">full_reconfigures?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+If true, we always remove the <a href="CMake.html">CMake</a> cache before
+reconfiguring. This is to workaround the aggressive caching behaviour of <a
+href="CMake.html">CMake</a>, and is set to true by default.
+</p>
+<p>
+See <a href="CMake.html#M000147">CMake.full_reconfigures?</a> and
+CMake.full_reconfigures= for a global setting
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="full-reconfigures--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 39</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_reconfigures?</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@full_reconfigures</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-constant">CMake</span>.<span class="ruby-identifier">full_reconfigures?</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-ivar">@full_reconfigures</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
 			<div id="import-method" class="method-detail ">
-				<a name="M000153"></a>
+				<a name="M000157"></a>
 
 				<div class="method-heading">
 				
@@ -603,7 +726,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 69</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 93</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
             <span class="ruby-keyword kw">super</span>
 
@@ -621,7 +744,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="install-method" class="method-detail ">
-				<a name="M000166"></a>
+				<a name="M000169"></a>
 
 				<div class="method-heading">
 				
@@ -642,7 +765,7 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 151</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 178</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;installing #{name}&quot;</span>
@@ -660,7 +783,7 @@ Install the result in prefix
 
 		
 			<div id="install-doc-method" class="method-detail ">
-				<a name="M000149"></a>
+				<a name="M000152"></a>
 
 				<div class="method-heading">
 				
@@ -679,7 +802,7 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-doc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 34</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 58</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_doc</span>
             <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">builddir</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -692,7 +815,7 @@ Install the result in prefix
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000155"></a>
+				<a name="M000158"></a>
 
 				<div class="method-heading">
 				
@@ -711,7 +834,7 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 78</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 102</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
             <span class="ruby-keyword kw">super</span>
 
@@ -756,7 +879,7 @@ Install the result in prefix
 
 		
 			<div id="with-doc-method" class="method-detail ">
-				<a name="M000150"></a>
+				<a name="M000153"></a>
 
 				<div class="method-heading">
 				
@@ -777,7 +900,7 @@ Declare that the given target can be used to generate documentation
 					<div class="method-source-code"
 						id="with-doc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 39</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 63</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_doc</span>(<span class="ruby-identifier">target</span> = <span class="ruby-value str">'doc'</span>)
             <span class="ruby-identifier">doc_task</span> <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>

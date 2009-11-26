@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: Changes.txt [autobuild-1.4.1 Documentation]</title>
+	<title>File: Changes.txt [autobuild-1.4.3 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -139,7 +139,42 @@
 	</div>
 
 	<div id="documentation">
-		<h2>Version 1.4.0</h2>
+		<h2>Version 1.4.3</h2>
+<ul>
+<li>minor changes in how the shell environment is managed
+
+</li>
+<li>update LD_LIBRARY_PATH when applicable
+
+</li>
+<li>fix parsing of genom &#8216;require&#8217; statements (fix from Matthieu
+Gallien)
+
+</li>
+<li>fix issues with tracking tags and commits (fix from Matthieu Gallien)
+
+</li>
+</ul>
+<h2>Version 1.4.2</h2>
+<ul>
+<li>call subversion with the &#8212;non-interactive option, otherwise the build
+will block indefinitely. Note that git &#8220;questions&#8221; are properly
+passed to the user.
+
+</li>
+<li>don&#8217;t forcefully depend on orogen being available. This fixes
+bootstrapping situations where both orogen and some orogen modules need to
+be built.
+
+</li>
+<li>workaround CMake heavy-caching behaviour. When a reconfiguration is needed,
+delete the CMakeCache.txt file instead of recalling cmake on top of it. It
+should fix most of the problems of CMake related to caching of pkg-config
+files for instance.
+
+</li>
+</ul>
+<h2>Version 1.4.0</h2>
 <ul>
 <li>cmake package handler now displays progress value
 
@@ -382,7 +417,7 @@ inside the imported source tree
 <li>misc fixes w.r.t. handling dependencies
 
 </li>
-<li>added <a href="Autobuild.html#M000040">Autobuild.post_success_message</a>
+<li>added <a href="Autobuild.html#M000046">Autobuild.post_success_message</a>
 
 </li>
 </ul>
@@ -422,7 +457,7 @@ daily use at my work
 <li>put install-stamp files into logdir, to clean up the installation prefix
 
 </li>
-<li>added <a href="Autobuild.html#M000038">Autobuild.post_install</a>: run an
+<li>added <a href="Autobuild.html#M000040">Autobuild.post_install</a>: run an
 external program or call a block after all packages have been successfully
 built
 

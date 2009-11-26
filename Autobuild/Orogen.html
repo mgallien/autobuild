@@ -61,21 +61,21 @@
 					
 					<li><a href="#M000217">::new</a></li>
 					
-					<li><a href="#M000214">::orocos_target</a></li>
+					<li><a href="#M000210">::orocos_target</a></li>
 					
-					<li><a href="#M000216">#corba</a></li>
+					<li><a href="#M000212">#corba</a></li>
 					
 					<li><a href="#M000218">#depends_on</a></li>
 					
-					<li><a href="#M000221">#genstamp</a></li>
+					<li><a href="#M000224">#genstamp</a></li>
 					
 					<li><a href="#M000219">#import</a></li>
 					
-					<li><a href="#M000215">#orocos_target</a></li>
+					<li><a href="#M000211">#orocos_target</a></li>
 					
-					<li><a href="#M000220">#prepare</a></li>
+					<li><a href="#M000223">#prepare</a></li>
 					
-					<li><a href="#M000222">#regen</a></li>
+					<li><a href="#M000225">#regen</a></li>
 					
 				</ul>
 			</div>
@@ -226,7 +226,7 @@ they install in the pkgconfig/ namespace. It means that a
 &#8220;pkgconfig/camera&#8220; virtual package. This is done automatically
 by the <a href="CMake.html">CMake</a> package handler if the source
 contains a camera.pc.in file, but can also be done manually with a call to
-<a href="Package.html#M000055">Package#provides</a>:
+<a href="Package.html#M000056">Package#provides</a>:
 </p>
 <pre>
   pkg.provides &quot;pkgconfig/camera&quot;
@@ -372,7 +372,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="orocos-target-method" class="method-detail ">
-				<a name="M000214"></a>
+				<a name="M000210"></a>
 
 				<div class="method-heading">
 				
@@ -417,7 +417,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="corba-method" class="method-detail ">
-				<a name="M000216"></a>
+				<a name="M000212"></a>
 
 				<div class="method-heading">
 				
@@ -485,7 +485,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="genstamp-method" class="method-detail ">
-				<a name="M000221"></a>
+				<a name="M000224"></a>
 
 				<div class="method-heading">
 				
@@ -504,7 +504,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="genstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 223</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 224</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.orogen'</span>, <span class="ruby-value str">'orogen-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -554,7 +554,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="orocos-target-method" class="method-detail ">
-				<a name="M000215"></a>
+				<a name="M000211"></a>
 
 				<div class="method-heading">
 				
@@ -590,7 +590,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000220"></a>
+				<a name="M000223"></a>
 
 				<div class="method-heading">
 				
@@ -633,13 +633,14 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
             <span class="ruby-comment cmt"># Find out where orogen is, and make sure the configurestamp depend</span>
             <span class="ruby-comment cmt"># on it. Ignore if orogen is too old to have a --base-dir option</span>
-            <span class="ruby-identifier">orogen_root</span> = <span class="ruby-value">`orogen --base-dir`</span>.<span class="ruby-identifier">chomp</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">orogen_root</span>.<span class="ruby-identifier">empty?</span>
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;cannot find the orogen tool&quot;</span>
+            <span class="ruby-identifier">orogen_root</span> = <span class="ruby-value">`orogen --base-dir 2&gt;&amp;1`</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">orogen_root</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">orogen_root</span> = <span class="ruby-identifier">orogen_root</span>.<span class="ruby-identifier">split</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chomp</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">orogen_root</span>)
+                    <span class="ruby-identifier">orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_root</span>, <span class="ruby-value str">'orogen'</span>)
+                    <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">orogen_root</span>)
+                <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_root</span>, <span class="ruby-value str">'orogen'</span>)
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">orogen_root</span>)
-
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genstamp</span>
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">orogen_file</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-identifier">regen</span>
@@ -654,7 +655,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="regen-method" class="method-detail ">
-				<a name="M000222"></a>
+				<a name="M000225"></a>
 
 				<div class="method-heading">
 				
@@ -673,7 +674,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="regen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 225</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 226</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
             <span class="ruby-identifier">cmdline</span> = [<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'orogen'</span>)]
             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'--corba'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">corba</span>
