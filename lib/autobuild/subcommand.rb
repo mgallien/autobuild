@@ -63,7 +63,7 @@ module Autobuild
             # Just count the numer of processor: \d lines
             @processor_count = File.readlines('/proc/cpuinfo').
                 find_all { |l| l =~ /^processor\s+:\s+\d+$/ }.
-                count
+                size
         else
             # Hug... What kind of system is it ?
             STDERR.puts "INFO: cannot autodetect the number of CPUs on this sytem"
