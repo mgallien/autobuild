@@ -58,11 +58,11 @@
 						<li><a href="./lib/autobuild/import/cvs_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/import/cvs.rb">lib/autobuild/import/cvs.rb</a></li>
 					
-						<li><a href="./lib/autobuild/timestamps_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/autobuild/timestamps.rb">lib/autobuild/timestamps.rb</a></li>
-					
 						<li><a href="./lib/autobuild/reporting_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/reporting.rb">lib/autobuild/reporting.rb</a></li>
+					
+						<li><a href="./lib/autobuild/timestamps_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/timestamps.rb">lib/autobuild/timestamps.rb</a></li>
 					
 						<li><a href="./lib/autobuild/subcommand_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/subcommand.rb">lib/autobuild/subcommand.rb</a></li>
@@ -173,55 +173,55 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000062">::apply</a></li>
+					<li><a href="#M000058">::apply</a></li>
 					
-					<li><a href="#M000044">::apply_post_install</a></li>
+					<li><a href="#M000041">::apply_post_install</a></li>
 					
-					<li><a href="#M000133">::autodetect_processor_count</a></li>
+					<li><a href="#M000138">::autodetect_processor_count</a></li>
 					
-					<li><a href="#M000154">::autotools</a></li>
+					<li><a href="#M000157">::autotools</a></li>
 					
-					<li><a href="#M000049">::clean_log!</a></li>
+					<li><a href="#M000048">::clean_log!</a></li>
 					
-					<li><a href="#M000144">::cmake</a></li>
+					<li><a href="#M000145">::cmake</a></li>
 					
 					<li><a href="#M000051">::commandline</a></li>
 					
-					<li><a href="#M000107">::cvs</a></li>
+					<li><a href="#M000108">::cvs</a></li>
 					
-					<li><a href="#M000084">::darcs</a></li>
+					<li><a href="#M000085">::darcs</a></li>
 					
-					<li><a href="#M000213">::dummy</a></li>
+					<li><a href="#M000207">::dummy</a></li>
 					
-					<li><a href="#M000018">::env_add</a></li>
+					<li><a href="#M000023">::env_add</a></li>
 					
-					<li><a href="#M000024">::env_add_path</a></li>
+					<li><a href="#M000026">::env_add_path</a></li>
 					
-					<li><a href="#M000014">::env_clear</a></li>
+					<li><a href="#M000017">::env_clear</a></li>
 					
-					<li><a href="#M000017">::env_set</a></li>
+					<li><a href="#M000022">::env_set</a></li>
 					
-					<li><a href="#M000038">::full_build?</a></li>
+					<li><a href="#M000039">::full_build?</a></li>
 					
-					<li><a href="#M000173">::genom</a></li>
+					<li><a href="#M000174">::genom</a></li>
 					
-					<li><a href="#M000121">::get_stamp</a></li>
+					<li><a href="#M000131">::get_stamp</a></li>
 					
-					<li><a href="#M000106">::git</a></li>
+					<li><a href="#M000103">::git</a></li>
 					
-					<li><a href="#M000137">::import</a></li>
+					<li><a href="#M000135">::import</a></li>
 					
-					<li><a href="#M000143">::installed_pkgconfig</a></li>
+					<li><a href="#M000144">::installed_pkgconfig</a></li>
 					
 					<li><a href="#M000047">::logdir</a></li>
 					
-					<li><a href="#M000187">::orogen</a></li>
+					<li><a href="#M000188">::orogen</a></li>
 					
-					<li><a href="#M000061">::package_set</a></li>
+					<li><a href="#M000063">::package_set</a></li>
 					
-					<li><a href="#M000132">::parallel_build_level</a></li>
+					<li><a href="#M000134">::parallel_build_level</a></li>
 					
-					<li><a href="#M000027">::pathvar</a></li>
+					<li><a href="#M000030">::pathvar</a></li>
 					
 					<li><a href="#M000040">::post_install</a></li>
 					
@@ -233,19 +233,19 @@
 					
 					<li><a href="#M000110">::progress_with_value</a></li>
 					
-					<li><a href="#M000118">::source_tree</a></li>
+					<li><a href="#M000130">::source_tree</a></li>
 					
-					<li><a href="#M000094">::svn</a></li>
+					<li><a href="#M000097">::svn</a></li>
 					
-					<li><a href="#M000080">::tar</a></li>
+					<li><a href="#M000081">::tar</a></li>
 					
-					<li><a href="#M000050">::tool</a></li>
+					<li><a href="#M000049">::tool</a></li>
 					
-					<li><a href="#M000122">::touch_stamp</a></li>
+					<li><a href="#M000132">::touch_stamp</a></li>
 					
-					<li><a href="#M000108">::tree_timestamp</a></li>
+					<li><a href="#M000123">::tree_timestamp</a></li>
 					
-					<li><a href="#M000028">::update_environment</a></li>
+					<li><a href="#M000031">::update_environment</a></li>
 					
 				</ul>
 			</div>
@@ -617,7 +617,7 @@ machine.
 Sets the level of parallelism during the build
 </p>
 <p>
-See <a href="Autobuild.html#M000132">parallel_build_level</a> for detailed
+See <a href="Autobuild.html#M000134">parallel_build_level</a> for detailed
 information
 </p>
 				
@@ -634,7 +634,7 @@ information
 
 		
 			<div id="apply-method" class="method-detail ">
-				<a name="M000062"></a>
+				<a name="M000058"></a>
 
 				<div class="method-heading">
 				
@@ -707,7 +707,7 @@ information
 
 		
 			<div id="apply-post-install-method" class="method-detail ">
-				<a name="M000044"></a>
+				<a name="M000041"></a>
 
 				<div class="method-heading">
 				
@@ -749,7 +749,7 @@ information
 
 		
 			<div id="autodetect-processor-count-method" class="method-detail ">
-				<a name="M000133"></a>
+				<a name="M000138"></a>
 
 				<div class="method-heading">
 				
@@ -801,7 +801,7 @@ Returns the number of CPUs present on this system
 
 		
 			<div id="autotools-method" class="method-detail ">
-				<a name="M000154"></a>
+				<a name="M000157"></a>
 
 				<div class="method-heading">
 				
@@ -820,7 +820,7 @@ Returns the number of CPUs present on this system
 					<div class="method-source-code"
 						id="autotools-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 9</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 10</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">autotools</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
         <span class="ruby-constant">Autotools</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
     <span class="ruby-keyword kw">end</span></pre>
@@ -833,7 +833,7 @@ Returns the number of CPUs present on this system
 
 		
 			<div id="clean-log--method" class="method-detail ">
-				<a name="M000049"></a>
+				<a name="M000048"></a>
 
 				<div class="method-heading">
 				
@@ -869,7 +869,7 @@ Removes all log files
 
 		
 			<div id="cmake-method" class="method-detail ">
-				<a name="M000144"></a>
+				<a name="M000145"></a>
 
 				<div class="method-heading">
 				
@@ -997,7 +997,7 @@ elements
 
 		
 			<div id="cvs-method" class="method-detail ">
-				<a name="M000107"></a>
+				<a name="M000108"></a>
 
 				<div class="method-heading">
 				
@@ -1013,7 +1013,7 @@ elements
 Returns the CVS importer which will get the <tt>name</tt> module in
 repository <tt>repo</tt>. The allowed values in <tt>options</tt> are
 described in <a
-href="Autobuild/CVSImporter.html#M000101">CVSImporter.new</a>.
+href="Autobuild/CVSImporter.html#M000104">CVSImporter.new</a>.
 </p>
 					
 
@@ -1034,7 +1034,7 @@ href="Autobuild/CVSImporter.html#M000101">CVSImporter.new</a>.
 
 		
 			<div id="darcs-method" class="method-detail ">
-				<a name="M000084"></a>
+				<a name="M000085"></a>
 
 				<div class="method-heading">
 				
@@ -1050,7 +1050,7 @@ href="Autobuild/CVSImporter.html#M000101">CVSImporter.new</a>.
 Returns the Darcs importer which will get the source from the Darcs
 repository <tt>source</tt>. The allowed values in <tt>options</tt> are
 described in <a
-href="Autobuild/DarcsImporter.html#M000081">DarcsImporter.new</a>.
+href="Autobuild/DarcsImporter.html#M000082">DarcsImporter.new</a>.
 </p>
 					
 
@@ -1071,7 +1071,7 @@ href="Autobuild/DarcsImporter.html#M000081">DarcsImporter.new</a>.
 
 		
 			<div id="dummy-method" class="method-detail ">
-				<a name="M000213"></a>
+				<a name="M000207"></a>
 
 				<div class="method-heading">
 				
@@ -1103,7 +1103,7 @@ href="Autobuild/DarcsImporter.html#M000081">DarcsImporter.new</a>.
 
 		
 			<div id="env-add-method" class="method-detail ">
-				<a name="M000018"></a>
+				<a name="M000023"></a>
 
 				<div class="method-heading">
 				
@@ -1159,7 +1159,7 @@ Adds a new value to an environment variable
 
 		
 			<div id="env-add-path-method" class="method-detail ">
-				<a name="M000024"></a>
+				<a name="M000026"></a>
 
 				<div class="method-heading">
 				
@@ -1202,7 +1202,7 @@ Adds a new value to an environment variable
 
 		
 			<div id="env-clear-method" class="method-detail ">
-				<a name="M000014"></a>
+				<a name="M000017"></a>
 
 				<div class="method-heading">
 				
@@ -1235,7 +1235,7 @@ Adds a new value to an environment variable
 
 		
 			<div id="env-set-method" class="method-detail ">
-				<a name="M000017"></a>
+				<a name="M000022"></a>
 
 				<div class="method-heading">
 				
@@ -1270,7 +1270,7 @@ Set a new environment variable
 
 		
 			<div id="full-build--method" class="method-detail ">
-				<a name="M000038"></a>
+				<a name="M000039"></a>
 
 				<div class="method-heading">
 				
@@ -1304,7 +1304,7 @@ True if we build and if the build is applied on all packages
 
 		
 			<div id="genom-method" class="method-detail ">
-				<a name="M000173"></a>
+				<a name="M000174"></a>
 
 				<div class="method-heading">
 				
@@ -1336,7 +1336,7 @@ True if we build and if the build is applied on all packages
 
 		
 			<div id="get-stamp-method" class="method-detail ">
-				<a name="M000121"></a>
+				<a name="M000131"></a>
 
 				<div class="method-heading">
 				
@@ -1369,7 +1369,7 @@ True if we build and if the build is applied on all packages
 
 		
 			<div id="git-method" class="method-detail ">
-				<a name="M000106"></a>
+				<a name="M000103"></a>
 
 				<div class="method-heading">
 				
@@ -1384,7 +1384,7 @@ True if we build and if the build is applied on all packages
 					<p>
 Creates a git importer which gets the source for the given repository and
 branch URL <tt>source</tt>. The allowed values in <tt>options</tt> are
-described in <a href="Autobuild/SVN.html#M000086">SVN.new</a>.
+described in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 </p>
 					
 
@@ -1405,7 +1405,7 @@ described in <a href="Autobuild/SVN.html#M000086">SVN.new</a>.
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000137"></a>
+				<a name="M000135"></a>
 
 				<div class="method-heading">
 				
@@ -1437,7 +1437,7 @@ described in <a href="Autobuild/SVN.html#M000086">SVN.new</a>.
 
 		
 			<div id="installed-pkgconfig-method" class="method-detail ">
-				<a name="M000143"></a>
+				<a name="M000144"></a>
 
 				<div class="method-heading">
 				
@@ -1501,7 +1501,7 @@ The directory in which logs are saved
 
 		
 			<div id="orogen-method" class="method-detail ">
-				<a name="M000187"></a>
+				<a name="M000188"></a>
 
 				<div class="method-heading">
 				
@@ -1533,7 +1533,7 @@ The directory in which logs are saved
 
 		
 			<div id="package-set-method" class="method-detail ">
-				<a name="M000061"></a>
+				<a name="M000063"></a>
 
 				<div class="method-heading">
 				
@@ -1552,7 +1552,7 @@ The directory in which logs are saved
 					<div class="method-source-code"
 						id="package-set-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 330</span>
+<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 333</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">package_set</span>(<span class="ruby-identifier">spec</span>)
         <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">packages</span><span class="ruby-operator">|</span>
             <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">TARGETS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target</span><span class="ruby-operator">|</span>
@@ -1569,7 +1569,7 @@ The directory in which logs are saved
 
 		
 			<div id="parallel-build-level-method" class="method-detail ">
-				<a name="M000132"></a>
+				<a name="M000134"></a>
 
 				<div class="method-heading">
 				
@@ -1585,7 +1585,7 @@ The directory in which logs are saved
 Returns the number of processes that can run in parallel during the build.
 This is a system-wide value that can be overriden in a per-package fashion
 by using <a
-href="Autobuild/Package.html#M000060">Package#parallel_build_level</a>.
+href="Autobuild/Package.html#M000062">Package#parallel_build_level</a>.
 </p>
 <p>
 If not set, defaults to the number of CPUs on the system
@@ -1620,7 +1620,7 @@ See also parallel_build_level=
 
 		
 			<div id="pathvar-method" class="method-detail ">
-				<a name="M000027"></a>
+				<a name="M000030"></a>
 
 				<div class="method-heading">
 				
@@ -1633,7 +1633,7 @@ See also parallel_build_level=
 				<div class="method-description">
 					
 					<p>
-DEPRECATED: use <a href="Autobuild.html#M000024">env_add_path</a> instead
+DEPRECATED: use <a href="Autobuild.html#M000026">env_add_path</a> instead
 </p>
 					
 
@@ -1849,7 +1849,7 @@ string or a block, in which case the block must return the message string.
 
 		
 			<div id="source-tree-method" class="method-detail ">
-				<a name="M000118"></a>
+				<a name="M000130"></a>
 
 				<div class="method-heading">
 				
@@ -1883,7 +1883,7 @@ string or a block, in which case the block must return the message string.
 
 		
 			<div id="svn-method" class="method-detail ">
-				<a name="M000094"></a>
+				<a name="M000097"></a>
 
 				<div class="method-heading">
 				
@@ -1898,7 +1898,7 @@ string or a block, in which case the block must return the message string.
 					<p>
 Creates a subversion importer which import the source for the Subversion
 URL <tt>source</tt>. The allowed values in <tt>options</tt> are described
-in <a href="Autobuild/SVN.html#M000086">SVN.new</a>.
+in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 </p>
 					
 
@@ -1919,7 +1919,7 @@ in <a href="Autobuild/SVN.html#M000086">SVN.new</a>.
 
 		
 			<div id="tar-method" class="method-detail ">
-				<a name="M000080"></a>
+				<a name="M000081"></a>
 
 				<div class="method-heading">
 				
@@ -1934,7 +1934,7 @@ in <a href="Autobuild/SVN.html#M000086">SVN.new</a>.
 					<p>
 Creates an importer which downloads a tarball from <tt>source</tt> and
 unpacks it. The allowed values in <tt>options</tt> are described in <a
-href="Autobuild/TarImporter.html#M000077">TarImporter.new</a>.
+href="Autobuild/TarImporter.html#M000078">TarImporter.new</a>.
 </p>
 					
 
@@ -1955,7 +1955,7 @@ href="Autobuild/TarImporter.html#M000077">TarImporter.new</a>.
 
 		
 			<div id="tool-method" class="method-detail ">
-				<a name="M000050"></a>
+				<a name="M000049"></a>
 
 				<div class="method-heading">
 				
@@ -2000,7 +2000,7 @@ href="Autobuild.html#programs">Autobuild.programs</a> by doing
 
 		
 			<div id="touch-stamp-method" class="method-detail ">
-				<a name="M000122"></a>
+				<a name="M000132"></a>
 
 				<div class="method-heading">
 				
@@ -2038,7 +2038,7 @@ href="Autobuild.html#programs">Autobuild.programs</a> by doing
 
 		
 			<div id="tree-timestamp-method" class="method-detail ">
-				<a name="M000108"></a>
+				<a name="M000123"></a>
 
 				<div class="method-heading">
 				
@@ -2096,7 +2096,7 @@ href="Autobuild.html#programs">Autobuild.programs</a> by doing
 
 		
 			<div id="update-environment-method" class="method-detail ">
-				<a name="M000028"></a>
+				<a name="M000031"></a>
 
 				<div class="method-heading">
 				

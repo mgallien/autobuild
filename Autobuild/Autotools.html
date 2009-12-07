@@ -59,35 +59,35 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000156">::builddir=</a></li>
+					<li><a href="#M000159">::builddir=</a></li>
 					
-					<li><a href="#M000162">::new</a></li>
+					<li><a href="#M000164">::new</a></li>
 					
-					<li><a href="#M000179">#build</a></li>
+					<li><a href="#M000182">#build</a></li>
 					
-					<li><a href="#M000160">#builddir</a></li>
+					<li><a href="#M000161">#builddir</a></li>
 					
-					<li><a href="#M000159">#builddir=</a></li>
+					<li><a href="#M000160">#builddir=</a></li>
 					
-					<li><a href="#M000161">#buildstamp</a></li>
+					<li><a href="#M000163">#buildstamp</a></li>
 					
-					<li><a href="#M000175">#configure</a></li>
+					<li><a href="#M000180">#configure</a></li>
 					
-					<li><a href="#M000168">#depends_on</a></li>
+					<li><a href="#M000170">#depends_on</a></li>
 					
-					<li><a href="#M000170">#ensure_dependencies_installed</a></li>
+					<li><a href="#M000171">#ensure_dependencies_installed</a></li>
 					
-					<li><a href="#M000182">#install</a></li>
+					<li><a href="#M000184">#install</a></li>
 					
-					<li><a href="#M000163">#install_doc</a></li>
+					<li><a href="#M000165">#install_doc</a></li>
 					
-					<li><a href="#M000171">#prepare</a></li>
+					<li><a href="#M000172">#prepare</a></li>
 					
-					<li><a href="#M000172">#regen</a></li>
+					<li><a href="#M000173">#regen</a></li>
 					
-					<li><a href="#M000166">#use</a></li>
+					<li><a href="#M000168">#use</a></li>
 					
-					<li><a href="#M000164">#with_doc</a></li>
+					<li><a href="#M000166">#with_doc</a></li>
 					
 				</ul>
 			</div>
@@ -228,7 +228,7 @@ disabled by default, aclocal, autoconf and automake use are autodetected.
 </p>
 <p>
 To override this default behaviour on a per-package basis, use <a
-href="Autotools.html#M000166">Autotools#use</a>
+href="Autotools.html#M000168">Autotools#use</a>
 </p>
 
 		</div>
@@ -301,7 +301,7 @@ href="Autotools.html#M000166">Autotools#use</a>
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000156"></a>
+				<a name="M000159"></a>
 
 				<div class="method-heading">
 				
@@ -320,7 +320,7 @@ href="Autotools.html#M000166">Autotools#use</a>
 					<div class="method-source-code"
 						id="builddir--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 28</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 29</span>
             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-nil and non-empty&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">new</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>)
@@ -335,7 +335,7 @@ href="Autotools.html#M000166">Autotools#use</a>
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000162"></a>
+				<a name="M000164"></a>
 
 				<div class="method-heading">
 				
@@ -354,7 +354,7 @@ href="Autotools.html#M000166">Autotools#use</a>
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 49</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 50</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
             <span class="ruby-ivar">@using</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
             <span class="ruby-ivar">@configureflags</span> = []
@@ -376,7 +376,7 @@ href="Autotools.html#M000166">Autotools#use</a>
 
 		
 			<div id="builddir-method" class="method-detail ">
-				<a name="M000160"></a>
+				<a name="M000161"></a>
 
 				<div class="method-heading">
 				
@@ -397,7 +397,7 @@ Returns the absolute builddir
 					<div class="method-source-code"
 						id="builddir-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 42</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 43</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@builddir</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Autotools</span>.<span class="ruby-identifier">builddir</span>, <span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -408,7 +408,7 @@ Returns the absolute builddir
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000159"></a>
+				<a name="M000160"></a>
 
 				<div class="method-heading">
 				
@@ -427,7 +427,7 @@ Returns the absolute builddir
 					<div class="method-source-code"
 						id="builddir--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 36</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 37</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-empty&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>
@@ -442,7 +442,7 @@ Returns the absolute builddir
 
 		
 			<div id="buildstamp-method" class="method-detail ">
-				<a name="M000161"></a>
+				<a name="M000163"></a>
 
 				<div class="method-heading">
 				
@@ -464,7 +464,7 @@ has been successfully built for the last time. The path is absolute
 					<div class="method-source-code"
 						id="buildstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 47</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 48</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">buildstamp</span>; <span class="ruby-node">&quot;#{builddir}/#{STAMPFILE}&quot;</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -475,7 +475,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="depends-on-method" class="method-detail ">
-				<a name="M000168"></a>
+				<a name="M000170"></a>
 
 				<div class="method-heading">
 				
@@ -494,7 +494,7 @@ has been successfully built for the last time. The path is absolute
 					<div class="method-source-code"
 						id="depends-on-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 109</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 110</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-keyword kw">super</span>
             <span class="ruby-identifier">stamps</span> = <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>].<span class="ruby-identifier">installstamp</span> }
@@ -509,7 +509,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="ensure-dependencies-installed-method" class="method-detail ">
-				<a name="M000170"></a>
+				<a name="M000171"></a>
 
 				<div class="method-heading">
 				
@@ -528,7 +528,7 @@ has been successfully built for the last time. The path is absolute
 					<div class="method-source-code"
 						id="ensure-dependencies-installed-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 115</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 116</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ensure_dependencies_installed</span>
             <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
                 <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg</span>].<span class="ruby-identifier">installstamp</span>].<span class="ruby-identifier">invoke</span>
@@ -543,7 +543,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="install-doc-method" class="method-detail ">
-				<a name="M000163"></a>
+				<a name="M000165"></a>
 
 				<div class="method-heading">
 				
@@ -562,7 +562,7 @@ has been successfully built for the last time. The path is absolute
 					<div class="method-source-code"
 						id="install-doc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 56</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 57</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_doc</span>(<span class="ruby-identifier">relative_to</span> = <span class="ruby-identifier">builddir</span>)
             <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">relative_to</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -575,7 +575,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000171"></a>
+				<a name="M000172"></a>
 
 				<div class="method-heading">
 				
@@ -594,7 +594,7 @@ has been successfully built for the last time. The path is absolute
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 121</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 122</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
             <span class="ruby-keyword kw">super</span>
 
@@ -615,7 +615,7 @@ has been successfully built for the last time. The path is absolute
                 <span class="ruby-identifier">old_opt</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">find</span>   { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">testflags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>) }
                 <span class="ruby-identifier">new_opt</span> = <span class="ruby-identifier">testflags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>) }
                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_opt</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new_opt</span>
-                    <span class="ruby-constant">File</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">config_status</span> <span class="ruby-comment cmt"># to force reconfiguration</span>
+                    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">config_status</span> <span class="ruby-comment cmt"># to force reconfiguration</span>
                 <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
 
@@ -648,7 +648,7 @@ has been successfully built for the last time. The path is absolute
 
 		
 			<div id="use-method" class="method-detail ">
-				<a name="M000166"></a>
+				<a name="M000168"></a>
 
 				<div class="method-heading">
 				
@@ -723,7 +723,7 @@ For instance, for automake
 					<div class="method-source-code"
 						id="use-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 94</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 95</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">use</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">programs</span>)
             <span class="ruby-identifier">programs</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">programs</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">programs</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
@@ -747,7 +747,7 @@ For instance, for automake
 
 		
 			<div id="with-doc-method" class="method-detail ">
-				<a name="M000164"></a>
+				<a name="M000166"></a>
 
 				<div class="method-heading">
 				
@@ -768,12 +768,12 @@ Declare that the given target can be used to generate documentation
 					<div class="method-source-code"
 						id="with-doc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 61</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 62</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_doc</span>(<span class="ruby-identifier">target</span> = <span class="ruby-value str">'doc'</span>)
             <span class="ruby-identifier">doc_task</span> <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                     <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating documentation for #{name}&quot;</span>
-                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'doc'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-identifier">target</span>)
+                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'doc'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-identifier">target</span>)
                     <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
                 <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
@@ -793,7 +793,7 @@ Declare that the given target can be used to generate documentation
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000179"></a>
+				<a name="M000182"></a>
 
 				<div class="method-heading">
 				
@@ -814,13 +814,13 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 232</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 233</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
-            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) {
+            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;building #{name}&quot;</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-value str">'./config.status'</span>)
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>)
-            }
+                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-value str">'./config.status'</span>)
+                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>)
+            <span class="ruby-keyword kw">end</span>
             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">buildstamp</span>)
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -832,7 +832,7 @@ Do the build in builddir
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000175"></a>
+				<a name="M000180"></a>
 
 				<div class="method-heading">
 				
@@ -853,7 +853,7 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 216</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 217</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{builddir} already exists but is not a directory&quot;</span>
@@ -865,7 +865,7 @@ Configure the builddir directory before starting make
                 <span class="ruby-identifier">command</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Array</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">configureflags</span>]
                 
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;configuring build system for #{name}&quot;</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
+                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
             }
         <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -877,7 +877,7 @@ Configure the builddir directory before starting make
 
 		
 			<div id="install-method" class="method-detail ">
-				<a name="M000182"></a>
+				<a name="M000184"></a>
 
 				<div class="method-heading">
 				
@@ -898,12 +898,12 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 242</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 243</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
-            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) {
+            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;installing #{name}&quot;</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'install'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-value str">'install'</span>)
-            }
+                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'install'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-value str">'install'</span>)
+            <span class="ruby-keyword kw">end</span>
             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">installstamp</span>)
             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">update_environment</span>(<span class="ruby-identifier">prefix</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -916,7 +916,7 @@ Install the result in prefix
 
 		
 			<div id="regen-method" class="method-detail ">
-				<a name="M000172"></a>
+				<a name="M000173"></a>
 
 				<div class="method-heading">
 				
@@ -937,7 +937,7 @@ Adds a target to rebuild the autotools environment
 					<div class="method-source-code"
 						id="regen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 168</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 169</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>(<span class="ruby-identifier">confsource</span> = <span class="ruby-keyword kw">nil</span>)
             <span class="ruby-identifier">conffile</span> = <span class="ruby-node">&quot;#{srcdir}/configure&quot;</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">confsource</span>
@@ -949,14 +949,14 @@ Adds a target to rebuild the autotools environment
             <span class="ruby-keyword kw">end</span>
 
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) {
+                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-identifier">:autogen</span>].<span class="ruby-identifier">nil?</span>
                         <span class="ruby-identifier">using</span>[<span class="ruby-identifier">:autogen</span>] = <span class="ruby-node">%w{autogen autogen.sh}</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">f</span>) }
                     <span class="ruby-keyword kw">end</span>
 
                     <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating build system for #{name}&quot;</span>
                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-identifier">:autogen</span>]
-                        <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">using</span>[<span class="ruby-identifier">:autogen</span>]))
+                        <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">using</span>[<span class="ruby-identifier">:autogen</span>]))
                     <span class="ruby-keyword kw">else</span>
                         <span class="ruby-comment cmt"># Autodetect autoconf/aclocal/automake</span>
                         <span class="ruby-comment cmt">#</span>
@@ -975,11 +975,11 @@ Adds a target to rebuild the autotools environment
                                                <span class="ruby-keyword kw">else</span>; <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">tool</span>)
                                                <span class="ruby-keyword kw">end</span>
 
-                                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-identifier">tool_program</span>)
+                                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-identifier">tool_program</span>)
                             <span class="ruby-keyword kw">end</span>
                         <span class="ruby-keyword kw">end</span>
                     <span class="ruby-keyword kw">end</span>
-                }
+                <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
 
             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">conffile</span>

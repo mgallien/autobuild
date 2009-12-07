@@ -68,21 +68,21 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000064">::new</a></li>
+					<li><a href="#M000065">::new</a></li>
 					
-					<li><a href="#M000071">#apply</a></li>
+					<li><a href="#M000072">#apply</a></li>
 					
-					<li><a href="#M000070">#call_patch</a></li>
+					<li><a href="#M000071">#call_patch</a></li>
 					
-					<li><a href="#M000067">#import</a></li>
+					<li><a href="#M000068">#import</a></li>
 					
-					<li><a href="#M000073">#patch</a></li>
+					<li><a href="#M000075">#patch</a></li>
 					
-					<li><a href="#M000066">#patches</a></li>
+					<li><a href="#M000067">#patches</a></li>
 					
-					<li><a href="#M000069">#patchlist</a></li>
+					<li><a href="#M000070">#patchlist</a></li>
 					
-					<li><a href="#M000072">#unapply</a></li>
+					<li><a href="#M000074">#unapply</a></li>
 					
 				</ul>
 			</div>
@@ -233,7 +233,7 @@ apply after the import can be given in the <tt>:patches</tt> option.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000064"></a>
+				<a name="M000065"></a>
 
 				<div class="method-heading">
 				
@@ -280,7 +280,7 @@ More options are specific to each importer type.
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000067"></a>
+				<a name="M000068"></a>
 
 				<div class="method-heading">
 				
@@ -338,7 +338,7 @@ Performs the import of <tt>package</tt>
 
 		
 			<div id="patches-method" class="method-detail ">
-				<a name="M000066"></a>
+				<a name="M000067"></a>
 
 				<div class="method-heading">
 				
@@ -376,7 +376,7 @@ Performs the import of <tt>package</tt>
 
 		
 			<div id="apply-method" class="method-detail ">
-				<a name="M000071"></a>
+				<a name="M000072"></a>
 
 				<div class="method-heading">
 				
@@ -406,7 +406,7 @@ Performs the import of <tt>package</tt>
 
 		
 			<div id="call-patch-method" class="method-detail ">
-				<a name="M000070"></a>
+				<a name="M000071"></a>
 
 				<div class="method-heading">
 				
@@ -428,9 +428,9 @@ Performs the import of <tt>package</tt>
 <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 87</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">reverse</span>, <span class="ruby-identifier">file</span>)
         <span class="ruby-identifier">patch</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'patch'</span>)
-        <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) {
-            <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:patch</span>, <span class="ruby-identifier">patch</span>, <span class="ruby-value str">'-p0'</span>, (<span class="ruby-identifier">reverse</span> <span class="ruby-value">? </span><span class="ruby-value str">'-R'</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>), <span class="ruby-node">&quot;&lt;#{file}&quot;</span>)
-        }
+        <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
+            <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">:patch</span>, <span class="ruby-identifier">patch</span>, <span class="ruby-value str">'-p0'</span>, (<span class="ruby-identifier">reverse</span> <span class="ruby-value">? </span><span class="ruby-value str">'-R'</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>), <span class="ruby-node">&quot;&lt;#{file}&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -441,7 +441,7 @@ Performs the import of <tt>package</tt>
 
 		
 			<div id="patch-method" class="method-detail ">
-				<a name="M000073"></a>
+				<a name="M000075"></a>
 
 				<div class="method-heading">
 				
@@ -501,7 +501,7 @@ Performs the import of <tt>package</tt>
 
 		
 			<div id="patchlist-method" class="method-detail ">
-				<a name="M000069"></a>
+				<a name="M000070"></a>
 
 				<div class="method-heading">
 				
@@ -536,7 +536,7 @@ been called)
 
 		
 			<div id="unapply-method" class="method-detail ">
-				<a name="M000072"></a>
+				<a name="M000074"></a>
 
 				<div class="method-heading">
 				

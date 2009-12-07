@@ -61,7 +61,7 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000136">::run</a></li>
+					<li><a href="#M000141">::run</a></li>
 					
 				</ul>
 			</div>
@@ -224,7 +224,7 @@
 
 		
 			<div id="run-method" class="method-detail ">
-				<a name="M000136"></a>
+				<a name="M000141"></a>
 
 				<div class="method-heading">
 				
@@ -251,14 +251,22 @@
         <span class="ruby-identifier">command</span>.<span class="ruby-identifier">reject!</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">empty?</span>) }
         <span class="ruby-identifier">command</span>.<span class="ruby-identifier">collect!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span> }
 
-        <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span>)
-        <span class="ruby-identifier">logname</span> = <span class="ruby-node">&quot;#{Autobuild.logdir}/#{target}-#{phase}.log&quot;</span>
+        <span class="ruby-identifier">target_name</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:name</span>)
+                          <span class="ruby-identifier">target</span>.<span class="ruby-identifier">name</span>
+                      <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">to_str</span>
+                      <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">logdir</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:logdir</span>)
+                     <span class="ruby-identifier">target</span>.<span class="ruby-identifier">logdir</span>
+                 <span class="ruby-keyword kw">else</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span>
+                 <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">logname</span> = <span class="ruby-node">&quot;#{logdir}/#{target_name}-#{phase}.log&quot;</span>
         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">logname</span>))
             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">logname</span>)
         <span class="ruby-keyword kw">end</span>
 
         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
-            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{target}: running #{command.join(&quot; &quot;)}\n    (output goes to #{logname})&quot;</span>
+            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{target_name}: running #{command.join(&quot; &quot;)}\n    (output goes to #{logname})&quot;</span>
         <span class="ruby-keyword kw">end</span>
 
         <span class="ruby-identifier">input_streams</span> = <span class="ruby-identifier">command</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">$1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">o</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\&lt;(.+)/</span> }.<span class="ruby-identifier">compact</span>
@@ -367,12 +375,12 @@
             <span class="ruby-identifier">childstatus</span>
         <span class="ruby-keyword kw">end</span>
 
-        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">exitstatus</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">status</span>.<span class="ruby-identifier">exitstatus</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">exitstatus</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
             <span class="ruby-identifier">raise</span> <span class="ruby-constant">Failed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">status</span>.<span class="ruby-identifier">exitstatus</span>), <span class="ruby-node">&quot;'#{command.join(' ')}' returned status #{status.exitstatus}&quot;</span>
         <span class="ruby-keyword kw">end</span>
 
     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Failed</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-        <span class="ruby-identifier">error</span> = <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">SubcommandFailed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">command</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>), <span class="ruby-identifier">logname</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">status</span>)
+        <span class="ruby-identifier">error</span> = <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">SubcommandFailed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">target_name</span>, <span class="ruby-identifier">command</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>), <span class="ruby-identifier">logname</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">status</span>)
         <span class="ruby-identifier">error</span>.<span class="ruby-identifier">phase</span> = <span class="ruby-identifier">phase</span>
         <span class="ruby-identifier">raise</span> <span class="ruby-identifier">error</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
     <span class="ruby-keyword kw">end</span></pre>

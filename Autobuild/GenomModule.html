@@ -59,13 +59,13 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000174">::new</a></li>
+					<li><a href="#M000175">::new</a></li>
 					
-					<li><a href="#M000180">#cpp_options</a></li>
+					<li><a href="#M000179">#cpp_options</a></li>
 					
-					<li><a href="#M000184">#depends_on</a></li>
+					<li><a href="#M000185">#depends_on</a></li>
 					
-					<li><a href="#M000185">#genom_dependencies</a></li>
+					<li><a href="#M000186">#genom_dependencies</a></li>
 					
 					<li><a href="#M000178">#genomstamp</a></li>
 					
@@ -77,7 +77,7 @@
 					
 					<li><a href="#M000177">#prepare</a></li>
 					
-					<li><a href="#M000186">#regen</a></li>
+					<li><a href="#M000187">#regen</a></li>
 					
 				</ul>
 			</div>
@@ -246,7 +246,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000174"></a>
+				<a name="M000175"></a>
 
 				<div class="method-heading">
 				
@@ -287,7 +287,7 @@
 
 		
 			<div id="cpp-options-method" class="method-detail ">
-				<a name="M000180"></a>
+				<a name="M000179"></a>
 
 				<div class="method-heading">
 				
@@ -321,7 +321,7 @@ Extract the cpp options from the genom options
 
 		
 			<div id="depends-on-method" class="method-detail ">
-				<a name="M000184"></a>
+				<a name="M000185"></a>
 
 				<div class="method-heading">
 				
@@ -354,7 +354,7 @@ Extract the cpp options from the genom options
 
 		
 			<div id="genom-dependencies-method" class="method-detail ">
-				<a name="M000185"></a>
+				<a name="M000186"></a>
 
 				<div class="method-heading">
 				
@@ -616,7 +616,7 @@ Called before running the rake tasks and after all imports have been made
 
 		
 			<div id="regen-method" class="method-detail ">
-				<a name="M000186"></a>
+				<a name="M000187"></a>
 
 				<div class="method-heading">
 				
@@ -657,7 +657,7 @@ Called before running the rake tasks and after all imports have been made
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span>
                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
                     <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating GenoM files for #{name}&quot;</span>
-                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">cmdline</span>)
+                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">cmdline</span>)
                 <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
 
@@ -667,7 +667,7 @@ Called before running the rake tasks and after all imports have been made
                 <span class="ruby-comment cmt"># since the generation takes care of rebuilding configure</span>
                 <span class="ruby-comment cmt"># if .gen has changed</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating build system for #{name}&quot;</span>
-                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) { <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'autogen'</span>)) }
+                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) { <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'autogen'</span>)) }
             <span class="ruby-keyword kw">end</span>
 
             <span class="ruby-keyword kw">super</span>(<span class="ruby-node">&quot;#{srcdir}/autoconf/configure.ac&quot;</span>)

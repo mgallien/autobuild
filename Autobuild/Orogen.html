@@ -59,23 +59,25 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000217">::new</a></li>
+					<li><a href="#M000223">::new</a></li>
 					
-					<li><a href="#M000210">::orocos_target</a></li>
+					<li><a href="#M000219">::orocos_target</a></li>
 					
-					<li><a href="#M000212">#corba</a></li>
+					<li><a href="#M000220">::orogen_root</a></li>
 					
-					<li><a href="#M000218">#depends_on</a></li>
+					<li><a href="#M000222">#corba</a></li>
 					
-					<li><a href="#M000224">#genstamp</a></li>
+					<li><a href="#M000224">#depends_on</a></li>
 					
-					<li><a href="#M000219">#import</a></li>
+					<li><a href="#M000227">#genstamp</a></li>
 					
-					<li><a href="#M000211">#orocos_target</a></li>
+					<li><a href="#M000225">#import</a></li>
 					
-					<li><a href="#M000223">#prepare</a></li>
+					<li><a href="#M000221">#orocos_target</a></li>
 					
-					<li><a href="#M000225">#regen</a></li>
+					<li><a href="#M000226">#prepare</a></li>
+					
+					<li><a href="#M000228">#regen</a></li>
 					
 				</ul>
 			</div>
@@ -226,7 +228,7 @@ they install in the pkgconfig/ namespace. It means that a
 &#8220;pkgconfig/camera&#8220; virtual package. This is done automatically
 by the <a href="CMake.html">CMake</a> package handler if the source
 contains a camera.pc.in file, but can also be done manually with a call to
-<a href="Package.html#M000056">Package#provides</a>:
+<a href="Package.html#M000057">Package#provides</a>:
 </p>
 <pre>
   pkg.provides &quot;pkgconfig/camera&quot;
@@ -336,7 +338,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000217"></a>
+				<a name="M000223"></a>
 
 				<div class="method-heading">
 				
@@ -355,7 +357,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 161</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 181</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">config</span>)
             <span class="ruby-ivar">@corba</span>       = <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">corba</span>
             <span class="ruby-keyword kw">super</span>
@@ -372,7 +374,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="orocos-target-method" class="method-detail ">
-				<a name="M000210"></a>
+				<a name="M000219"></a>
 
 				<div class="method-heading">
 				
@@ -391,7 +393,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="orocos-target-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 133</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 142</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orocos_target</span>
             <span class="ruby-identifier">user_target</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'OROCOS_TARGET'</span>]
             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orocos_target</span>
@@ -410,6 +412,45 @@ contains a camera.pc.in file, but can also be done manually with a call to
 			</div>
 
 		
+			<div id="orogen-root-method" class="method-detail ">
+				<a name="M000220"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">orogen_root</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="orogen-root-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 153</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_root</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orogen_root</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-ivar">@orogen_root</span> = <span class="ruby-value">`orogen --base-dir 2&gt;&amp;1`</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orogen_root</span>.<span class="ruby-identifier">empty?</span>
+                    <span class="ruby-ivar">@orogen_root</span> = <span class="ruby-keyword kw">false</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-ivar">@orogen_root</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
 		</div>
 	
 		<div id="public-instance-method-details" class="method-section section">
@@ -417,7 +458,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="corba-method" class="method-detail ">
-				<a name="M000212"></a>
+				<a name="M000222"></a>
 
 				<div class="method-heading">
 				
@@ -436,7 +477,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="corba-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 156</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 176</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">corba</span>
             <span class="ruby-ivar">@corba</span> <span class="ruby-operator">||</span> (<span class="ruby-ivar">@corba</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">corba</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -449,7 +490,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="depends-on-method" class="method-detail ">
-				<a name="M000218"></a>
+				<a name="M000224"></a>
 
 				<div class="method-heading">
 				
@@ -468,7 +509,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="depends-on-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 169</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 189</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
             <span class="ruby-keyword kw">super</span>
 
@@ -485,7 +526,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="genstamp-method" class="method-detail ">
-				<a name="M000224"></a>
+				<a name="M000227"></a>
 
 				<div class="method-heading">
 				
@@ -504,7 +545,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="genstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 224</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 250</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.orogen'</span>, <span class="ruby-value str">'orogen-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -515,7 +556,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000219"></a>
+				<a name="M000225"></a>
 
 				<div class="method-heading">
 				
@@ -534,7 +575,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 177</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 197</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
             <span class="ruby-keyword kw">super</span>
 
@@ -554,7 +595,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="orocos-target-method" class="method-detail ">
-				<a name="M000211"></a>
+				<a name="M000221"></a>
 
 				<div class="method-heading">
 				
@@ -573,7 +614,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="orocos-target-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 145</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 165</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orocos_target</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orocos_target</span>.<span class="ruby-identifier">nil?</span>
                 <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">orocos_target</span>
@@ -590,7 +631,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000223"></a>
+				<a name="M000226"></a>
 
 				<div class="method-heading">
 				
@@ -609,7 +650,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 188</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 208</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
             <span class="ruby-keyword kw">super</span>
 
@@ -631,16 +672,22 @@ contains a camera.pc.in file, but can also be done manually with a call to
                 <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
 
-            <span class="ruby-comment cmt"># Find out where orogen is, and make sure the configurestamp depend</span>
-            <span class="ruby-comment cmt"># on it. Ignore if orogen is too old to have a --base-dir option</span>
-            <span class="ruby-identifier">orogen_root</span> = <span class="ruby-value">`orogen --base-dir 2&gt;&amp;1`</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">orogen_root</span>.<span class="ruby-identifier">empty?</span>
-                <span class="ruby-identifier">orogen_root</span> = <span class="ruby-identifier">orogen_root</span>.<span class="ruby-identifier">split</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chomp</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">orogen_root</span>)
-                    <span class="ruby-identifier">orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_root</span>, <span class="ruby-value str">'orogen'</span>)
-                    <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">orogen_root</span>)
+            <span class="ruby-comment cmt"># Check if there is an orogen package registered. If it is the case,</span>
+            <span class="ruby-comment cmt"># simply depend on it. Otherwise, look out for orogen --base-dir</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-value str">'orogen'</span>]
+                <span class="ruby-identifier">depends_on</span> <span class="ruby-value str">&quot;orogen&quot;</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># Find out where orogen is, and make sure the configurestamp depend</span>
+                <span class="ruby-comment cmt"># on it. Ignore if orogen is too old to have a --base-dir option</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">orogen_root</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">orogen_root</span>
+                    <span class="ruby-identifier">orogen_root</span> = <span class="ruby-identifier">orogen_root</span>.<span class="ruby-identifier">split</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chomp</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">orogen_root</span>)
+                        <span class="ruby-identifier">orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_root</span>, <span class="ruby-value str">'orogen'</span>)
+                        <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">orogen_root</span>)
+                    <span class="ruby-keyword kw">end</span>
                 <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
+
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genstamp</span>
             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">orogen_file</span>) <span class="ruby-keyword kw">do</span>
                 <span class="ruby-identifier">regen</span>
@@ -655,7 +702,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
 		
 			<div id="regen-method" class="method-detail ">
-				<a name="M000225"></a>
+				<a name="M000228"></a>
 
 				<div class="method-heading">
 				
@@ -674,7 +721,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="regen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 226</span>
+<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 252</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
             <span class="ruby-identifier">cmdline</span> = [<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'orogen'</span>)]
             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'--corba'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">corba</span>
@@ -682,7 +729,7 @@ contains a camera.pc.in file, but can also be done manually with a call to
 
             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating oroGen project #{name}&quot;</span>
             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">name</span>, <span class="ruby-value str">'orogen'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">cmdline</span>
+                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'orogen'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">cmdline</span>
                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span> <span class="ruby-identifier">genstamp</span>
             <span class="ruby-keyword kw">end</span>
         <span class="ruby-keyword kw">end</span></pre>
