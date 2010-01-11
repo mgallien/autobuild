@@ -91,10 +91,12 @@ module Autobuild
                                "--replace-all", "remote.autobuild.fetch",  "+refs/heads/*:refs/remotes/autobuild/*")
 
                 # We are checking out a specific commit. We just call git fetch
-                if commit 
+                if commit
                     Subprocess.run(package, :import, Autobuild.tool('git'), 'fetch', 'autobuild')
+                elsif tag
+                    Subprocess.run(package, :import, Autobuild.tool('git'), 'fetch', repository, "tags/#{tag}")
                 else
-                    Subprocess.run(package, :import, Autobuild.tool('git'), 'fetch', repository, branch || tag)
+                    Subprocess.run(package, :import, Autobuild.tool('git'), 'fetch', repository, branch)
                 end
 
                 # Now get the actual commit ID from the FETCH_HEAD file, and
