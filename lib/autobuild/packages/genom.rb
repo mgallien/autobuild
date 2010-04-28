@@ -112,7 +112,7 @@ module Autobuild
 	    end
 	end
 
-        def regen
+        def create_regen_target
             cmdline = [ 'genom', "#{name}.gen", *genomflags ]
 
 	    # Check that the module has been generated with the same flags
@@ -138,15 +138,17 @@ module Autobuild
             end
 
             acuser = File.join(srcdir, "configure.ac.user")
-            file File.join(srcdir, 'configure') => acuser do
-                # configure does not depend on the .gen file
-                # since the generation takes care of rebuilding configure
-                # if .gen has changed
-                progress "generating build system for %s"
-                Dir.chdir(srcdir) { Subprocess.run(self, 'genom', File.expand_path('autogen')) }
+            if File.exists? acuser
+                file File.join(srcdir, 'configure') => acuser do
+                    # configure does not depend on the .gen file
+                    # since the generation takes care of rebuilding configure
+                    # if .gen has changed
+                    progress "generating build system for %s"
+                    Dir.chdir(srcdir) { Subprocess.run(self, 'genom', File.expand_path('autogen')) }
+                end
             end
 
-	    super("#{srcdir}/autoconf/configure.ac")
+            super(genomstamp)
         end
     end
 end
