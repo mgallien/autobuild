@@ -18,10 +18,6 @@ module Autobuild
             end
         end
 
-        def initialize(options)
-            super
-        end
-
         def doc_dir
             @cmakeBuilder.doc_dir if @cmakeBuilder
         end
@@ -37,10 +33,6 @@ module Autobuild
 
         def buildstamp
             @cmakeBuilder.buildstamp if @cmakeBuilder
-        end
-
-        def import
-            super
         end
 
         def prepare
