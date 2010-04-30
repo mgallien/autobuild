@@ -60,7 +60,7 @@ module Autobuild
                     allPatches = []
 
                     Dir.new("#{srcdir}/patches").each do |dirEntry|
-                        if dirEntry =~ /.*\.patch/
+                        if dirEntry =~ /.*\.patch$/
                             allPatches << dirEntry
                         end
                     end
