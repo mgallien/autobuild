@@ -2,6 +2,7 @@ require 'autobuild/config'
 require 'find'
 require 'rake/tasklib'
 require 'fileutils'
+require 'tempfile'
 
 STAMPFILE = "autobuild-stamp"
 
