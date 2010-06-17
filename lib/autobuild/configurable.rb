@@ -49,7 +49,7 @@ module Autobuild
             @builddir = new
         end
         # Returns the absolute builddir
-        def builddir; File.expand_path(@builddir || self.class.builddir, srcdir) end
+        def builddir; File.expand_path(@builddir || self.class.builddir, subsrcdir) end
 
         # Build stamp
         # This returns the name of the file which marks when the package has been
@@ -63,7 +63,7 @@ module Autobuild
 
         def prepare_for_rebuild
             prepare_for_forced_build
-            if File.exists?(builddir) && builddir != srcdir
+            if File.exists?(builddir) && builddir != subsrcdir
                 FileUtils.rm_rf builddir
             end
         end
@@ -75,7 +75,7 @@ module Autobuild
         end
 
         def prepare
-            Autobuild.source_tree srcdir do |pkg|
+            Autobuild.source_tree subsrcdir do |pkg|
 		pkg.exclude << Regexp.new("^#{Regexp.quote(builddir)}")
                 pkg.exclude << Regexp.new("^#{doc_dir}") if doc_dir
 	    end
@@ -89,7 +89,7 @@ module Autobuild
             end
             task "#{name}-prepare" => configurestamp
 
-            file buildstamp => [ srcdir, configurestamp ] do
+            file buildstamp => [ subsrcdir, configurestamp ] do
                 ensure_dependencies_installed
                 build
             end

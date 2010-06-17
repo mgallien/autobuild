@@ -94,11 +94,11 @@ module Autobuild
         def prepare_for_forced_build
             autodetect_needed_stages
             if using[:autoconf]
-                FileUtils.rm_f File.join(srcdir, 'configure')
+                FileUtils.rm_f File.join(subsrcdir, 'configure')
             end
 
             if using[:automake]
-                Find.find(srcdir) do |path|
+                Find.find(subsrcdir) do |path|
                     if File.basename(path) == "Makefile.in"
                         FileUtils.rm_f path
                     end
@@ -153,33 +153,33 @@ module Autobuild
             # Let the user disable the use of autoconf explicitely by using 'false'.
             # 'nil' means autodetection
             if using[:autoconf].nil?
-                if File.file?(File.join(srcdir, 'configure.in')) || File.file?(File.join(srcdir, 'configure.ac'))
+                if File.file?(File.join(subsrcdir, 'configure.in')) || File.file?(File.join(subsrcdir, 'configure.ac'))
                     using[:autoconf] = true 
                 end
             end
             using[:aclocal] = using[:autoconf] if using[:aclocal].nil?
             if using[:automake].nil?
-                using[:automake] = File.exists?(File.join(srcdir, 'Makefile.am'))
+                using[:automake] = File.exists?(File.join(subsrcdir, 'Makefile.am'))
             end
 
             if using[:libtool].nil?
-                using[:libtool] = File.exists?(File.join(srcdir, 'ltmain.sh'))
+                using[:libtool] = File.exists?(File.join(subsrcdir, 'ltmain.sh'))
             end
         end
 
         # Adds a target to rebuild the autotools environment
         def create_regen_target(confsource = nil)
-	    conffile = "#{srcdir}/configure"
+	    conffile = "#{subsrcdir}/configure"
 	    if confsource
 		file conffile => confsource
 	    elsif confext = %w{.ac .in}.find { |ext| File.exists?("#{conffile}#{ext}") }
 		file conffile => "#{conffile}#{confext}"
 	    else
-		raise PackageException.new(name), "neither configure.ac nor configure.in present in #{srcdir}"
+		raise PackageException.new(name), "neither configure.ac nor configure.in present in #{subsrcdir}"
 	    end
 
             file conffile do
-                Dir.chdir(srcdir) do
+                Dir.chdir(subsrcdir) do
                     if using[:autogen].nil?
                         using[:autogen] = %w{autogen autogen.sh}.find { |f| File.exists?(f) }
                     end
@@ -214,7 +214,7 @@ module Autobuild
         def configure
             super do
                 Dir.chdir(builddir) do
-                    command = [ "#{srcdir}/configure", "--no-create", "--prefix=#{prefix}" ]
+                    command = [ "#{subsrcdir}/configure", "--no-create", "--prefix=#{prefix}" ]
                     command += Array[*configureflags]
                     
                     progress "configuring build system for %s"

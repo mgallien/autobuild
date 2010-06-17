@@ -49,6 +49,10 @@ module Autobuild
 	# set the source directory. If a relative path is given,
 	# it is relative to Autobuild.srcdir. Defaults to #name
 	attr_writer     :srcdir
+        # set an insource sub directory that contains the real sources we want to
+        # build. If an absolute path is given, we should fail with an error.
+        # defaults to . the current directory
+        attr_writer     :subsrcdir
 	# set the installation directory. If a relative path is given,
 	# it is relative to Autobuild.prefix. Defaults to ''
 	attr_writer :prefix
@@ -69,6 +73,8 @@ module Autobuild
 
 	# Absolute path to the source directory. See #srcdir=
 	def srcdir; File.expand_path(@srcdir || name, Autobuild.srcdir) end
+        # Absolute path to the insource real directory. See #subsrcdir=
+        def subsrcdir; File.expand_path(@subsrcdir || ".", srcdir) end
 	# Absolute path to the installation directory. See #prefix=
 	def prefix; File.expand_path(@prefix || '', Autobuild.prefix) end
         # Absolute path to the log directory for this package. See #logdir=
@@ -200,7 +206,7 @@ module Autobuild
 
         # Install the result in prefix
         def install
-            Dir.chdir(srcdir) do
+            Dir.chdir(subsrcdir) do
                 Autobuild.apply_post_install(name, @post_install)
             end
             Autobuild.touch_stamp(installstamp)
@@ -222,7 +228,7 @@ module Autobuild
         # doc_dir attribute is not set.
         def doc_dir
             if @doc_dir
-                File.expand_path(@doc_dir, srcdir)
+                File.expand_path(@doc_dir, subsrcdir)
             end
         end
 
@@ -254,7 +260,7 @@ module Autobuild
                 @installed_doc = false
                 catch(:doc_disabled) do
                     begin
-                        Dir.chdir(srcdir) do
+                        Dir.chdir(subsrcdir) do
                             yield if block_given?
                         end
 
