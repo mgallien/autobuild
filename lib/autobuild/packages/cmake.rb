@@ -116,7 +116,7 @@ module Autobuild
                 all_defines['CMAKE_INSTALL_PREFIX'] = prefix
                 cache = File.read(cmake_cache)
                 did_change = all_defines.any? do |name, value|
-                    cache_line = cache.each_line.find do |line|
+                    cache_line = cache.each_line do |line|
                         line =~ /^#{name}:/
                     end
 
